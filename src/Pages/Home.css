@@ -25,6 +25,7 @@
 
 .image{
     border-radius: 5px;
+    width: 350px;
 }
 
 .club{
@@ -33,4 +34,31 @@
 
 .h1{
     margin-top: 100px;
+}
+
+.icon{
+    margin: 30px 0px;
+}
+
+.m-club{
+    display: none;
+}
+
+@media only screen and (max-width: 1024px) {
+    .content{
+        width: 100%;
+        padding: 20px;
+    }
+    .image{
+        width: 90%;
+    }
+    .club{
+        display: none;
+    }
+    .m-club{
+        display: block;
+    }
+    .h1{
+        margin-top: 50px;
+    }
 }

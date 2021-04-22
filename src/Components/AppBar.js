@@ -9,9 +9,6 @@ export class AppBar extends Component {
                     <div className="wrap logo" >
                         <img alt="logo" src={logo} width="70px" /> <div style={{fontFamily:"inherit"}} >brown box.</div>
                     </div>
-                    <div >
-
-                    </div>
                 </div>
             </div>
         )

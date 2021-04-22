@@ -7,6 +7,7 @@ import bose from '../Images/bose.jpg'
 import ad from '../Images/advertise.jpg'
 import wh from '../Images/warehouse.jpg'
 import club from '../Images/club.png'
+import mclub from "../Images/clubm.png"
 
 export class Home extends Component {
     render() {
@@ -25,7 +26,7 @@ export class Home extends Component {
                             <AnimatedText />
                         </div>
                         <p>
-                            We are an e-commerce website which provide you <br />
+                            We are an e-commerce website which provides you 
                             products in wholesale rates. The products are always new, genuine <br />
                             and contains no defects.
                             <br />
@@ -48,7 +49,7 @@ export class Home extends Component {
                                 </p>
                             </div>
                             <div>
-                                <img alt="i" className="image" src={bose} width="350px" />
+                                <img alt="i" className="image" src={bose} />
                             </div>
                         </div>
 
@@ -60,7 +61,7 @@ export class Home extends Component {
                                 </p>
                             </div>
                             <div>
-                                <img alt="i" className="image" src={ad} width="350px" />
+                                <img alt="i" className="image" src={ad} />
                             </div>
                         </div>
 
@@ -76,7 +77,7 @@ export class Home extends Component {
                                 </p>
                             </div>
                             <div>
-                                <img alt="i" className="image" src={wh} width="350px" />
+                                <img alt="i" className="image" src={wh} />
                             </div>
                         </div>
 
@@ -85,54 +86,25 @@ export class Home extends Component {
 
 
 
-                        {/*<div className="std-ctn" style={{ alignItems: "center" }} >
-                            <div>
-                                <img alt="i" className="image" src={src} width="250px" />
-                                <div>
-                                    <h2>
-                                        Warehouse
-                                    </h2>
-                                </div>
-                            </div>
-
-                            <img width="40px" height="40px" src="https://img.icons8.com/fluent/48/000000/chevron-right.png" />
-
-                            <div>
-                                <img alt="i" className="image bw" src={shop} width="250px" />
-                                <div>
-                                    <h2>
-                                        Seller
-                                    </h2>
-                                </div>
-                            </div>
-
-                            <img width="40px" height="40px" src="https://img.icons8.com/fluent/48/000000/chevron-right.png" />
-
-                            <div>
-                                <img alt="i" className="image" src={home} width="250px" />
-                                <div>
-                                    <h2>
-                                        To You
-                                    </h2>
-                                </div>
-                            </div>
-        </div>*/}
-
                         <div className="std-ctn" style={{ alignItems: "center" }} >
                             <div>
                                 <h1 className="h1" >
                                     Simply
                                 </h1>
+                                <p className="wrap" >
+                                    <img alt="i" className="m-club" src={mclub} />
+                                </p>
                                 <p>
-                                    <img alt="i" className="club" src={club} width="250px" />
+                                    <img alt="i" className="club" src={club} />
                                 </p>
                                 <div>
                                     <p>
-                                        So, we are FRAUD or products are not FAKE at all. All products are from genuine 
-                                        retailers.
+                                        So, we are FRAUD or products are not FAKE at all. All products are from genuine
+                                        retailer, these are the same retailers who are present on other e-commerce websites
+                                        (like amazon, flipkart etc.).
                                     </p>
                                     <p>
-                                        All the products are genuine, orignal and of best quality. 
+                                        All the products are genuine, orignal and of best quality.
                                     </p>
                                 </div>
                             </div>
@@ -141,9 +113,9 @@ export class Home extends Component {
                         <div>
                             <div>
                                 <div>
-                                    <h1 className="h1" className="wrap" style={{width:"fit-content"}} >
-                                        Join Us 
-                                        <img src="https://img.icons8.com/carbon-copy/50/000000/whatsapp.png"/>
+                                    <h1 className="h1" className="wrap" style={{ width: "fit-content" }} >
+                                        Join Us
+                                        <img src="https://img.icons8.com/carbon-copy/50/000000/whatsapp.png" />
                                     </h1>
                                 </div>
                                 <div style={{ width: "100%" }} >

@@ -40,7 +40,26 @@ div{
     cursor: pointer;
 }
 
+.para-img{
+    width: 350px;
+}
+
 .std-btn:hover{
     background-color: white;
     color: #f4bc57;
+}
+
+@media only screen and (max-width: 1024px) {
+    .desktop-ctn{
+        width: 100%;
+        padding: 0px;
+        margin: 0px;
+        padding-left: 10px;
+    }
+    .std-ctn{
+        flex-direction: column;
+    }
+    .std-para{
+        width: 80%;
+    }
 }
