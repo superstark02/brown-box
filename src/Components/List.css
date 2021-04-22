@@ -1,0 +1,35 @@
+.list-prt{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.list-ctn{
+    width: 250px;
+    max-width: 250px;
+    margin: 10px;
+}
+
+.item-img{
+    width: 70%;
+}
+
+.item-name{
+    font-size: 13px;
+    color: #e2a22b;
+}
+
+.sp{
+    font-size: 20px;
+}
+.mrp{
+    font-size: 13px;
+}
+
+@media only screen and (max-width: 1024px) {
+    .list-prt{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+}
