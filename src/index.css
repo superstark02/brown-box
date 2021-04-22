@@ -11,3 +11,23 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@font-face {
+  font-family: 'neometric';
+  src: local('neometric'), url(./Fonts/Neometric/NeometricBlack.otf) format('truetype');
+}
+
+@font-face {
+  font-family: 'medium';
+  src: local('medium'), url(./Fonts/Neometric/NeometricAltMedium.otf) format('truetype');
+}
+
+@font-face {
+  font-family: 'thin';
+  src: local('thin'), url(./Fonts/Neometric/NeometricAltLightItalic.otf) format('truetype');
+}
+
+@font-face {
+  font-family: 'satisfy';
+  src: local('satisfy'), url(./Fonts/Satisfy/Satisfy-Regular.ttf) format('truetype');
+}
