@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import "./AppBar.css"
-import logo from "../Images/bblogo.png"
+import logo from "../Images/bblogo.jfif"
 export class AppBar extends Component {
     render() {
         return (

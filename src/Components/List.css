@@ -10,7 +10,7 @@
 }
 
 .item-img{
-    width: 70%;
+    height: 160px;
 }
 
 .item-name{
@@ -23,6 +23,11 @@
 }
 .mrp{
     font-size: 13px;
+}
+.save{
+    color: grey;
+    font-size: 13px;
+    margin-top: 5px;
 }
 
 @media only screen and (max-width: 1024px) {

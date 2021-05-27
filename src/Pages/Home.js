@@ -13,7 +13,8 @@ export class Home extends Component {
         return (
             <div>
                 <AppBar />
-                <div className="wallpaper" ></div>
+                <div className="wallpaper" >
+                </div>
                 <div className="overlay wrap" >
                     <div className="content" >
                         <div>
@@ -28,12 +29,12 @@ export class Home extends Component {
                             We are an e-commerce website that provides you products at wholesale rates. <br />The products are always the latest, new and genuine.
                             <br />
                             <br />
-                            How it happens? Is explained below.
+                            How we work? Is explained below.
                         </p>
                         <div>
                             <a href="https://chat.whatsapp.com/Ky0jpeWgviDJ4YkY2WsJHr" >
                                 <button className="std-btn" >
-                                    Join Us
+                                    Products
                                 </button>
                             </a>
                         </div>
@@ -45,11 +46,11 @@ export class Home extends Component {
                         <div className="std-ctn" style={{ alignItems: "center" }} >
                             <div>
                                 <h1 className="h1" >
-                                    How It Works
+                                    How We Work
                                 </h1>
                                 <div>
                                     <p>
-                                        When at least 20 customers are ready to buy a product. We contact our trusted network of
+                                        We launch a product every week. When at least 20 customers are ready to buy a product. We contact our trusted network of
                                         retailers and deliver it.
                                     </p>
                                 </div>
@@ -76,11 +77,11 @@ export class Home extends Component {
                             <div>
                                 <div>
                                     <h1 className="h1" style={{ width: "fit-content" }} >
-                                        Latest Products
+                                        Trending
                                     </h1>
                                 </div>
                                 <div>
-                                    <List/>
+                                    <List />
                                 </div>
                             </div>
                         </div>
@@ -109,7 +110,7 @@ export class Home extends Component {
                         </div>
 
                         <div>
-                            <Brands/>
+                            <Brands />
                         </div>
 
 

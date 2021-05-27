@@ -32,7 +32,10 @@ export class List extends Component {
                                     &#8377;{item.sp}
                                 </div>
                                 <div className="mrp" >
-                                    MRP:<strike>&#8377;{item.mrp}</strike>
+                                    Online:<strike>&#8377;{item.mrp}</strike>
+                                </div>
+                                <div className="save" >
+                                    Save:&#8377;{parseInt(item.mrp.replace(/\,/g,''))-parseInt(item.sp.replace(/\,/g,''))}
                                 </div>
                             </div>
                         )
