@@ -1,56 +1,75 @@
 import React, { Component } from 'react'
-import "../Pages/Home.css"
-import bose from '../Images/bose.jpg'
-import ad from '../Images/advertise.jpg'
-import wh from '../Images/warehouse.jpg'
+import "./HowWeWork.css"
+import warehouse from '../Images/HowWeWork/warehouse.png'
+import retailer from '../Images/HowWeWork/wholeseller.png'
+import shop from '../Images/HowWeWork/shop.png'
+import customer from '../Images/HowWeWork/customer.png'
 
 export class HowWeWork extends Component {
     render() {
         return (
             <div className="wrap" >
                 <div className="desktop-ctn" >
-                <h1 className="h1" >
+                    <h1 className="h1" >
                         How We Work?
-                        </h1>
-                    <div className="std-ctn" >
-                        <div>
-                            <p className="std-para" >
-                                For any product ( camera, earbuds, shoes etc.). The wholesale rate only implies when
-                                it is ordered in bulk.
-                                </p>
+                    </h1>
+
+                    <div className="how-we-work-cnt" >
+                        <div className="how-we-work-child" >
+                            <div className="wrap" >
+                                <img src={warehouse} alt="i" width="80%" />
+                            </div>
+                            <div>
+                                Warehouse
+                            </div>
                         </div>
+
                         <div>
-                            <img alt="i" className="image" src={bose} />
+                            <img src="https://img.icons8.com/fluent/48/000000/chevron-right.png" />
+                        </div>
+
+                        <div className="how-we-work-child" >
+                            <div className="wrap" >
+                                <img src={retailer} alt="i" width="80%" />
+                            </div>
+                            <div>
+                                Retailer 
+                            </div>
+                            <div className="skip" >
+                                <img src="https://img.icons8.com/cotton/2x/delete-sign--v2.png" width="30%" />
+                            </div>
+                        </div>
+
+                        <div>
+                            <img src="https://img.icons8.com/fluent/48/000000/chevron-right.png" />
+                        </div>
+
+                        <div className="how-we-work-child" >
+                            <div className="wrap" >
+                                <img src={shop} alt="i" width="80%" />
+                            </div>
+                            <div>
+                                Showroom
+                            </div>
+                            <div className="skip" >
+                                <img src="https://img.icons8.com/cotton/2x/delete-sign--v2.png"  width="35%"  />
+                            </div>
+                        </div>
+
+                        <div>
+                            <img src="https://img.icons8.com/fluent/48/000000/chevron-right.png" />
+                        </div>
+
+                        <div className="how-we-work-child" >
+                            <div className="wrap" >
+                                <img src={customer} alt="i" width="80%" />
+                            </div>
+                            <div>
+                                To You
+                            </div>
                         </div>
                     </div>
 
-                    <div className="std-ctn" >
-                        <div>
-                            <p className="std-para" >
-                                So, we choose a product everyday. Advertise it in our groups, social media
-                                and other communities.
-                                </p>
-                        </div>
-                        <div>
-                            <img alt="i" className="image" src={ad} />
-                        </div>
-                    </div>
-
-                    <div className="std-ctn" >
-                        <div>
-                            <p className="std-para" >
-                                If we are able to find atleast 20 customers to buy, we order it through our network of
-                                trusted retailers, suppliers and warehouses.
-                                </p>
-
-                            <p className="std-para" >
-                                Then it is delivered directly from factory/warehouse to you.
-                                </p>
-                        </div>
-                        <div>
-                            <img alt="i" className="image" src={wh} />
-                        </div>
-                    </div>
                 </div>
             </div>
         )
@@ -58,3 +77,4 @@ export class HowWeWork extends Component {
 }
 
 export default HowWeWork
+

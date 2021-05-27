@@ -7,6 +7,7 @@ import club from '../Images/club.png'
 import mclub from "../Images/clubm.png"
 import List from '../Components/List'
 import Brands from '../Components/Brands'
+import HowWeWork from '../Components/HowWeWork'
 
 export class Home extends Component {
     render() {
@@ -60,6 +61,9 @@ export class Home extends Component {
                                 <p>
                                     <img alt="i" className="club" src={club} />
                                 </p>
+                                <div>
+                                    <HowWeWork/>
+                                </div>
                                 <div>
                                     <p>
                                         All products are from genuine
