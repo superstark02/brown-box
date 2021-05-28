@@ -15,23 +15,24 @@ export class MyList extends Component {
     }
 
     componentDidMount() {
-        getCollection("Products").then(snap=>{
-            this.setState({data:snap})
+        getCollection("Products").then(snap => {
+            this.setState({ data: snap })
         })
     }
 
     myArrow({ type, onClick, isEdge }) {
-        const pointer = type === consts.PREV ? <ArrowBackIosRoundedIcon style={{fontSize:"15px"}} /> : <ArrowForwardIosRoundedIcon style={{fontSize:"15px"}}  />
+        const pointer = type === consts.PREV ? <ArrowBackIosRoundedIcon style={{ fontSize: "15px" }} /> : <ArrowForwardIosRoundedIcon style={{ fontSize: "15px" }} />
         return (
-            <div className="wrap" style={{width:"auto"}} >
+            <div className="wrap" style={{ width: "auto" }} >
                 <ButtonBase onClick={onClick} disabled={isEdge} style={{
                     marginRight: "20px",
-                    backgroundColor: "grey",
+                    backgroundColor: "white",
                     padding: "10px",
                     boxShadow: "0px 5px 10px rgba(0,0,0,0.6)",
                     borderRadius: "50%",
                     width: "40px",
                     height: "40px",
+                    cursor:"pointer"
                 }}>
                     <div className="wrap" >
                         {pointer}
@@ -56,15 +57,31 @@ export class MyList extends Component {
                                 {
                                     this.state.data.map(item => {
                                         return (
-                                            <div style={{ display: "inline-block" }} >
+                                            <div>
                                                 <ButtonBase className="w3-animate-opacity" style={{ height: "100%", marginRight: "20px" }}>
                                                     <Link to={"/display/"}
                                                         style={{ height: "100%" }}  >
-                                                        <div className="list-item" style={{ backgroundImage: "url(" + item.image + ")" }} >
-                                                            
-                                                        </div>
-                                                        <div>
-                                                            {item.name}
+                                                        <div className="list-item" >
+                                                            <div className="center-image" >
+                                                                <img src={item.image} width="80%" />
+                                                            </div>
+                                                            <div>
+                                                                <div className="item-name" >
+                                                                    {item.name}
+                                                                </div>
+                                                                <div className="mrp" >
+                                                                    Online:<strike>&#8377;{item.mrp}</strike>
+                                                                </div>
+                                                                <div className="save" >
+                                                                    Save:&#8377;{parseInt(item.mrp.replace(/\,/g, '')) - parseInt(item.sp.replace(/\,/g, ''))}
+                                                                </div>
+                                                                <div className="sp" >
+                                                                    &#8377;{item.sp}
+                                                                </div>
+                                                                <button className="std-btn-2" >
+                                                                    Add To Cart
+                                                                </button>
+                                                            </div>
                                                         </div>
                                                     </Link>
                                                 </ButtonBase>
@@ -75,10 +92,10 @@ export class MyList extends Component {
                             </Carousel>
                         </div>
                     ) : (
-                            <div>
+                        <div>
 
-                            </div>
-                        )
+                        </div>
+                    )
                 }
             </div>
         )

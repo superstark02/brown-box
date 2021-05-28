@@ -2,6 +2,10 @@ div{
     font-family: medium;
 }
 
+.h1{
+    font-family: medium;
+}
+
 .wrap{
     display: flex;
     justify-content: center;

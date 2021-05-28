@@ -1,38 +1,63 @@
 .list-container{
     width: 100%;
     padding: 10px 50px;
-    display: inline-block;
+    background-color: #f4bd57;
     margin: 10px 0px;
-    white-space: nowrap;
+    justify-content: space-evenly;
+    height: 22vw;
 }
 
 .list-item{
-    width: 10vw;
-    height: 14vw;
-    overflow: hidden;
-    border-radius: 2px;
-    display: inline-block;
-    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5) ;
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    flex-direction: column-reverse;
-    padding: 10px;
-    align-items: flex-end;
-}
-
-.logo{
-    width: fit-content;
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 10px;
-}
-
-.app-logo{
+    width: 80%;
+    height: 20vw;
     border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5) ;
+    padding: 10px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 10px;
 }
 
-.rate{
-    color: rgb(197,194,197);
+.center-image{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item-name{
+    font-size: 13px;
+    color: #e2a22b;
+    width: 100%;
+    text-align: left;
+}
+
+.sp{
+    font-size: 20px;
+    color: black;
+    width: 100%;
+    text-align: left;
+}
+.mrp{
+    font-size: 13px;
+    color: black;
+    width: 100%;
+    text-align: left;
+}
+.save{
+    color: grey;
+    font-size: 13px;
+    margin-top: 5px;
+    width: 100%;
+    text-align: left;
+}
+
+.std-btn-2{
+    border: none;
+    color: #e2a22b;;
+    background-color: white;
+    font-size: 15px;
+    cursor: pointer;
 }

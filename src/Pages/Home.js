@@ -49,7 +49,7 @@ export class Home extends Component {
                         <div className="std-ctn" style={{ alignItems: "center" }} >
                             <div>
                                 <div>
-                                    <HowWeWork/>
+                                    <HowWeWork />
                                 </div>
                                 <div>
                                     <p>
@@ -74,11 +74,23 @@ export class Home extends Component {
                                 <div>
                                     <List />
                                 </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div>
+                    <MyList />
+                </div>
+
+                <div className="wrap" >
+                    <div className="desktop-ctn" >
+                        
+                        <div>
+                            <div>
                                 <div>
-                                    <MyList/>
-                                </div>
-                                <div>
-                                    <ProductDisplay/>
+                                    <ProductDisplay />
                                 </div>
                             </div>
                         </div>
