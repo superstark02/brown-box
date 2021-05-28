@@ -14,6 +14,12 @@ export class HowWeWork extends Component {
                         How We Work?
                     </h1>
 
+                    <div>
+                        <p>
+                            We launch a product every week. When at least 20 customers are ready to buy a product. We ship products from the company directly.
+                        </p>
+                    </div>
+
                     <div className="how-we-work-cnt" >
                         <div className="how-we-work-child" >
                             <div className="wrap" >
@@ -33,7 +39,7 @@ export class HowWeWork extends Component {
                                 <img src={retailer} alt="i" width="80%" />
                             </div>
                             <div>
-                                Retailer 
+                                Retailer
                             </div>
                             <div className="skip" >
                                 <img src="https://img.icons8.com/cotton/2x/delete-sign--v2.png" width="30%" />
@@ -52,7 +58,7 @@ export class HowWeWork extends Component {
                                 Showroom
                             </div>
                             <div className="skip" >
-                                <img src="https://img.icons8.com/cotton/2x/delete-sign--v2.png"  width="35%"  />
+                                <img src="https://img.icons8.com/cotton/2x/delete-sign--v2.png" width="35%" />
                             </div>
                         </div>
 

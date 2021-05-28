@@ -8,6 +8,8 @@ import mclub from "../Images/clubm.png"
 import List from '../Components/List'
 import Brands from '../Components/Brands'
 import HowWeWork from '../Components/HowWeWork'
+import ProductDisplay from '../Components/ProductDisplay'
+import MyList from '../Components/MyList'
 
 export class Home extends Component {
     render() {
@@ -46,21 +48,6 @@ export class Home extends Component {
                     <div className="desktop-ctn" >
                         <div className="std-ctn" style={{ alignItems: "center" }} >
                             <div>
-                                <h1 className="h1" >
-                                    How We Work
-                                </h1>
-                                <div>
-                                    <p>
-                                        We launch a product every week. When at least 20 customers are ready to buy a product. We contact our trusted network of
-                                        retailers and deliver it.
-                                    </p>
-                                </div>
-                                <p className="wrap" >
-                                    <img alt="i" className="m-club" src={mclub} />
-                                </p>
-                                <p>
-                                    <img alt="i" className="club" src={club} />
-                                </p>
                                 <div>
                                     <HowWeWork/>
                                 </div>
@@ -86,6 +73,12 @@ export class Home extends Component {
                                 </div>
                                 <div>
                                     <List />
+                                </div>
+                                <div>
+                                    <MyList/>
+                                </div>
+                                <div>
+                                    <ProductDisplay/>
                                 </div>
                             </div>
                         </div>

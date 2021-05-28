@@ -1,0 +1,38 @@
+.list-container{
+    width: 100%;
+    padding: 10px 50px;
+    display: inline-block;
+    margin: 10px 0px;
+    white-space: nowrap;
+}
+
+.list-item{
+    width: 10vw;
+    height: 14vw;
+    overflow: hidden;
+    border-radius: 2px;
+    display: inline-block;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5) ;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 10px;
+    align-items: flex-end;
+}
+
+.logo{
+    width: fit-content;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+}
+
+.app-logo{
+    border-radius: 5px;
+}
+
+.rate{
+    color: rgb(197,194,197);
+}
