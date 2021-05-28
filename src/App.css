@@ -53,6 +53,10 @@ div{
     color: #f4bc57;
 }
 
+.mobile{
+    display: none;
+}
+
 @media only screen and (max-width: 1024px) {
     .desktop-ctn{
         width: 100%;
@@ -65,5 +69,11 @@ div{
     }
     .std-para{
         width: 80%;
+    }
+    .desktop{
+        display: none;
+    }
+    .mobile{
+        display: block;
     }
 }

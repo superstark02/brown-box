@@ -31,7 +31,7 @@ export class HowWeWork extends Component {
                         </div>
 
                         <div>
-                            <img src="https://img.icons8.com/fluent/48/000000/chevron-right.png" />
+                            <img className="chev" src="https://img.icons8.com/fluent/48/000000/chevron-right.png" />
                         </div>
 
                         <div className="how-we-work-child" >
@@ -42,12 +42,12 @@ export class HowWeWork extends Component {
                                 Retailer
                             </div>
                             <div className="skip" >
-                                <img src="https://img.icons8.com/cotton/2x/delete-sign--v2.png" width="30%" />
+                                <i class="fa fa-ban skip"></i>
                             </div>
                         </div>
 
                         <div>
-                            <img src="https://img.icons8.com/fluent/48/000000/chevron-right.png" />
+                            <img className="chev" src="https://img.icons8.com/fluent/48/000000/chevron-right.png"/>
                         </div>
 
                         <div className="how-we-work-child" >
@@ -58,12 +58,12 @@ export class HowWeWork extends Component {
                                 Showroom
                             </div>
                             <div className="skip" >
-                                <img src="https://img.icons8.com/cotton/2x/delete-sign--v2.png" width="35%" />
+                                <i class="fa fa-ban skip"></i>
                             </div>
                         </div>
 
                         <div>
-                            <img src="https://img.icons8.com/fluent/48/000000/chevron-right.png" />
+                            <img className="chev" src="https://img.icons8.com/fluent/48/000000/chevron-right.png" />
                         </div>
 
                         <div className="how-we-work-child" >

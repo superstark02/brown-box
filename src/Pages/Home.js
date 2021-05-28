@@ -3,13 +3,11 @@ import AnimatedText from '../Components/AnimatedText'
 import AppBar from '../Components/AppBar'
 import Footer from '../Components/Footer'
 import "./Home.css"
-import club from '../Images/club.png'
-import mclub from "../Images/clubm.png"
-import List from '../Components/List'
 import Brands from '../Components/Brands'
 import HowWeWork from '../Components/HowWeWork'
 import ProductDisplay from '../Components/ProductDisplay'
 import MyList from '../Components/MyList'
+import MobileList from '../Components/MobileList'
 
 export class Home extends Component {
     render() {
@@ -71,17 +69,17 @@ export class Home extends Component {
                                         Trending
                                     </h1>
                                 </div>
-                                <div>
-                                    <List />
-                                </div>
                             </div>
                         </div>
 
                     </div>
                 </div>
 
-                <div>
+                <div className="desktop" >
                     <MyList />
+                </div>
+                <div className="mobile" >
+                    <MobileList />
                 </div>
 
                 <div className="wrap" >

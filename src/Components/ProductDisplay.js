@@ -14,8 +14,7 @@ export class ProductDisplay extends Component {
                         <div class="u-container-style u-expanded-width u-product u-product-1">
                             <div
                                 class="u-container-layout u-valign-middle-lg u-valign-middle-xl u-valign-top-sm u-valign-top-xs u-container-layout-1">
-                                <img alt=""
-                                    class="u-expanded-width-sm u-expanded-width-xs u-image u-image-default u-product-control u-image-1"
+                                <img alt="" className="floating u-expanded-width-sm u-expanded-width-xs u-image u-image-default u-product-control u-image-1"
                                     src={product} />
                                 <div
                                     class="u-align-center-sm u-align-center-xs u-align-left-lg u-align-left-md u-align-left-xl u-container-style u-expanded-width-sm u-expanded-width-xs u-group u-shape-rectangle u-group-1">
