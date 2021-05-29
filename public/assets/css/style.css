@@ -15,11 +15,11 @@ body{
 /*--fonts--*/
 @font-face{
 	font-family: 'Didact Gothic';
-	src:url(../fonts/Didact_Gothic/DidactGothic.ttf) format('truetype');
+	src:url(../Fonts/Neometric/NeometricAltMedium.otf) format('truetype');
 }
 @font-face{
 	font-family: 'Pathway Gothic One';
-	src:url(../fonts/Pathway_Gothic_One/PathwayGothicOne-Regular.ttf) format('truetype');
+	src:url(../Fonts/Neometric/NeometricAltMedium.otf) format('truetype');
 }
 .header-top{
     position: relative;
@@ -33,7 +33,7 @@ body{
 }
 .logo a,.logo a:hover {
     font-family: 'Pathway Gothic One';
-    background-color: #A5E126;
+    background-color: #f4bc57;
     text-transform: uppercase;
     text-decoration: none;
     padding: 10px 60px;
@@ -400,7 +400,7 @@ span.fel-fal-bar2{
 }
 .quick-view a {
      font-family: 'Pathway Gothic One';
-    background-color: #A5E126;
+    background-color: #f4bc57;
     padding: 5px;
     font-weight: 400;
     text-decoration: none;
@@ -464,12 +464,12 @@ a.subs-btn {
     outline: none;
 }
 a.subs-btn:hover{
-    background: #A5E126;
+    background: #f4bc57;
     transition: 0.5s all;
     border: none;
-    border-right: 2px solid #A5E126;
-    border-bottom: 2px solid #A5E126;
-    border-top: 2px solid #A5E126;
+    border-right: 2px solid #f4bc57;
+    border-bottom: 2px solid #f4bc57;
+    border-top: 2px solid #f4bc57;
     color: #fff;
 }
 .footer-grid ul{
@@ -764,7 +764,7 @@ div#profile p,div#home p,div#messages {
 }
 .tab-nike>li.active>a,.tab-nike>li.active>a:focus,.tab-nike>li.active>a:hover{
     color: #100b0b;
-    background-color: #A5E126;
+    background-color: #f4bc57;
     border-radius: 0;
 }
 .tab-nike>li>a:focus, .tab-nike>li>a:hover {
@@ -894,7 +894,7 @@ ul.qty li {
 }
 span.glyphicon.glyphicon-minus {
     color: #fff;
-    background-color: #A5E126;
+    background-color: #f4bc57;
     font-size: 12px;
     padding: 0px 5px;
     margin-right: 7px;
@@ -1336,7 +1336,7 @@ div textarea {
         border: none;
     }
     .navbar-default .navbar-toggle .icon-bar {
-        background-color: #a5e126;
+        background-color: #f4bc57;
     }
     .navbar-default .navbar-toggle {
         border: none;
@@ -1366,7 +1366,7 @@ div textarea {
         border: none;
     }
     .navbar-default .navbar-toggle .icon-bar {
-        background-color: #a5e126;
+        background-color: #f4bc57;
     }
     .navbar-default .navbar-toggle {
         border: none;
