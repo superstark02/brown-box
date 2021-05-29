@@ -3,6 +3,7 @@ import AppBar from '../Components/AppBar'
 import '../App.css'
 import MyList from '../Components/MyList'
 import MobileList from '../Components/MobileList'
+import Slider from '../Components/Slider'
 
 export class Single extends Component {
     render() {
@@ -22,7 +23,7 @@ export class Single extends Component {
                 <div className="showcase-grid">
                     <div className="container">
                         <div className="col-md-8 showcase">
-                            <MySlider/>
+                            <Slider/>
                         </div>
                         <div className="col-md-4 showcase">
                             <div className="showcase-rt-top">

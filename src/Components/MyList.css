@@ -4,12 +4,12 @@
     background-color: #f4bd57;
     margin: 10px 0px;
     justify-content: space-evenly;
-    height: 22vw;
+    height: 23vw;
 }
 
 .list-item{
     width: 80%;
-    height: 20vw;
+    height: 21vw;
     border-radius: 5px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5) ;
     padding: 10px;
