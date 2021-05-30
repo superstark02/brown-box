@@ -78,9 +78,6 @@ export class MyList extends Component {
                                                                 <div className="sp" >
                                                                     &#8377;{item.sp}
                                                                 </div>
-                                                                <button className="std-btn-2" >
-                                                                    Add To Cart
-                                                                </button>
                                                             </div>
                                                         </div>
                                                     </Link>

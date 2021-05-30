@@ -14,30 +14,32 @@ export class Home extends Component {
         return (
             <div>
                 <AppBar />
-                <div className="wallpaper" >
-                </div>
-                <div className="overlay wrap" >
-                    <div className="content" >
-                        <div>
-                            <div style={{ fontSize: "6vw" }} className="font-a" >
-                                brown box.
+                <div style={{position:'relative'}} >
+                    <div className="wallpaper" >
+                    </div>
+                    <div className="overlay wrap" >
+                        <div className="content" >
+                            <div>
+                                <div style={{ fontSize: "6vw" }} className="font-a" >
+                                    brown box.
                             </div>
-                        </div>
-                        <div>
-                            <AnimatedText />
-                        </div>
-                        <p className="intro" >
-                            We are an e-commerce website that provides you products at wholesale rates. <br />The products are always the latest, new and genuine.
+                            </div>
+                            <div>
+                                <AnimatedText />
+                            </div>
+                            <p className="intro" >
+                                We are an e-commerce website that provides you products at wholesale rates. <br />The products are always the latest, new and genuine.
                             <br />
-                            <br />
+                                <br />
                             How we work? Is explained below.
                         </p>
-                        <div>
-                            <a href="https://chat.whatsapp.com/Ky0jpeWgviDJ4YkY2WsJHr" >
-                                <button className="std-btn" >
-                                    Products
+                            <div>
+                                <a href="https://chat.whatsapp.com/Ky0jpeWgviDJ4YkY2WsJHr" >
+                                    <button className="std-btn" >
+                                        Products
                                 </button>
-                            </a>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -84,7 +86,7 @@ export class Home extends Component {
 
                 <div className="wrap" >
                     <div className="desktop-ctn" >
-                        
+
                         <div>
                             <div>
                                 <div>

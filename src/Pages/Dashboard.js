@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import AppBar from '../Components/AppBar'
 import "./Home.css"
 import "./Dashboard.css"
 import { uploadData } from '../Database/uploadData'
@@ -27,7 +26,6 @@ export class Dashboard extends Component {
     render() {
         return (
             <div>
-                <AppBar/>
                 <div className="wrap" >
                     <div className="desktop-ctn" >
                         <h2>

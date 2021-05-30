@@ -4,21 +4,13 @@ import '../App.css'
 import MyList from '../Components/MyList'
 import MobileList from '../Components/MobileList'
 import Slider from '../Components/Slider'
+import { MyFooter } from '../Components/Footer'
 
 export class Single extends Component {
     render() {
         return (
             <div>
                 <AppBar />
-                <div className="head-bread" style={{ paddingTop: "10vh" }} >
-                    <div className="container">
-                        <ol className="breadcrumb">
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">Men</a></li>
-                            <li className="active">Shop</li>
-                        </ol>
-                    </div>
-                </div>
 
                 <div className="showcase-grid">
                     <div className="container">
@@ -127,49 +119,7 @@ export class Single extends Component {
                 <div className="mobile" >
                     <MobileList />
                 </div>
-
-                <div className="footer-grid" style={{marginTop:"100px"}} >
-                    <div className="container">
-                        <div className="col-md-2 re-ft-grd">
-                            <h3>Categories</h3>
-                            <ul className="categories">
-                                <li><a href="#">Men</a></li>
-                                <li><a href="#">Women</a></li>
-                                <li><a href="#">Kids</a></li>
-                                <li><a href="#">Formal</a></li>
-                                <li><a href="#">Casuals</a></li>
-                                <li><a href="#">Sports</a></li>
-                            </ul>
-                        </div>
-                        <div className="col-md-2 re-ft-grd">
-                            <h3>Short links</h3>
-                            <ul className="shot-links">
-                                <li><a href="#">Contact us</a></li>
-                                <li><a href="#">Support</a></li>
-                                <li><a href="#">Delivery</a></li>
-                                <li><a href="#">Return Policy</a></li>
-                                <li><a href="#">Terms & conditions</a></li>
-                                <li><a href="contact.html">Sitemap</a></li>
-                            </ul>
-                        </div>
-                        <div className="col-md-6 re-ft-grd">
-                            <h3>Social</h3>
-                            <ul className="shot-links">
-                                <li><a href="#" className="fb">facebook</a></li>
-                                <li><a href="#" className="twt">twitter</a></li>
-                                <li><a href="#" className="gpls">g+ plus</a></li>
-                                <div className="clearfix"></div>
-                            </ul>
-                        </div>
-                        
-                        <div className="clearfix"></div>
-                    </div>
-                    <div className="copy-rt">
-                        <div className="container">
-                            <p>&copy;   2015 N-AIR All Rights Reserved. Design by <a href="http://www.w3layouts.com">w3layouts</a></p>
-                        </div>
-                    </div>
-                </div>
+                <MyFooter/>
             </div>
         )
     }
