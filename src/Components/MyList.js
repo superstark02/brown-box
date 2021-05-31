@@ -59,7 +59,7 @@ export class MyList extends Component {
                                         return (
                                             <div>
                                                 <ButtonBase className="w3-animate-opacity" style={{ height: "100%", marginRight: "20px" }}>
-                                                    <Link to={"/display/"}
+                                                    <Link to={"/product/"}
                                                         style={{ height: "100%" }}  >
                                                         <div className="list-item" >
                                                             <div className="center-image" >

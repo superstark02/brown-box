@@ -30,11 +30,10 @@
 
 @media only screen and (max-width: 1024px) {
     .app-bar{
-        justify-content: center;
+        justify-content: space-between;
     }
 
     .logo{
-        margin-left: 20px;
         font-size: 15px;
     }
 }

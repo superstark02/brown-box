@@ -5,6 +5,8 @@ import Dashboard from './Pages/Dashboard';
 import Single from './Pages/Single'
 import Test from './Pages/Test';
 import Cart from './Pages/Cart';
+import Login from './Pages/Login';
+import PhoneVerify from './Pages/PhoneVerify';
 
 function App() {
   return (
@@ -15,6 +17,8 @@ function App() {
           <Route exact path='/dashboard' component={Dashboard} />
           <Route exact path='/product' component={Single} />
           <Route exact path='/cart' component={Cart} />
+          <Route exact path='/login' component={Login} />
+          <Route exact path='/phone-verify' component={PhoneVerify} />
           <Route exact path='/data' component={Test} />
         </Switch>
       </Router>

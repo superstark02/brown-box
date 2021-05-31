@@ -6,6 +6,7 @@ import "../NicePage/Products/nicepage.css"
 import "../NicePage/Products/Post-Template.css"
 import { FaBeer } from 'react-icons/fa';
 import { ShoppingCart } from '@material-ui/icons'
+import { Link } from 'react-router-dom'
 
 export class AppBar extends Component {
     render() {
@@ -16,16 +17,13 @@ export class AppBar extends Component {
                         <img alt="logo" src={logo} width="70px" /> <div style={{ fontFamily: "inherit" }} >brown box.</div>
                     </div>
                     <div style={{ display: "flex", alignItems: "center" }} >
-                        <div>
-                            <button class="app-std-btn">
-                                Sign up
-                            </button>
+                        <Link to="/login" >
                             <button class="app-std-btn">
                                 Login
                             </button>
-                        </div>
+                        </Link>
                         <div>
-                            <a href="checkout.html">
+                            <a href="/cart">
                                 <div class="total">
                                     <ShoppingCart />
                                 (<span id="simpleCart_quantity" class="simpleCart_quantity"></span>)
