@@ -1,82 +1,44 @@
 import React, { Component } from 'react'
 import "./Home.css"
 import "./Dashboard.css"
+import axios from 'axios'
 import { uploadData } from '../Database/uploadData'
 
 export class Dashboard extends Component {
 
     state = {
-        name: "",
-        sp: "",
-        mrp:"",
-        cat:"",
-        image:""
+        data: null,
+    }
+
+    componentDidMount() {
+        axios.get("https://sheet.best/api/sheets/ac64ce8a-6b8e-457b-91db-421051becea4")
+            .then(res => {
+                console.log(res.data)
+                this.setState({data:res.data})
+            })
+
+
+        /*Tabletop.init({
+            key: "2PACX-1vSS5FAOql2jW1wbT5trXZsrQxyeIoUdoAV53AiZHQEbNTP0JCKLMqXo4JcOV2dJ1D5rYDUvR79v1X5A",
+            simpleSheet: true
+        })
+            .then((data) => { console.log(data) })
+            .catch((err) => console.warn(err));*/
     }
 
     submit = () => {
-        uploadData([{
-            name: this.state.name,
-            sp: this.state.sp,
-            mrp: this.state.mrp,
-            cat: this.state.cat,
-            image: this.state.image
-        }])
+        if(this.state.data){
+            uploadData(this.state.data)
+        }
     }
 
     render() {
         return (
-            <div>
+            <div style={{backgroundColor:"#282828", height:"100vh"}} >
                 <div className="wrap" >
-                    <div className="desktop-ctn" >
-                        <h2>
-                            Enter Data
-                        </h2>
-                        <h1>
-                            Enter Data
-                        </h1>
-                        <div>
-                            <div>
-                                Name
-                            </div>
-                            <div>
-                                <input placeholder="Name" value={this.state.name} onChange={(e)=>{this.setState({name:e.target.value})}} />
-                            </div>
-
-                            <div>
-                                BB Price
-                            </div>
-                            <div>
-                                <input placeholder="Number With Commas" value={this.state.sp} onChange={(e)=>{this.setState({sp:e.target.value})}} />
-                            </div>
-
-                            <div>
-                                Market Price
-                            </div>
-                            <div>
-                                <input placeholder="Number With Commas" value={this.state.mrp} onChange={(e)=>{this.setState({mrp:e.target.value})}} />
-                            </div>
-
-                            <div>
-                                Category Of The Product
-                            </div>
-                            <div>
-                                <input placeholder="predefined category only" value={this.state.cat} onChange={(e)=>{this.setState({cat:e.target.value})}} />
-                            </div>
-
-                            <div>
-                                Image
-                            </div>
-                            <div>
-                                <input placeholder="link" value={this.state.image} onChange={(e)=>{this.setState({image:e.target.value})}} />
-                            </div>
-
-                            <div>
-                                <button className="std-btn" onClick={this.submit} >
-                                    UPLOAD
-                                </button>
-                            </div>
-                        </div>
-                    </div>
+                    <button className="std-btn" onClick={this.submit} >
+                        UPDATE
+                    </button>
                 </div>
             </div>
         )

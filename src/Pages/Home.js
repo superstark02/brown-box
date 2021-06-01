@@ -34,10 +34,10 @@ export class Home extends Component {
                             How we work? Is explained below.
                         </p>
                             <div>
-                                <a href="https://chat.whatsapp.com/Ky0jpeWgviDJ4YkY2WsJHr" >
+                                <a href="/product" >
                                     <button className="std-btn" >
                                         Products
-                                </button>
+                                    </button>
                                 </a>
                             </div>
                         </div>

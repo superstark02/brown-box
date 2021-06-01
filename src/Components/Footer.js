@@ -25,11 +25,6 @@ export class MyFooter extends Component {
                         <h3>Categories</h3>
                         <ul className="categories">
                             <li><a href="#">Men</a></li>
-                            <li><a href="#">Women</a></li>
-                            <li><a href="#">Kids</a></li>
-                            <li><a href="#">Formal</a></li>
-                            <li><a href="#">Casuals</a></li>
-                            <li><a href="#">Sports</a></li>
                         </ul>
                     </div>
                     <div className="col-md-2 re-ft-grd">
@@ -46,9 +41,9 @@ export class MyFooter extends Component {
                     <div className="col-md-6 re-ft-grd">
                         <h3>Social</h3>
                         <ul className="shot-links">
-                            <li><a href="#" className="fb">facebook</a></li>
+                            <li><a href="#" className="fb">instagram</a></li>
                             <li><a href="#" className="twt">twitter</a></li>
-                            <li><a href="#" className="gpls">g+ plus</a></li>
+                            <li><a href="#" className="gpls">discord</a></li>
                             <div className="clearfix"></div>
                         </ul>
                     </div>
@@ -57,7 +52,7 @@ export class MyFooter extends Component {
                 </div>
                 <div className="copy-rt">
                     <div className="container">
-                        <p>&copy;   2021 N-AIR All Rights Reserved. Design by Pidgin</p>
+                        <p>&copy;   2021 Brown Box All Rights Reserved. Design by Pidgin</p>
                     </div>
                 </div>
             </div>

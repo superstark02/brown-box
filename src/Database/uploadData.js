@@ -17,9 +17,9 @@ export function uploadData(data) {
     ]*/
 
     for (i = 0; i < data.length; i++) {
-        db.collection("Products").doc(Math.floor(Date.now() / 1000).toString())
+        db.collection("Products").doc(data[i])
             .set({
-                id: Math.floor(Date.now() / 1000),
+                id: data[i].id,
                 name: data[i].name,
                 sp: data[i].sp,
                 mrp: data[i].mrp,

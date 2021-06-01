@@ -10,7 +10,7 @@ const functions = require("firebase-functions");
 
 const app = require('express')()
 const path = require('path')
-const shortid = require('shortid')
+const shortid = require('nanoid')
 const Razorpay = require('razorpay')
 const cors = require('cors')
 const bodyParser = require('body-parser')
@@ -19,11 +19,11 @@ app.use(cors())
 app.use(bodyParser.json())
 
 const razorpay = new Razorpay({
-	key_id: 'rzp_test_uGoq5ABJztRAhk',
-	key_secret: 'FySe2f5fie9hij1a5s6clk9B'
+	key_id: 'rzp_test_XG2R08Y3JGV5fg',
+	key_secret: 'sTHqxpmpzSLmTKtuLCgYtowx'
 })
 
-app.get('/logo.svg', (req, res) => {
+app.get('/logo512.png', (req, res) => {
 	res.sendFile(path.join(__dirname, 'logo.svg'))
 })
 
@@ -53,13 +53,13 @@ app.post('/verification', (req, res) => {
 
 app.post('/razorpay', async (req, res) => {
 	const payment_capture = 1
-	const amount = 499
+	const amount = 1
 	const currency = 'INR'
 
 	const options = {
 		amount: amount * 100,
 		currency,
-		receipt: shortid.generate(),
+		receipt: shortid.nanoid(),
 		payment_capture
 	}
 
@@ -78,4 +78,7 @@ app.post('/razorpay', async (req, res) => {
 
 app.listen(1337, () => {
 	console.log('Listening on 1337')
+	console.log(shortid.nanoid())
 })
+
+exports.widgets = functions.https.onRequest(app);
