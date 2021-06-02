@@ -88,7 +88,7 @@ export class Single extends Component {
                                     <div className="clearfix"></div>
                                 </div>
                                 <ul>
-                                    <button className="std-btn">
+                                    <button className="std-btn-1">
                                         Buy Now
                                     </button>
                                 </ul>

@@ -1,12 +1,14 @@
 import React, { Component } from 'react'
 import product from '../Images/sgrtl.png'
 import './ProductDisplay.css'
+import Avatar from '@material-ui/core/Avatar';
+import AvatarGroup from '@material-ui/lab/AvatarGroup';
 
 export class ProductDisplay extends Component {
     render() {
         return (
             <div>
-                <h1 className="h1" style={{ textAlign: "center", marginBottom:"-100px" }} >
+                <h1 className="h1" style={{ textAlign: "center", marginBottom: "-100px" }} >
                     Product Of The Week
                 </h1>
                 <section class="u-align-center u-clearfix u-section-1" id="carousel_a386">
@@ -40,6 +42,18 @@ export class ProductDisplay extends Component {
                                                 Save &#8377;574
                                             </p>
                                         </div>
+                                        <div>
+                                            <AvatarGroup max={4}>
+                                                <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
+                                                <Avatar alt="Travis Howard" src="/static/images/avatar/2.jpg" />
+                                                <Avatar alt="Cindy Baker" src="/static/images/avatar/3.jpg" />
+                                                <Avatar alt="Agnes Walker" src="/static/images/avatar/4.jpg" />
+                                                <Avatar alt="Trevor Henderson" src="/static/images/avatar/5.jpg" />
+                                            </AvatarGroup>
+                                        </div>
+                                        <div>
+                                            50+ users are buying this product together
+                                        </div>
                                         <div class="u-product-control u-product-desc u-text u-text-2">
                                             <p>
                                                 <li>
@@ -57,7 +71,7 @@ export class ProductDisplay extends Component {
                                             </p>
                                         </div>
                                         <a href="/product"
-                                            class="u-btn u-button-style u-custom-color-1 u-hover-grey-75 u-product-control u-text-white u-btn-1">VIEW   
+                                            class="u-btn u-button-style u-custom-color-1 u-hover-grey-75 u-product-control u-text-white u-btn-1">VIEW
                                         </a>
                                     </div>
                                 </div>

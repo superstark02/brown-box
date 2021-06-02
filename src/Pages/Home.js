@@ -8,6 +8,7 @@ import HowWeWork from '../Components/HowWeWork'
 import ProductDisplay from '../Components/ProductDisplay'
 import MyList from '../Components/MyList'
 import MobileList from '../Components/MobileList'
+import { FaDiscord, FaInstagram } from 'react-icons/fa'
 
 export class Home extends Component {
     render() {
@@ -100,18 +101,25 @@ export class Home extends Component {
                                 <div>
                                     <h1 className="h1" style={{ width: "fit-content" }} >
                                         Join Us
-                                        <img src="https://img.icons8.com/carbon-copy/50/000000/whatsapp.png" />
                                     </h1>
                                 </div>
                                 <div style={{ width: "100%" }} >
                                     <p >
-                                        Join us on our WhatsApp group. We bring you new products every week.
+                                        Join our community. We bring you new products every week.
                                     </p>
                                     <div className="wrap"  >
-                                        <a href="https://chat.whatsapp.com/Ky0jpeWgviDJ4YkY2WsJHr" >
-                                            <button className="std-btn" >
-                                                Join
-                                        </button>
+                                        <a href="https://discord.gg/audgpcspdG" >
+                                            <button className="std-btn wrap" >
+                                                Join Us
+                                                <FaDiscord style={{fontSize:"30px", margin:"0px 5px"}} />
+                                            </button>
+                                        </a>
+
+                                        <a href="https://www.instagram.com/brownbox_india/" >
+                                            <button className="std-btn wrap" >
+                                                Join Us
+                                                <FaInstagram style={{fontSize:"30px", margin:"0px 5px"}} />
+                                            </button>
                                         </a>
                                     </div>
                                 </div>
