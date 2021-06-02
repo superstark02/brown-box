@@ -50,12 +50,9 @@ export class MyList extends Component {
                                                                 <div className="save" >
                                                                     Save:&#8377;{parseInt(item.mrp.replace(/\,/g, '')) - parseInt(item.sp.replace(/\,/g, ''))}
                                                                 </div>
-                                                                <div className="sp" >
+                                                                <div className="sp" style={{fontSize:"17px"}} >
                                                                     &#8377;{item.sp}
                                                                 </div>
-                                                                <button className="std-btn-2" >
-                                                                    Add To Cart
-                                                                </button>
                                                             </div>
                                                         </div>
                                                     </Link>

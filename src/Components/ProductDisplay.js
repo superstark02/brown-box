@@ -56,8 +56,8 @@ export class ProductDisplay extends Component {
                                                 </li>
                                             </p>
                                         </div>
-                                        <a href="https://nicepage.com/c/table-website-templates"
-                                            class="u-btn u-button-style u-custom-color-1 u-hover-grey-75 u-product-control u-text-white u-btn-1">Add to Cart
+                                        <a href="/product"
+                                            class="u-btn u-button-style u-custom-color-1 u-hover-grey-75 u-product-control u-text-white u-btn-1">VIEW   
                                         </a>
                                     </div>
                                 </div>

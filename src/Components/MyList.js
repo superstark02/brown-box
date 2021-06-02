@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import "./MyList.css"
 import { ButtonBase } from '@material-ui/core'
-import { Link } from 'react-router-dom'
 import Carousel, { consts } from 'react-elastic-carousel'
 import ArrowBackIosRoundedIcon from '@material-ui/icons/ArrowBackIosRounded';
 import ArrowForwardIosRoundedIcon from '@material-ui/icons/ArrowForwardIosRounded';
@@ -55,7 +54,7 @@ export class MyList extends Component {
                                 renderArrow={this.myArrow}
                             >
                                 {
-                                    this.state.data.map(item => {
+                                    this.state.data.map((item, index) => {
                                         return (
                                             <div>
                                                 <ButtonBase className="w3-animate-opacity" style={{ height: "100%", marginRight: "20px" }}>
@@ -63,7 +62,7 @@ export class MyList extends Component {
                                                         style={{ height: "100%" }}  >
                                                         <div className="list-item" >
                                                             <div className="center-image" >
-                                                                <img src={item.image} width="80%" />
+                                                                <img src={item.image} width="70%" />
                                                             </div>
                                                             <div>
                                                                 <div className="item-name" >
@@ -72,11 +71,14 @@ export class MyList extends Component {
                                                                 <div className="mrp" >
                                                                     Online:<strike>&#8377;{item.mrp}</strike>
                                                                 </div>
-                                                                <div className="save" >
+                                                                <div className="sp" style={{fontSize:"17px"}} >
+                                                                    &#8377;{item.sp}
+                                                                </div>
+                                                                <div className="save" style={{width:"fit-content", color:"#48c479"}} >
                                                                     Save:&#8377;{parseInt(item.mrp.replace(/\,/g, '')) - parseInt(item.sp.replace(/\,/g, ''))}
                                                                 </div>
-                                                                <div className="sp" >
-                                                                    &#8377;{item.sp}
+                                                                <div style={{textAlign:"left", color:"grey"}} >
+                                                                    #WEEK {index+1} (2/6/20)
                                                                 </div>
                                                             </div>
                                                         </div>

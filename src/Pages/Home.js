@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import AnimatedText from '../Components/AnimatedText'
 import AppBar from '../Components/AppBar'
-import Footer from '../Components/Footer'
+import { MyFooter } from '../Components/Footer'
 import "./Home.css"
 import Brands from '../Components/Brands'
 import HowWeWork from '../Components/HowWeWork'
@@ -126,7 +126,7 @@ export class Home extends Component {
                     </div>
                 </div>
 
-                <Footer />
+                <MyFooter />
             </div>
         )
     }

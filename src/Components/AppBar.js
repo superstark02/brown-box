@@ -23,12 +23,12 @@ export class AppBar extends Component {
                             </button>
                         </Link>
                         <div>
-                            <a href="/cart">
+                            {/*<a href="/cart">
                                 <div class="total">
                                     <ShoppingCart />
                                 (<span id="simpleCart_quantity" class="simpleCart_quantity"></span>)
                                 </div>
-                            </a>
+                            </a>*/}
                             <div class="clearfix"> </div>
                         </div>
                     </div>
