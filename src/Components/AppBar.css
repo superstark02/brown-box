@@ -28,6 +28,12 @@
     padding: 0px 10px;
 }
 
+.profile-photo{
+    width: 50px;
+    border-radius: 50%;
+    border: solid 3px #f4bc57;
+}
+
 @media only screen and (max-width: 1024px) {
     .app-bar{
         justify-content: space-between;

@@ -4,11 +4,34 @@ import logo from "../Images/bblogo.jfif"
 import "../NicePage/Products/Home.css"
 import "../NicePage/Products/nicepage.css"
 import "../NicePage/Products/Post-Template.css"
-import { FaBeer, FaUserCircle } from 'react-icons/fa';
-import { ShoppingCart } from '@material-ui/icons'
+import { FaUserCircle } from 'react-icons/fa';
 import { Link } from 'react-router-dom'
+import firebase from 'firebase'
+import { SettingsInputAntennaTwoTone } from '@material-ui/icons'
+import login from '../Database/Login'
 
 export class AppBar extends Component {
+
+    state = {
+        login_btn: true,
+        image: null
+    }
+
+    componentDidMount() {
+        firebase.auth().onAuthStateChanged(user=>{
+            if(user){
+                this.setState({image: user.photoURL})
+                this.setState({login_btn:false})
+            }else{
+                this.setState({login_btn:true})
+            }
+        });
+    }
+
+    sign_in = async () => {
+        login();
+    }
+
     render() {
         return (
             <div>
@@ -19,23 +42,28 @@ export class AppBar extends Component {
                         </div>
                     </Link>
                     <div style={{ display: "flex", alignItems: "center" }} >
-                        <button class="app-std-btn">
-                            Login
-                        </button>
-                        <div className="wrap" >
-                            {/*<a href="/cart">
-                                <div class="total">
+                        {
+                            this.state.login_btn ? (
+                                <button class="app-std-btn" onClick={this.sign_in} >
+                                    Login
+                                </button>
+                            ) : (
+                                <div className="wrap" >
+                                    {/*<a href="/cart">
+                                        <div class="total">
                                     <ShoppingCart />
-                                (<span id="simpleCart_quantity" class="simpleCart_quantity"></span>)
+                                    (<span id="simpleCart_quantity" class="simpleCart_quantity"></span>)
+                                    </div>
+                                    </a>*/}
+                                    <a href="/login" style={{}} >
+                                        <div>
+                                            <img src={this.state.image} className="profile-photo" />
+                                        </div>
+                                    </a>
+                                    <div class="clearfix"> </div>
                                 </div>
-                            </a>*/}
-                            <a href="/account" style={{ color: "#f4bc57", fontSize: "40px" }} >
-                                <div>
-                                    <FaUserCircle />
-                                </div>
-                            </a>
-                            <div class="clearfix"> </div>
-                        </div>
+                            )
+                        }
                     </div>
                 </div>
             </div>

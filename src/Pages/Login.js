@@ -1,10 +1,33 @@
 import React, { Component } from 'react'
 import AppBar from '../Components/AppBar'
 import { MyFooter } from '../Components/Footer'
+import getDoc from '../Database/getDoc'
 import "./Login.css"
+import firebase from 'firebase'
+import Loading from '../Components/Loading'
 
 export class Login extends Component {
+
+    state = {
+        user_data: null
+    }
+
+    componentDidMount(){
+        firebase.auth().onAuthStateChanged(user=>{
+            if(user){
+                return getDoc("Users", user.uid).then(user_data=>{
+                    this.setState({user_data:user_data})
+                })
+            }else{
+                return alert("Please login to order")
+            }
+        });
+    }
+
     render() {
+        if(!this.state.user_data){
+            return <Loading/>
+        }
         return (
             <div>
                 <AppBar />
@@ -15,10 +38,10 @@ export class Login extends Component {
                             <div class="panel">
                                 <div class="user-heading round">
                                     <a href="#">
-                                        <img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="" />
+                                        <img src={this.state.user_data.photo} alt="" />
                                     </a>
-                                    <h1>Camila Smith</h1>
-                                    <p>deydey@theEmail.com</p>
+                                    <h1>{this.state.user_data.name}</h1>
+                                    <p>{this.state.user_data.email}</p>
                                 </div>
 
                                 <ul class="nav nav-pills nav-stacked">
@@ -40,21 +63,17 @@ export class Login extends Component {
                                     <div class="row">
                                         <div class="bio-row">
                                             <p>
-                                                <span>First Name </span>:
-                                                <input id="address-line2" id="first-name" placeholder="Name"
+                                                <span>First Name </span>
+                                                <input id="address-line2" id="first-name" value={this.state.user_data.name}
                                                     class="input-xlarge" />
                                             </p>
                                         </div>
                                         <div class="bio-row">
-                                            <p><span>Last Name </span>: <input id="last-name" type="text"
+                                            <p><span>Email </span> <input id="email" type="email" value={this.state.user_data.email}
                                                     class="input-xlarge" /></p>
                                         </div>
                                         <div class="bio-row">
-                                            <p><span>Email </span>: <input id="email" type="email"
-                                                    class="input-xlarge" /></p>
-                                        </div>
-                                        <div class="bio-row">
-                                            <p><span>Mobile </span>: <input id="phone" name="address-line" type="text"
+                                            <p><span>Mobile </span> <input id="phone" value={this.state.user_data.phone} name="phone" type="text"
                                                     class="input-xlarge" /></p>
                                         </div>
                                     </div>

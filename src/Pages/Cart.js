@@ -1,10 +1,12 @@
 import React from 'react'
-import { FaWindowClose } from 'react-icons/fa'
+import firebase from 'firebase'
 import AppBar from '../Components/AppBar'
 import { MyFooter } from '../Components/Footer'
 import './Cart.css'
 import Dialog from '@material-ui/core/Dialog';
 import logo from "../Images/bblogo.jfif"
+import Loading from '../Components/Loading'
+import getDoc from '../Database/getDoc'
 
 function loadScript(src) {
     return new Promise((resolve) => {
@@ -28,8 +30,20 @@ export function Cart() {
         setOpen(false)
     };
 
-    const [name, setName] = React.useState('Mehul')
+    const [data, setData] = React.useState(null)
     const [open, setOpen] = React.useState(false)
+
+    React.useEffect(() => {
+        firebase.auth().onAuthStateChanged(user=>{
+            if(user){
+                getDoc("Users", user.uid).then(data=>{
+                    setData(data)
+                })
+            }else{
+                this.setState({login_btn:true})
+            }
+        });
+    },)
 
     async function displayRazorpay() {
         const res = await loadScript('https://checkout.razorpay.com/v1/checkout.js')
@@ -52,18 +66,26 @@ export function Cart() {
             order_id: data.id,
             name: 'Donation',
             description: 'Thank you for nothing. Please give us some money',
-            image: {logo},
+            image: { logo },
             handler: function (response) {
                 setOpen(true)
             },
             prefill: {
-                name,
+                name: data.name,
                 email: 'sdfdsjfh2@ndsfdf.com',
                 phone_number: '9899999999'
             }
         }
         const paymentObject = new window.Razorpay(options)
         paymentObject.open()
+    }
+
+    const check_details = () => {
+        return displayRazorpay();
+    }
+
+    if(!data){
+        return <Loading/>
     }
 
     return (
@@ -76,9 +98,9 @@ export function Cart() {
                             <h3>Price Details</h3>
                             <span>Total</span>
                             <span class="total1">6200.00</span>
-                            <span>Discount</span>
-                            <span class="total1">10%(Festival Offer)</span>
-                            <span>Delivery Charges</span>
+                            <span>Save</span>
+                            <span class="total1">10%(Team Buy)</span>
+                            <span>Shipping</span>
                             <span class="total1">150.00</span>
                             <div class="clearfix"></div>
                         </div>
@@ -92,21 +114,20 @@ export function Cart() {
                         <a class="order" onClick={displayRazorpay} href="#">Place Order</a>
                     </div>
                     <div class="col-md-9 cart-items">
-                        <h1>My Shopping Bag (2)</h1>
+                        <h1>Checkout</h1>
                         <div class="cart-header">
-                            <div class="close1"><FaWindowClose /></div>
+                            {/*<div class="close1"><FaWindowClose /></div>*/}
                             <div class="cart-sec simpleCart_shelfItem">
                                 <div class="cart-item cyc">
                                     <img src="https://cdn.shopify.com/s/files/1/0057/8938/4802/products/stone-grenade-rtl-1_720x.png?v=1613743977" class="img-responsive" alt="" />
                                 </div>
                                 <div class="cart-item-info">
                                     <ul class="qty">
-                                        <li><p>Size : 9 US</p></li>
                                         <li><p>Qty : 1</p></li>
                                         <li><p>Price each : $190</p></li>
                                     </ul>
                                     <div class="delivery">
-                                        <p>Service Charges : Rs.190.00</p>
+                                        <p>No hidden charges</p>
                                         <span>Delivered in 2-3 bussiness days</span>
                                         <div class="clearfix"></div>
                                     </div>
@@ -115,13 +136,74 @@ export function Cart() {
 
                             </div>
                         </div>
+
+                        <div class="panel-body bio-graph-info" style={{ marginTop: "50px" }} >
+                            <h1>Shipping Details</h1>
+
+                            <div class="panel-body bio-graph-info">
+                                <h1>Personal Info</h1>
+                                <div class="row">
+                                    <div class="bio-row">
+                                        <p>
+                                            <span>First Name </span>
+                                                <input id="address-line2" id="first-name" placeholder="Name" value={data.name}
+                                                class="input-xlarge" />
+                                        </p>
+                                    </div>
+                                    <div class="bio-row">
+                                        <p><span>Email </span> <input id="email" type="email" value={data.email}
+                                            class="input-xlarge" /></p>
+                                    </div>
+                                    <div class="bio-row">
+                                        <p><span>Mobile </span> <input id="phone" name="address-line" type="text" value={data.phone}
+                                            class="input-xlarge" /></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="control-group">
+                                <label class="control-label">Address Line</label>
+                                <div class="controls">
+                                    <input id="address-line2" name="address-line" type="text" placeholder="address line 2"
+                                        class="input-xlarge" />
+                                    <p class="help-block">Apartment, suite , unit, building, floor, etc.</p>
+                                </div>
+                            </div>
+
+                            <div class="control-group">
+                                <label class="control-label">City / Town</label>
+                                <div class="controls">
+                                    <input id="city" name="city" type="text" placeholder="city" class="input-xlarge" />
+                                    <p class="help-block"></p>
+                                </div>
+                            </div>
+
+                            <div class="control-group">
+                                <label class="control-label">State / Province / Region</label>
+                                <div class="controls">
+                                    <input id="region" name="region" type="text" placeholder="state / province / region"
+                                        class="input-xlarge" />
+                                    <p class="help-block"></p>
+                                </div>
+                            </div>
+
+                            <div class="control-group">
+                                <label class="control-label">Zip / Postal Code</label>
+                                <div class="controls">
+                                    <input id="postal-code" name="postal-code" type="text" placeholder="zip or postal code"
+                                        class="input-xlarge" />
+                                    <p class="help-block"></p>
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
                     <div class="clearfix"> </div>
                 </div>
             </div>
 
-            <Dialog onClose={handleClose} style={{backgroundColor:"transparent"}} open={open}>
-                <div style={{background:"transparent"}} >
+            <Dialog onClose={handleClose} style={{ backgroundColor: "transparent" }} open={open}>
+                <div style={{ background: "transparent" }} >
                     <div class="modal-dialog modal-confirm">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -135,8 +217,8 @@ export function Cart() {
                             <div class="modal-body">
                                 <p class="text-center">Your order is placed!! Check your email for details.</p>
                             </div>
-                            <h3 style={{textAlign:"center"}} >
-                                Thank You <br/> For Shopping With Us<br/>🙏
+                            <h3 style={{ textAlign: "center" }} >
+                                Thank You <br /> For Shopping With Us<br />🙏
                             </h3>
                             <div class="modal-footer">
                                 <button class="btn btn-success btn-block" onClick={() => { setOpen(false) }} data-dismiss="modal">OK</button>

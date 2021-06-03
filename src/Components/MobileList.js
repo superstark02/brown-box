@@ -34,13 +34,12 @@ export class MyList extends Component {
                                         return (
                                             <div style={{ display: "inline-block" }} >
                                                 <ButtonBase className="w3-animate-opacity" style={{ height: "100%", marginRight: "20px" }}>
-                                                    <Link to={"/display/"}
-                                                        style={{ height: "100%" }}  >
+                                                    <Link to={"/display/"}>
                                                         <div className="list-item-m" >
                                                             <div className="center-image" >
                                                                 <img src={item.image} width="80%" />
                                                             </div>
-                                                            <div>
+                                                            <div style={{width:"100%"}} >
                                                                 <div className="item-name" >
                                                                     {item.name}
                                                                 </div>
