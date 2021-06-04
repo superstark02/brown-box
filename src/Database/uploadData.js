@@ -1,37 +1,42 @@
 import { db } from "../firebase";
 //import {getByWord} from './getCollectionQuery'
 
-export function uploadData(data) {
+export function uploadData(data, response) {
 
-    var i = 0;
-
-    /*var data = [
-        {
-            name: "Mi 10000mAH Li-Polymer Power Bank 2i (Black)",
-            sp: "799",
-            mrp: "1,799",
-            cat: "powerbank",
-            image: "https://images-na.ssl-images-amazon.com/images/I/51YhwdPtl0L._SL1050_.jpg"
-        },
-        
-    ]*/
-
-    for (i = 0; i < data.length; i++) {
-        db.collection("Products").doc(data[i])
+    return new Promise((resolve, reject) => {
+        db.collection("Users").doc(data.uid).collection("Orders").doc(data.product)
             .set({
-                id: data[i].id,
-                name: data[i].name,
-                sp: data[i].sp,
-                mrp: data[i].mrp,
-                cat: data[i].cat,
-                image: data[i].image,
+                name: data.name,
+                phone: data.phone,
+                email: data.email,
+                address: data.address,
+                city: data.city,
+                state: data.state,
+                pincode: data.pincode,
+                payment_id: response.razorpay_payment_id,
+                order_id: response.razorpay_order_id,
+                razorpay_sign: response.razorpay_signature,
             }).then(result => {
-                console.log("Done")
-                alert("Done")
+                db.collection("Users").doc(data.uid)
+                    .update({
+                        name: data.name,
+                        phone: data.phone,
+                        email: data.email,
+                        address: data.address,
+                        city: data.city,
+                        state: data.state,
+                        pincode: data.pincode
+                    }).then(result => {
+                        console.log("Done")
+                        resolve(true)
+                    }).catch(error => {
+                        console.log(error)
+                    })
             }).catch(error => {
-                console.log(error)
+                reject(false)
             })
-    }
+
+    });
 
 }
 

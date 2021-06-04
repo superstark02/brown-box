@@ -24,7 +24,7 @@ const razorpay = new Razorpay({
 })
 
 app.get('/logo512.png', (req, res) => {
-	res.sendFile(path.join(__dirname, 'logo.svg'))
+	res.sendFile(path.join(__dirname, 'logo512.png'))
 })
 
 app.post('/verification', (req, res) => {

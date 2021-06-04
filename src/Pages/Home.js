@@ -35,9 +35,9 @@ export class Home extends Component {
                             How we work? Is explained below.
                         </p>
                             <div>
-                                <a href="/product" >
+                                <a href="#pow" >
                                     <button className="std-btn" >
-                                        Products
+                                        Product Of The Week
                                     </button>
                                 </a>
                             </div>
@@ -90,7 +90,7 @@ export class Home extends Component {
 
                         <div>
                             <div>
-                                <div>
+                                <div id="#pow" >
                                     <ProductDisplay />
                                 </div>
                             </div>

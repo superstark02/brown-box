@@ -329,7 +329,7 @@ span.fel-fal-bar2{
 }
 .ih-item.square.effect3 .info {
     padding: 6px 12px;
-    background: #fa5400;
+    background: #f4bc57;
     opacity: 0;
     -webkit-transition: all 0.35s ease-in-out;
     -moz-transition: all 0.35s ease-in-out;
@@ -553,7 +553,7 @@ a.ft-log, a.ft-log:hover {
 }
 .copy-rt p a:hover{
     text-decoration: none;
-    color: #fa5400;
+    color: #f4bc57;
 }
 .total {
     display: inline-block;
@@ -641,7 +641,7 @@ ol.breadcrumb li a:hover{
     text-transform: uppercase;
 }
 .rating-stars ul li a:hover,.rating-stars ul li a.active,.rating-stars ul li a:focus{
-    color: #fb4c29 !important;
+    color: #ffff !important;
     transition: 0.5s all;
 }
 .shocase-rt-bot ul {
@@ -700,7 +700,7 @@ li.ad-2-crt a {
     border-radius: 0;
 }
 li.ad-2-crt a:hover{
-    background: #fa5400;
+    background: #f4bc57;
     color: #fff;
     border:none;
     transition: 0.5s all;
@@ -792,7 +792,7 @@ a.continue,a.order {
     text-transform: uppercase;
 }
 a.continue:hover, a.order:hover{
-    background: #fa5400;
+    background: #f4bc57;
     transition: 0.5s all;
 }
 a.order{
@@ -933,7 +933,7 @@ input#amount {
     font-size: 13px;
 }
 .single-bottom a p:hover{
-    color: #fa5400;
+    color: #f4bc57;
 }
 /*--login-css--*/
 .login-right h3, .log h3 {
@@ -991,7 +991,7 @@ input#amount {
     line-height: 1.8em;
 }
 .log form input[type=submit]:hover {
-    background: #fa5400;
+    background: #f4bc57;
     color: #fff;
     transition: .5s all;
     -webkit-transition: .5s all;
@@ -1008,7 +1008,7 @@ input#amount {
 }
 .login-right a:hover {
     text-decoration: none;
-    background-color: #fa5400;
+    background-color: #f4bc57;
     transition: .5s all;
     -webkit-transition: .5s all;
     -o-transition: .5s all;
@@ -1072,7 +1072,7 @@ input#amount {
     text-align: left;
 }
 .reg form input[type=submit]:hover {
-    background: #fa5400;
+    background: #f4bc57;
     transition: 0.5s all;
 }
 .map iframe {
