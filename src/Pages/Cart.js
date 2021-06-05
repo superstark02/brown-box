@@ -4,7 +4,6 @@ import AppBar from '../Components/AppBar'
 import { MyFooter } from '../Components/Footer'
 import './Cart.css'
 import Dialog from '@material-ui/core/Dialog';
-import logo from "../Images/bblogo.jfif"
 import Loading from '../Components/Loading'
 import getDoc from '../Database/getDoc'
 import { uploadData } from '../Database/uploadData'
@@ -114,7 +113,7 @@ export class Cart extends React.Component {
             pincode: this.state.pincode,
             uid: this.state.data.uid,
             product: this.state.product,
-            e: e
+            e: e,
         }
 
         this.displayRazorpay(temp).then(res => {
@@ -138,7 +137,7 @@ export class Cart extends React.Component {
             return
         }
 
-        const data = await fetch('https://us-central1-pine-valley-7820d.cloudfunctions.net/widgets/razorpay', { method: 'POST' }).then((t) =>
+        const data = await fetch('http://localhost:1337/razorpay', { method: 'POST' }).then((t) =>
             t.json()
         )
 
@@ -148,13 +147,12 @@ export class Cart extends React.Component {
             currency: data.currency,
             amount: data.amount.toString(),
             order_id: data.id,
-            name: 'Donation',
-            description: 'Thank you for nothing. Please give us some money',
-            image: { logo },
-            handler:(response) => {
-                uploadData(user_data, response).then(res=>{
-                    sendMail(user_data, response);
-                    this.setState({open:res})
+            name: 'Brown Box',
+            description: 'Thank you for choosing us',
+            handler: (response) => {
+                uploadData(user_data, response, this.state.data.photo).then(res=>{
+                    sendMail(user_data.e);
+                    this.setState({open:true});
                 })
             },
             prefill: {
@@ -176,6 +174,9 @@ export class Cart extends React.Component {
             <div>
                 <AppBar />
                 <form onSubmit={this.check_details} >
+                    <input type="hidden" name="product_name" value="Product name" />
+                    <input type="hidden" name="shipping" value="100" />
+                    
                     <div class="check">
                         <div class="container">
                             <div class="col-md-3 cart-total">
