@@ -153,7 +153,7 @@ export class Cart extends React.Component {
             image: { logo },
             handler:(response) => {
                 uploadData(user_data, response).then(res=>{
-                    sendMail(user_data.e);
+                    sendMail(user_data, response);
                     this.setState({open:res})
                 })
             },
@@ -222,7 +222,6 @@ export class Cart extends React.Component {
                                     </div>
                                 </div>
 
-                                <form></form>
                                 <div class="panel-body bio-graph-info" style={{ marginTop: "50px" }} >
                                     <h1>Shipping Details</h1>
 
