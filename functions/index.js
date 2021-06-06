@@ -1,30 +1,23 @@
 const functions = require("firebase-functions");
 
-// // Create and Deploy Your First Cloud Functions
-// // https://firebase.google.com/docs/functions/write-firebase-functions
-//
-// exports.helloWorld = functions.https.onRequest((request, response) => {
-//   functions.logger.info("Hello logs!", {structuredData: true});
-//   response.send("Hello from Firebase!");
-// });
-
 const app = require('express')()
+const express = require('express')
 const path = require('path')
 const shortid = require('nanoid')
 const Razorpay = require('razorpay')
 const cors = require('cors')
-const bodyParser = require('body-parser')
 
 app.use(cors())
-app.use(bodyParser.json())
+app.use(express.json())
+app.use(express.urlencoded({extended:true}))
 
 const razorpay = new Razorpay({
-	key_id: 'rzp_test_XG2R08Y3JGV5fg',
-	key_secret: 'sTHqxpmpzSLmTKtuLCgYtowx'
+	key_id: 'rzp_test_0NgOX9f0NSb8Cy',
+	key_secret: 'qGIZeOXI1o77pq4B1xsD3dui'
 })
 
-app.get('/logo512.png', (req, res) => {
-	res.sendFile(path.join(__dirname, 'logo512.png'))
+app.get('/logo.svg', (req, res) => {
+	res.sendFile(path.join(__dirname, 'logo.svg'))
 })
 
 app.post('/verification', (req, res) => {
@@ -53,7 +46,7 @@ app.post('/verification', (req, res) => {
 
 app.post('/razorpay', async (req, res) => {
 	const payment_capture = 1
-	const amount = 1
+	const amount = 499
 	const currency = 'INR'
 
 	const options = {
@@ -73,12 +66,14 @@ app.post('/razorpay', async (req, res) => {
 		})
 	} catch (error) {
 		console.log(error)
+		console.log("yaha")
 	}
+
 })
 
 app.listen(1337, () => {
 	console.log('Listening on 1337')
-	console.log(shortid.nanoid())
 })
 
-exports.widgets = functions.https.onRequest(app);
+
+exports.pay = functions.https.onRequest(app);

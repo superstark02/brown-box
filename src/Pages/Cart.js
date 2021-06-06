@@ -10,6 +10,9 @@ import { uploadData } from '../Database/uploadData'
 import sendMail from '../Database/sendMail'
 
 
+const dev = "http://localhost:1337/razorpay";
+const production = "https://us-central1-pine-valley-7820d.cloudfunctions.net/pay/razorpay";
+
 function loadScript(src) {
     return new Promise((resolve) => {
         const script = document.createElement('script')
@@ -117,7 +120,6 @@ export class Cart extends React.Component {
         }
 
         this.displayRazorpay(temp).then(res => {
-            console.log(res);
             this.setState({ open: res })
         })
         return
@@ -129,30 +131,31 @@ export class Cart extends React.Component {
         this.setState({ [nam]: val });
     }
 
+
     displayRazorpay = async (user_data) => {
-        const res = await loadScript('https://checkout.razorpay.com/v1/checkout.js')
+        const res = await loadScript('https://checkout.razorpay.com/v1/checkout.js');
 
         if (!res) {
             alert('Razorpay SDK failed to load. Are you online?')
             return
         }
 
-        const data = await fetch('http://localhost:1337/razorpay', { method: 'POST' }).then((t) =>
+        const data = await fetch(production, { method: 'POST' }).then((t) =>
             t.json()
         )
 
-
         const options = {
-            key: __DEV__ ? 'rzp_test_XG2R08Y3JGV5fg' : 'rzp_test_XG2R08Y3JGV5fg',
+            key: __DEV__ ? 'rzp_test_0NgOX9f0NSb8Cy' : 'rzp_test_0NgOX9f0NSb8Cy',
             currency: data.currency,
             amount: data.amount.toString(),
             order_id: data.id,
+            image: res.image,
             name: 'Brown Box',
             description: 'Thank you for choosing us',
             handler: (response) => {
-                uploadData(user_data, response, this.state.data.photo).then(res=>{
+                uploadData(user_data, response, this.state.data.photo).then(res => {
                     sendMail(user_data.e);
-                    this.setState({open:true});
+                    this.setState({ open: true });
                 })
             },
             prefill: {
@@ -161,6 +164,7 @@ export class Cart extends React.Component {
                 phone_number: user_data.phone
             }
         }
+
         const paymentObject = new window.Razorpay(options)
         paymentObject.open()
     }
@@ -176,7 +180,7 @@ export class Cart extends React.Component {
                 <form onSubmit={this.check_details} >
                     <input type="hidden" name="product_name" value="Product name" />
                     <input type="hidden" name="shipping" value="100" />
-                    
+
                     <div class="check">
                         <div class="container">
                             <div class="col-md-3 cart-total">
@@ -308,7 +312,9 @@ export class Cart extends React.Component {
                                     Thank You <br /> For Shopping With Us<br />🙏
                                 </h3>
                                 <div class="modal-footer">
-                                    <button class="btn btn-success btn-block" onClick={() => { this.setState({ open: false }) }} data-dismiss="modal">OK</button>
+                                    <a href="/" >
+                                        <button class="btn btn-success btn-block" data-dismiss="modal">OK</button>
+                                    </a>
                                 </div>
                             </div>
                         </div>
