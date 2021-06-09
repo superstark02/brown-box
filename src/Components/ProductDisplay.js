@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import product from '../Images/sgrtl.png'
+import Avatars from './Avatars'
 import './ProductDisplay.css'
-import Avatar from '@material-ui/core/Avatar';
-import AvatarGroup from '@material-ui/lab/AvatarGroup';
 
 export class ProductDisplay extends Component {
+
     render() {
         return (
             <div>
@@ -23,7 +23,7 @@ export class ProductDisplay extends Component {
                                     <div class="u-container-layout u-valign-middle u-container-layout-2">
                                         <div class="u-border-3 u-border-custom-color-1 u-line u-line-horizontal u-line-1"></div>
 
-                                        <h2 class="u-custom-font u-font-merriweather u-product-control u-text u-text-1">
+                                        <h2>
                                             <h1 className="h1" href="#">
                                                 Stone Grenade RTL
                                             </h1>
@@ -42,18 +42,9 @@ export class ProductDisplay extends Component {
                                                 Save &#8377;574
                                             </p>
                                         </div>
-                                        <div>
-                                            <AvatarGroup max={4}>
-                                                <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
-                                                <Avatar alt="Travis Howard" src="/static/images/avatar/2.jpg" />
-                                                <Avatar alt="Cindy Baker" src="/static/images/avatar/3.jpg" />
-                                                <Avatar alt="Agnes Walker" src="/static/images/avatar/4.jpg" />
-                                                <Avatar alt="Trevor Henderson" src="/static/images/avatar/5.jpg" />
-                                            </AvatarGroup>
-                                        </div>
-                                        <div>
-                                            50+ users are buying this product together
-                                        </div>
+
+                                        <Avatars/>
+                                        
                                         <div class="u-product-control u-product-desc u-text u-text-2">
                                             <p>
                                                 <li>

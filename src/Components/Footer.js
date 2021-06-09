@@ -21,29 +21,25 @@ export class MyFooter extends Component {
         return (
             <div className="footer-grid" style={{ marginTop: "100px" }} >
                 <div className="container">
-                    <div className="col-md-2 re-ft-grd">
+                    {/*<div className="col-md-2 re-ft-grd">
                         <h3>Categories</h3>
                         <ul className="categories">
                             <li><a href="#">Men</a></li>
                         </ul>
-                    </div>
+                    </div>*/}
                     <div className="col-md-2 re-ft-grd">
                         <h3>Short links</h3>
                         <ul className="shot-links">
-                            <li><a href="#">Contact us</a></li>
-                            <li><a href="#">Support</a></li>
-                            <li><a href="#">Delivery</a></li>
-                            <li><a href="#">Return Policy</a></li>
-                            <li><a href="#">Terms & conditions</a></li>
-                            <li><a href="contact.html">Sitemap</a></li>
+                            <li><a href="/contact">Contact Us</a></li>
+                            <li><a href="/return-policy">Return Policy</a></li>
+                            <li><a href="/terms-conditions">Terms & conditions</a></li>
                         </ul>
                     </div>
                     <div className="col-md-6 re-ft-grd">
                         <h3>Social</h3>
                         <ul className="shot-links">
-                            <li><a href="#" className="fb">instagram</a></li>
-                            <li><a href="#" className="twt">twitter</a></li>
-                            <li><a href="#" className="gpls">discord</a></li>
+                            <li><a href="https://www.instagram.com/brownbox_india/" className="fb">instagram</a></li>
+                            <li><a href="https://wa.me/919319977851?text=Hi" className="gpls">whatsapp</a></li>
                             <div className="clearfix"></div>
                         </ul>
                     </div>

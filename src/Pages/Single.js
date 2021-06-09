@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import AppBar from '../Components/AppBar'
 import '../App.css'
 import './Single.css'
@@ -7,19 +7,19 @@ import MobileList from '../Components/MobileList'
 import Slider from '../Components/Slider'
 import { MyFooter } from '../Components/Footer'
 import { FaCheckCircle, FaExchangeAlt, FaShippingFast, FaUndo } from 'react-icons/fa'
-import Avatar from '@material-ui/core/Avatar';
-import AvatarGroup from '@material-ui/lab/AvatarGroup';
 import firebase from 'firebase'
-import { Redirect, useHistory } from 'react-router'
+import { useHistory } from 'react-router'
 import login from '../Database/Login'
+import Avatars from '../Components/Avatars'
+import ProgressBar from 'react-bootstrap/ProgressBar'
 
 
 export function Single() {
 
     const history = useHistory();
-  
+
     const handleOnSubmit = () => {
-      history.push(`/cart`);
+        history.push(`/cart`);
     };
 
     const check_user = () => {
@@ -94,7 +94,7 @@ export function Single() {
                                             </li>
                                         */}
 
-                                    <li className="qty">
+                                    {/*<li className="qty">
                                         <h4>QTY</h4>
                                         <select className="form-control qnty-chrt">
                                             <option>1</option>
@@ -105,7 +105,7 @@ export function Single() {
                                             <option>6</option>
                                             <option>7</option>
                                         </select>
-                                    </li>
+                                    </li>*/}
                                 </ul>
                                 <div className="clearfix"></div>
                             </div>
@@ -113,23 +113,18 @@ export function Single() {
 
                         <div style={{ marginTop: "30px" }} >
                             <div>
-                                <AvatarGroup max={4}>
-                                    <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
-                                    <Avatar alt="Travis Howard" src="/static/images/avatar/2.jpg" />
-                                    <Avatar alt="Cindy Baker" src="/static/images/avatar/3.jpg" />
-                                    <Avatar alt="Agnes Walker" src="/static/images/avatar/4.jpg" />
-                                    <Avatar alt="Trevor Henderson" src="/static/images/avatar/5.jpg" />
-                                </AvatarGroup>
+                                <Avatars />
                             </div>
-                            <div>
-                                10+ people are buying this together
-                                </div>
                         </div>
+
+                        {/*<div style={{margin:"20px 0px"}} >
+                            <ProgressBar variant='success' now={(45/50)*100} />
+                                </div>*/}
 
                         <ul>
                             <button className="std-btn-1" onClick={check_user} >
                                 Buy Together
-                                </button>
+                            </button>
                         </ul>
 
                         <div className="showcase-last">
@@ -193,24 +188,39 @@ export function Single() {
                         </div>
 
                         {/* Home */}
-                        <ul className="nav nav-pills tab-nike" role="tablist">
-                            <li role="presentation" className=""><a aria-controls="home" role="tab" data-toggle="tab">Highlights</a></li>
-                        </ul>
-                        <div className="tab-content">
-                            <div className="tab-pane active" id="home">
-                                <p>The full-length Max Air unit delivers excellent cushioning with enhanced flexibility for smoother transitions through footstrike.</p>
-                                <p>Dynamic Flywire cables integrate with the laces and wrap your midfoot for a truly adaptive, supportive fit.</p>
-                            </div>
-                        </div>
 
                         {/* Desc */}
                         <ul className="nav nav-pills tab-nike" role="tablist">
-                            <li role="presentation" className=""><a aria-controls="home" role="tab" data-toggle="tab">Product Details</a></li>
+                            <li role="presentation" className="">
+                                <a aria-controls="home" role="tab" data-toggle="tab">
+                                    Product Details
+                                </a>
+                            </li>
                         </ul>
                         <div className="tab-content">
                             <div className="tab-pane active" id="home">
                                 <p>Nike is one of the leading manufacturer and supplier of sports equipment, footwear and apparels. Nike is a global brand and it continuously creates products using high technology and design innovation. Nike has a vast collection of sports shoes for men at Snapdeal. You can explore our range of basketball shoes, football shoes, cricket shoes, tennis shoes, running shoes, daily shoes or lifestyle shoes. Take your pick from an array of sports shoes in vibrant colours like red, yellow, green, blue, brown, black, grey, olive, pink, beige and white. Designed for top performance, these shoes match the way you play or run. Available in materials like leather, canvas, suede leather, faux leather, mesh etc, these shoes are lightweight, comfortable, sturdy and extremely sporty. The sole of all Nike shoes is designed to provide an increased amount of comfort and the material is good enough to provide an improved fit. These shoes are easy to maintain and last for a really long time given to their durability. Buy Nike shoes for men online with us at some unbelievable discounts and great prices. So get faster and run farther with your Nike shoes and track how hard you can play.</p>
                             </div>
+                        </div>
+
+
+                        <ul className="nav nav-pills tab-nike" role="tablist">
+                            <li role="presentation" style={{ margin: "30px 0px" }}>
+                                <a aria-controls="home" role="tab" data-toggle="tab">
+                                    Product Review
+                                </a>
+                            </li>
+                        </ul>
+                        <div className="wrap" >
+                            <iframe
+                                width="956"
+                                height="538"
+                                src="https://www.youtube.com/embed/hhWeyq4gArI"
+                                title="YouTube video player"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen>
+                            </iframe>
                         </div>
 
                         {/*  */}
@@ -220,7 +230,7 @@ export function Single() {
 
             <div className="you-might-like">
                 <div className="container">
-                    <h3 className="you-might">Products You May Like</h3>
+                    <h3 className="you-might">Upcoming</h3>
                     <div className="clearfix"></div>
                 </div>
             </div>

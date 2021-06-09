@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import "./Home.css"
 import "./Dashboard.css"
 import axios from 'axios'
-import { uploadData } from '../Database/uploadData'
+import { uploadProducts } from '../Database/uploadData'
 
 export class Dashboard extends Component {
 
@@ -28,7 +28,7 @@ export class Dashboard extends Component {
 
     submit = () => {
         if(this.state.data){
-            uploadData(this.state.data)
+            uploadProducts(this.state.data)
         }
     }
 

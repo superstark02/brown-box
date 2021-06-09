@@ -5,6 +5,25 @@ import getDoc from '../Database/getDoc'
 import "./Login.css"
 import firebase from 'firebase'
 import Loading from '../Components/Loading'
+import { useHistory } from "react-router-dom";
+
+function Redirect() {
+    const history = useHistory();
+
+    const handleRoute = () => {
+        firebase.auth().signOut().then(() => {
+            history.push("/");
+        }).catch((error) => {
+            // An error happened.
+        });
+    }
+
+    return (
+        <div>
+            <button onClick={handleRoute} className="std-btn">Log Out</button>
+        </div>
+    )
+}
 
 export class Login extends Component {
 
@@ -12,21 +31,29 @@ export class Login extends Component {
         user_data: null
     }
 
-    componentDidMount(){
-        firebase.auth().onAuthStateChanged(user=>{
-            if(user){
-                return getDoc("Users", user.uid).then(user_data=>{
-                    this.setState({user_data:user_data})
+    componentDidMount() {
+        firebase.auth().onAuthStateChanged(user => {
+            if (user) {
+                return getDoc("Users", user.uid).then(user_data => {
+                    this.setState({ user_data: user_data })
                 })
-            }else{
+            } else {
                 return alert("Please login to order")
             }
         });
     }
 
+    logout = () => {
+        firebase.auth().signOut().then(() => {
+            Redirect();
+        }).catch((error) => {
+            // An error happened.
+        });
+    }
+
     render() {
-        if(!this.state.user_data){
-            return <Loading/>
+        if (!this.state.user_data) {
+            return <Loading />
         }
         return (
             <div>
@@ -70,11 +97,11 @@ export class Login extends Component {
                                         </div>
                                         <div class="bio-row">
                                             <p><span>Email </span> <input id="email" type="email" value={this.state.user_data.email}
-                                                    class="input-xlarge" /></p>
+                                                class="input-xlarge" /></p>
                                         </div>
                                         <div class="bio-row">
                                             <p><span>Mobile </span> <input id="phone" value={this.state.user_data.phone} name="phone" type="text"
-                                                    class="input-xlarge" /></p>
+                                                class="input-xlarge" /></p>
                                         </div>
                                     </div>
                                 </div>
@@ -117,6 +144,9 @@ export class Login extends Component {
                                     </div>
 
                                 </div>
+
+                                <Redirect />
+
                             </div>
                         </div>
                     </div>

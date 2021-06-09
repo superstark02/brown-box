@@ -67,7 +67,7 @@ export class HowWeWork extends Component {
                         </div>
 
                         <div className="how-we-work-child" >
-                            <div className="wrap" >
+                            <div className="wrap" style={{height:"100%"}} >
                                 <img src={customer} alt="i" width="80%" />
                             </div>
                             <div>

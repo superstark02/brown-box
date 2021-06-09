@@ -7,6 +7,7 @@ import Cart from './Pages/Cart';
 import Login from './Pages/Login';
 import PhoneVerify from './Pages/PhoneVerify';
 import Contact from './Pages/Contact';
+import ProductDisplay from './Pages/ProductDisplay';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route exact path='/' component={Home} />
           <Route exact path='/dashboard' component={Dashboard} />
           <Route exact path='/product' component={Single} />
+          <Route exact path='/product/:id' component={ProductDisplay} />
           <Route exact path='/cart' component={Cart} />
           <Route exact path='/login' component={Login} />
           <Route exact path='/contact' component={Contact} />

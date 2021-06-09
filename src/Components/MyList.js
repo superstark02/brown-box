@@ -31,7 +31,7 @@ export class MyList extends Component {
                     borderRadius: "50%",
                     width: "40px",
                     height: "40px",
-                    cursor:"pointer"
+                    cursor: "pointer"
                 }}>
                     <div className="wrap" >
                         {pointer}
@@ -58,11 +58,13 @@ export class MyList extends Component {
                                         return (
                                             <div>
                                                 <ButtonBase className="w3-animate-opacity" style={{ height: "100%", marginRight: "20px" }}>
-                                                    <a href="/product"
-                                                        style={{ height: "100%" }}  >
+                                                    <a href={"/product/"+item.id}
+                                                        style={{ height: "100%", textDecoration: "none" }}  >
                                                         <div className="list-item" >
-                                                            <div className="center-image" >
-                                                                <img src={item.image} width="70%" />
+                                                            <div className="wrap" style={{height:"100%"}} >
+                                                                <div className="center-image" >
+                                                                    <img src={item.image} width="70%" />
+                                                                </div>
                                                             </div>
                                                             <div>
                                                                 <div className="item-name" >
@@ -71,14 +73,14 @@ export class MyList extends Component {
                                                                 <div className="mrp" >
                                                                     Online:<strike>&#8377;{item.mrp}</strike>
                                                                 </div>
-                                                                <div className="sp" style={{fontSize:"17px"}} >
+                                                                <div className="sp" style={{ fontSize: "17px" }} >
                                                                     &#8377;{item.sp}
                                                                 </div>
-                                                                <div className="save" style={{width:"fit-content", color:"#48c479"}} >
+                                                                <div className="save" style={{ width: "fit-content", color: "#48c479" }} >
                                                                     Save:&#8377;{parseInt(item.mrp.replace(/\,/g, '')) - parseInt(item.sp.replace(/\,/g, ''))}
                                                                 </div>
-                                                                <div style={{textAlign:"left", color:"grey"}} >
-                                                                    #WEEK {index+1} (2/6/20)
+                                                                <div style={{ textAlign: "left", color: "grey" }} >
+                                                                    #WEEK {index + 1} (2/6/20)
                                                                 </div>
                                                             </div>
                                                         </div>

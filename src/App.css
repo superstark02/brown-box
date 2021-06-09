@@ -65,7 +65,7 @@ html{
     display: none;
 }
 
-a:hover{
+link , a, a:hover{
     text-decoration: none;
 }
 

@@ -63,3 +63,7 @@
     font-size: 15px;
     cursor: pointer;
 }
+
+link , a, a:hover{
+    text-decoration: none;
+}

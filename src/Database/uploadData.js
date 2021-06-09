@@ -42,7 +42,7 @@ export function uploadData(data, response, photo) {
                             product: data.product,
                             photo: photo
                         })
-                        .then(response => {
+                            .then(response => {
                                 resolve(true);
                             })
                     }).catch(error => {
@@ -56,6 +56,37 @@ export function uploadData(data, response, photo) {
             })
 
     });
+
+}
+
+
+export function uploadProducts(data) {
+
+    for (var i = 0; i < 8; i++) {
+        db.collection("Products").doc(data[i].id)
+            .set({
+                id: data[i].id,
+                name: data[i].name,
+                image: data[i].image,
+                mrp: data[i].mrp,
+                sp: data[i].sp,
+                category: data[i].category,
+                discount: data[i].discount,
+                description: data[i].description,
+                highlights: data[i].highlights,
+                image1: data[i].image1,
+                image2: data[i].image2,
+                image3: data[i].image3,
+                from: data[i].from,
+                to: data[i].to,
+                amazon: data[i].amazon,
+                flipkart: data[i].flipkart
+            }).then(result => {
+                console.log("Done")
+            }).catch(error => {
+                console.log(error)
+            })
+    }
 
 }
 
