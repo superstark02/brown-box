@@ -17,7 +17,7 @@ const razorpay = new Razorpay({
 })
 
 app.get('/logo.svg', (req, res) => {
-	res.sendFile(path.join(__dirname, 'logo.svg'))
+	res.sendFile(path.join(__dirname, 'logo512.png'))
 })
 
 app.post('/verification', (req, res) => {
@@ -45,8 +45,9 @@ app.post('/verification', (req, res) => {
 })
 
 app.post('/razorpay', async (req, res) => {
+	console.log("Here: "+req.body.amount)
 	const payment_capture = 1
-	const amount = 499
+	const amount = req.body.amount
 	const currency = 'INR'
 
 	const options = {

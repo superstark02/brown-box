@@ -140,7 +140,15 @@ export class Cart extends React.Component {
             return
         }
 
-        const data = await fetch(production, { method: 'POST' }).then((t) =>
+        let send_data = {
+            amount: 123
+        }
+
+        const data = await fetch(production, { 
+            method: 'POST',
+            body: JSON.stringify(send_data),
+            headers: { 'Content-Type': 'application/json' }
+        }).then((t) =>
             t.json()
         )
 
