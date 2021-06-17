@@ -8,6 +8,7 @@ import Login from './Pages/Login';
 import PhoneVerify from './Pages/PhoneVerify';
 import Contact from './Pages/Contact';
 import ProductDisplay from './Pages/ProductDisplay';
+import About from './Pages/About';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route exact path='/cart' component={Cart} />
           <Route exact path='/login' component={Login} />
           <Route exact path='/contact' component={Contact} />
+          <Route exact path='/about' component={About} />
           <Route exact path='/phone-verify' component={PhoneVerify} />
         </Switch>
       </Router>

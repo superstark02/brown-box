@@ -31,6 +31,7 @@ export class MyFooter extends Component {
                         <h3>Short links</h3>
                         <ul className="shot-links">
                             <li><a href="/contact">Contact Us</a></li>
+                            <li><a href="/about">About Us</a></li>
                             <li><a href="/return-policy">Return Policy</a></li>
                             <li><a href="/terms-conditions">Terms & conditions</a></li>
                         </ul>

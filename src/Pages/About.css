@@ -1,0 +1,10 @@
+.wallpaper-about{
+    background-image: url(../Images/about-bg.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 50vh;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    z-index: -1;
+}
