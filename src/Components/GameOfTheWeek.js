@@ -1,13 +1,15 @@
 import React, { Component } from 'react'
 import GameDisplay from './GameDisplay'
 import "./GameOfTheWeek.css"
-import ProductDisplay from './ProductDisplay'
+import "./MyList.css"
+import { ButtonBase } from '@material-ui/core'
 
 export class GameOfTheWeek extends Component {
     render() {
         return (
-            <div className="game-ctn" >
-                {/*<div className="game-details" >
+            <div>
+                <div className="game-ctn" >
+                    {/*<div className="game-details" >
                     <h1>
                         Resident Evil: Village
                     </h1>
@@ -31,7 +33,44 @@ export class GameOfTheWeek extends Component {
                         </button>
                     </div>
                 </div>*/}
-                <GameDisplay/>
+                    <GameDisplay />
+
+
+                </div>
+
+                <div className="wrap" >
+                    <div className="desktop-ctn" >
+                        <h2>
+                            Upcoming Game
+                        </h2>
+                        <ButtonBase style={{ width: "300px", padding: "10px" }}>
+                            <div className="list-item" style={{height:"auto"}} >
+                                <div className="wrap" style={{ height: "100%" }} >
+                                    <div className="center-image" >
+                                        <img src={"https://images-na.ssl-images-amazon.com/images/I/91lmTAVXgHL.jpg"} width="70%" />
+                                    </div>
+                                </div>
+                                <div>
+                                    <div className="item-name" >
+                                        Assassin's Creed: Valhalla
+                                    </div>
+                                    <div className="mrp" >
+                                        Online:<strike>&#8377;3,999</strike>
+                                    </div>
+                                    <div className="sp" style={{ fontSize: "17px" }} >
+                                        &#8377;3,200
+                                    </div>
+                                    <div className="save" style={{ width: "fit-content", color: "#48c479" }} >
+                                        Save:&#8377 800
+                                    </div>
+                                    <div style={{ textAlign: "left", color: "grey" }} >
+                                        #WEEK {1 + 1} (2/6/20)
+                                    </div>
+                                </div>
+                            </div>
+                        </ButtonBase>
+                    </div>
+                </div>
             </div>
         )
     }
