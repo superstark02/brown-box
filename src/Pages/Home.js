@@ -24,7 +24,7 @@ export class Home extends Component {
                             <div>
                                 <div style={{ fontSize: "6vw" }} className="font-a" >
                                     brown box.
-                            </div>
+                                </div>
                             </div>
                             <div>
                                 <AnimatedText />

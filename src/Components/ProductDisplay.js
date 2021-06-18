@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-import product from '../Images/sgrtl.png'
 import Avatars from './Avatars'
 import './ProductDisplay.css'
+
+const product = "https://rukminim1.flixcart.com/image/416/416/kmccosw0/gaming-accessory-kit/pubg-gamepad-trigger/d/v/j/pubg-gamepad-trigger-nehmaps-original-imagf8xjq72ewzw3.jpeg?q=70"
 
 export class ProductDisplay extends Component {
 
@@ -16,7 +17,7 @@ export class ProductDisplay extends Component {
                         <div class="u-container-style u-expanded-width u-product u-product-1">
                             <div
                                 class="u-container-layout u-valign-middle-lg u-valign-middle-xl u-valign-top-sm u-valign-top-xs u-container-layout-1">
-                                <img alt="" className="floating u-expanded-width-sm u-expanded-width-xs u-image u-image-default u-product-control u-image-1"
+                                <img alt="" width="50%" className="floating u-expanded-width-sm u-expanded-width-xs  u-image-default u-product-control "
                                     src={product} />
                                 <div
                                     class="u-align-center-sm u-align-center-xs u-align-left-lg u-align-left-md u-align-left-xl u-container-style u-expanded-width-sm u-expanded-width-xs u-group u-shape-rectangle u-group-1">
@@ -25,39 +26,41 @@ export class ProductDisplay extends Component {
 
                                         <h2>
                                             <h1 className="h1" href="#">
-                                                Stone Grenade RTL
+                                                AirLuk PUBG Mobile Trigger
                                             </h1>
                                             <h5 className='category' >
-                                                BLUETOOTH SPEAKERS
+                                                MOBILE GAMING
                                             </h5>
                                         </h2>
-                                        <div>
-                                            <p className="display-mrp" >
-                                                <strike>&#8377;1,549.00</strike>
-                                            </p>
-                                            <p class="u-price u-text-custom-color-1" style={{ fontSize: "1.5rem", fontWeight: "700" }}>
-                                                &#8377;1,002.00
-                                            </p>
-                                            <p className="display-mrp" >
+                                        <div style={{ marginTop: "10px" }}  >
+                                            <div className="disdivlay-mrp" style={{ marginTop: "10px" }} >
+                                                <strike>&#8377;399.00</strike>
+                                            </div>
+                                            <div class="u-price u-text-custom-color-1" style={{fontWeight: "700", margin:'10px 0px',fontSize:"25px" }}>
+                                                &#8377;45.00
+                                            </div>
+                                            <div className="display-mrp" >
                                                 Save &#8377;574
-                                            </p>
+                                            </div>
                                         </div>
 
-                                        <Avatars/>
-                                        
-                                        <div class="u-product-control u-product-desc u-text u-text-2">
+                                        <div>
+                                            <Avatars />
+                                        </div>
+
+                                        <div style={{margin:"20px"}}>
                                             <p>
                                                 <li>
-                                                    Up to 7 hours of Detonation
+                                                    Metal triggers
                                                 </li>
                                                 <li>
-                                                    HD explosive sound
+                                                    Transparent body
                                                 </li>
                                                 <li>
-                                                    Aligned easy access control
+                                                    Consuctive foam
                                                 </li>
                                                 <li>
-                                                    Sharp fabric coated IPX 6 finish
+                                                    Adjustable clip
                                                 </li>
                                             </p>
                                         </div>

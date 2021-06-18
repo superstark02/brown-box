@@ -62,7 +62,7 @@ export function uploadData(data, response, photo) {
 
 export function uploadProducts(data) {
 
-    for (var i = 0; i < 8; i++) {
+    for (var i = 0; i < 2; i++) {
         db.collection("Products").doc(data[i].id)
             .set({
                 id: data[i].id,

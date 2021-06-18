@@ -63,7 +63,7 @@ export class MyList extends Component {
                                                         <div className="list-item" >
                                                             <div className="wrap" style={{height:"100%"}} >
                                                                 <div className="center-image" >
-                                                                    <img src={item.image} width="70%" />
+                                                                    <img src={item.image} width="50%" />
                                                                 </div>
                                                             </div>
                                                             <div>
