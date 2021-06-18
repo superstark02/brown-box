@@ -72,18 +72,18 @@ export default function ProductDisplay(props) {
                             <div className="shocase-rt-bot">
                                 <div className="view-cnt" >
                                     <div className="view" >
-                                        View On
+                                        View Price On
                                             <div>
                                             <a href={data.amazon} >
-                                                <img src={"http://www.mountaincolours.in/uploads/clients/1551518604.jpg"} width="30px" />
+                                                <img src={"http://www.mountaincolours.in/uploads/clients/1551518604.jpg"} width="50px" />
                                             </a>
                                         </div>
                                     </div>
                                     <div className="view" >
-                                        View On
+                                        View Price On
                                             <div>
                                             <a href={data.flipkart} >
-                                                <img src={"https://www.pngarea.com/pngm/6/5103627_amazon-logo-png-icon-amazon-logo-png-transparent.png"} width="30px" />
+                                                <img src={"https://www.pngarea.com/pngm/6/5103627_amazon-logo-png-icon-amazon-logo-png-transparent.png"} width="50px" />
                                             </a>
                                         </div>
                                     </div>

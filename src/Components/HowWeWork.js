@@ -16,7 +16,7 @@ export class HowWeWork extends Component {
 
                     <div>
                         <p>
-                            We launch a product every week. When at least 20 customers are ready to buy a product. We ship products from the company directly.
+                            We launch a product every week
                         </p>
                     </div>
 

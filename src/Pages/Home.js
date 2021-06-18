@@ -29,10 +29,10 @@ export class Home extends Component {
                                 <AnimatedText />
                             </div>
                             <p className="intro" >
-                                We are an e-commerce website that provides you products at wholesale rates. <br />The products are always the latest, new and genuine.
+                                We are an e-commerce startup that provides you products at wholesale rates. <br />The products are always the latest, new and genuine.
                             <br />
-                                <br />
-                            How we work? Is explained below.
+                            <br />
+                            How we work? How such low rates? It's explained below.
                         </p>
                             <div>
                                 <a href="#pow" >
@@ -58,8 +58,9 @@ export class Home extends Component {
                                         retailer, these are the same retailers who are present on other e-commerce websites
                                         (like amazon, flipkart etc.).
                                     </p>
+                                    <br/>
                                     <p>
-                                        To buy/explore join our group.
+                                        To buy/explore join our <a href="https://www.instagram.com/brownbox_india/" >community</a>
                                     </p>
                                 </div>
                             </div>
