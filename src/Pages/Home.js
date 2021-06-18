@@ -9,6 +9,7 @@ import ProductDisplay from '../Components/ProductDisplay'
 import MyList from '../Components/MyList'
 import MobileList from '../Components/MobileList'
 import { FaInstagram } from 'react-icons/fa'
+import GameOfTheWeek from "../Components/GameOfTheWeek"
 
 export class Home extends Component {
     render() {
@@ -96,7 +97,13 @@ export class Home extends Component {
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
 
+                <GameOfTheWeek/>
+
+                <div className="wrap" >
+                    <div className="desktop-ctn" >
                         <div>
                             <div>
                                 <div>

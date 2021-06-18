@@ -1,10 +1,14 @@
 .list-container{
     width: 100%;
     padding: 10px 50px;
-    background-color: #f4bd57;
+    background-image: url(https://wallpapercave.com/wp/wp2737387.jpg);
     margin: 10px 0px;
     justify-content: space-evenly;
     height: 23vw;
+
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .list-item{

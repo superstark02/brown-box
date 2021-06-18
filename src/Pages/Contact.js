@@ -9,9 +9,10 @@ export class Contact extends Component {
     sendMail = (e) => {
         e.preventDefault();
 
-        emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', e.target, 'YOUR_USER_ID')
+        emailjs.sendForm('gmail', 'template_msy0k4l', e.target, 'user_rdnQ08wROAm4vj2HIcVdc')
             .then((result) => {
                 console.log(result.text);
+                alert("Message Sent")
             }, (error) => {
                 console.log(error.text);
             });

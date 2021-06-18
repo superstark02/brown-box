@@ -69,7 +69,7 @@ link , a, a:hover{
     text-decoration: none;
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1000px) {
     .desktop-ctn{
         width: 100%;
         padding: 0px;

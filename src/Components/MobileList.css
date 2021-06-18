@@ -4,6 +4,12 @@
     display: flex;
     margin: 10px 0px;
     overflow-x: scroll;
+
+    
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(https://wallpapercave.com/wp/wp2737387.jpg);
 }
 
 .list-item-m{
@@ -16,6 +22,9 @@
     padding: 10px;
     align-items: flex-end;
     margin-top: 10px;
+
+    background-color: white;
+    height: 100%;
 }
 
 
@@ -24,6 +33,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100%;
 }
 
 .item-name{
