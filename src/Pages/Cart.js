@@ -9,9 +9,9 @@ import getDoc from '../Database/getDoc'
 import { uploadData } from '../Database/uploadData'
 import sendMail from '../Database/sendMail'
 
-
 const dev = "http://localhost:1337/razorpay";
 const production = "https://us-central1-pine-valley-7820d.cloudfunctions.net/pay/razorpay";
+const shipping = 45
 
 function loadScript(src) {
     return new Promise((resolve) => {
@@ -77,7 +77,10 @@ export class Cart extends React.Component {
         address: null,
         city: null,
         my_state: null,
-        pincode: null
+        pincode: null,
+
+        product_data: null,
+        quantity: 1
     }
 
     handleClose = () => {
@@ -97,6 +100,11 @@ export class Cart extends React.Component {
                     this.setState({ my_state: data.state })
                     this.setState({ pincode: data.pincode })
                 })
+
+                getDoc("Products", "1").then(snap => {
+                    this.setState({product_data:snap})
+                })
+
             } else {
                 alert("Please sign in to continue. Or contact support")
             }
@@ -117,6 +125,7 @@ export class Cart extends React.Component {
             uid: this.state.data.uid,
             product: this.state.product,
             e: e,
+            total: parseFloat(this.state.product_data.sp)*this.state.quantity + shipping
         }
 
         this.displayRazorpay(temp).then(res => {
@@ -141,7 +150,7 @@ export class Cart extends React.Component {
         }
 
         let send_data = {
-            amount: 123
+            amount: user_data.total
         }
 
         const data = await fetch(production, { 
@@ -178,7 +187,7 @@ export class Cart extends React.Component {
     }
 
     render() {
-        if (!this.state.data) {
+        if (!this.state.data || !this.state.product_data) {
             return <Loading />
         }
 
@@ -194,18 +203,22 @@ export class Cart extends React.Component {
                             <div class="col-md-3 cart-total">
                                 <div class="price-details">
                                     <h3>Price Details</h3>
-                                    <span>Total</span>
-                                    <span class="total1">6200.00</span>
+                                    <span>Product</span>
+                                    <span class="total1">₹{this.state.product_data.sp}</span>
+                                    <span>Quantity</span>
+                                    <span class="total1">{this.state.quantity}</span>
                                     <span>Save</span>
-                                    <span class="total1">10%(Team Buy)</span>
+                                    <span class="total1">{this.state.product_data.discount}(Team Buy)</span>
                                     <span>Shipping</span>
-                                    <span class="total1">150.00</span>
+                                    <span class="total1">₹{shipping}</span>
+                                    <span>Payment Mode</span>
+                                    <span class="total1">Online</span>
                                     <div class="clearfix"></div>
                                 </div>
                                 <hr class="featurette-divider" />
                                 <ul class="total_price">
                                     <li class="last_price"> <h4>TOTAL</h4></li>
-                                    <li class="last_price"><span>6150.00</span></li>
+                                    <li class="last_price"><span>₹{parseFloat(this.state.product_data.sp)*this.state.quantity + shipping}</span></li>
                                     <div class="clearfix"> </div>
                                 </ul>
                                 <div class="clearfix"></div>
@@ -217,18 +230,36 @@ export class Cart extends React.Component {
                                     {/*<div class="close1"><FaWindowClose /></div>*/}
                                     <div class="cart-sec simpleCart_shelfItem">
                                         <div class="cart-item cyc">
-                                            <img src="https://cdn.shopify.com/s/files/1/0057/8938/4802/products/stone-grenade-rtl-1_720x.png?v=1613743977" class="img-responsive" alt="" />
+                                            <img src={this.state.product_data.image} class="img-responsive" alt="" />
                                         </div>
                                         <div class="cart-item-info">
                                             <ul class="qty">
-                                                <li><p>Qty : 1</p></li>
-                                                <li><p>Price each : $190</p></li>
+                                                <li>
+                                                    <p>
+                                                        Qty : 
+                                                        <select className="qt" 
+                                                            onChange={(e)=>{this.setState({quantity:e.target.value})}} >
+                                                            <option value="1">1</option>
+                                                            <option value="2">2</option>
+                                                            <option value="3">3</option>
+                                                            <option value="4">4</option>
+                                                            <option value="5">5</option>
+                                                            <option value="6">6</option>
+                                                            <option value="7">7</option>
+                                                            <option value="8">8</option>
+                                                        </select>
+                                                    </p>
+                                                </li>
+                                                <li><p>Price each : ₹{this.state.product_data.sp}</p></li>
                                             </ul>
                                             <div class="delivery">
                                                 <p>No hidden charges</p>
-                                                <span>Delivered in 2-3 bussiness days</span>
+                                                <span>Delivered in 3-4 bussiness days</span>
                                                 <div class="clearfix"></div>
                                             </div>
+                                        </div>
+                                        <div>
+                                            Sorry, cash on delivery ( COD ) is not available. We are working on that.
                                         </div>
                                         <div class="clearfix"></div>
 

@@ -73,16 +73,18 @@ export function Single(props) {
                         <div className="col-md-4 showcase">
                             <div className="showcase-rt-top">
                                 <div className="pull-left shoe-name">
-                                    <h3>Stone Grenade RTL</h3>
-                                    <p>BLUETOOTH SPEAKERS</p>
-                                    <h4 style={{ color: "#ffb300" }} >₹1,002.00</h4>
-                                    <div style={{ margin: "10px 0px", color: "grey" }} >
-                                        Online : ₹1,500.00
+                                    <h3>{data.name}</h3>
+                                    <p>{data.category}</p>
+                                    <h4 style={{ color: "#ffb300", margin:"20px 0px" }} >
+                                        ₹{data.sp}
+                                    </h4>
+                                    <div style={{ margin: "5px 0px", color: "grey" }} >
+                                        MRP : ₹{data.mrp}
                                         </div>
-                                    <div style={{ margin: "10px 0px", color: "grey" }} >
-                                        Save 45%
+                                        <div style={{ margin: "5px 0px", color: "grey" }} >
+                                            Save {data.discount}
                                         </div>
-                                </div>
+                                    </div>
                                 <div className="clearfix"></div>
                             </div>
                             <hr className="featurette-divider" />
@@ -91,7 +93,7 @@ export function Single(props) {
                                     <div className="view" >
                                         View Price On
                                             <div>
-                                            <a href="#" >
+                                            <a href={data.amazon} >
                                                 <img src={"http://www.mountaincolours.in/uploads/clients/1551518604.jpg"} width="50px" />
                                             </a>
                                         </div>
@@ -99,7 +101,7 @@ export function Single(props) {
                                     <div className="view" >
                                         View Price On
                                             <div>
-                                            <a href="#" >
+                                            <a href={data.flipkart} >
                                                 <img src={"https://www.pngarea.com/pngm/6/5103627_amazon-logo-png-icon-amazon-logo-png-transparent.png"} width="50px" />
                                             </a>
                                         </div>
@@ -157,11 +159,7 @@ export function Single(props) {
                             <div className="showcase-last">
                                 <h3>Description</h3>
                                 <ul>
-                                    <li>Internal bootie wraps your foot for a sock-like fit</li>
-                                    <li>Unique eyestays work with the Flywire cables to create an even better glove-like fit</li>
-                                    <li>Waffle outsole for durability and multi-surface traction</li>
-                                    <li>Sculpted Cushlon midsole combines plush cushioning and springy resilience for impact protection</li>
-                                    <li>Midsole flex grooves for greater forefoot flexibility</li>
+                                    {data.highlights}
                                 </ul>
                             </div>
                         </div>
@@ -226,7 +224,9 @@ export function Single(props) {
                             </ul>
                             <div className="tab-content">
                                 <div className="tab-pane active" id="home">
-                                    <p>Nike is one of the leading manufacturer and supplier of sports equipment, footwear and apparels. Nike is a global brand and it continuously creates products using high technology and design innovation. Nike has a vast collection of sports shoes for men at Snapdeal. You can explore our range of basketball shoes, football shoes, cricket shoes, tennis shoes, running shoes, daily shoes or lifestyle shoes. Take your pick from an array of sports shoes in vibrant colours like red, yellow, green, blue, brown, black, grey, olive, pink, beige and white. Designed for top performance, these shoes match the way you play or run. Available in materials like leather, canvas, suede leather, faux leather, mesh etc, these shoes are lightweight, comfortable, sturdy and extremely sporty. The sole of all Nike shoes is designed to provide an increased amount of comfort and the material is good enough to provide an improved fit. These shoes are easy to maintain and last for a really long time given to their durability. Buy Nike shoes for men online with us at some unbelievable discounts and great prices. So get faster and run farther with your Nike shoes and track how hard you can play.</p>
+                                    <p>
+                                        {data.description}
+                                    </p>
                                 </div>
                             </div>
     
@@ -242,7 +242,7 @@ export function Single(props) {
                                 <iframe 
                                     width="956" 
                                     height="538" 
-                                    src="https://www.youtube.com/embed/9sqN8tIsBNU" 
+                                    src={data.video}
                                     title="YouTube video player" frameborder="0" 
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                                     allowfullscreen>

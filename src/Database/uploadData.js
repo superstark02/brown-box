@@ -62,7 +62,7 @@ export function uploadData(data, response, photo) {
 
 export function uploadProducts(data) {
 
-    for (var i = 0; i < 2; i++) {
+    for (var i = 0; i < 5; i++) {
         db.collection("Products").doc(data[i].id)
             .set({
                 id: data[i].id,
@@ -80,7 +80,8 @@ export function uploadProducts(data) {
                 from: data[i].from,
                 to: data[i].to,
                 amazon: data[i].amazon,
-                flipkart: data[i].flipkart
+                flipkart: data[i].flipkart,
+                video: data[i].video
             }).then(result => {
                 console.log("Done")
             }).catch(error => {

@@ -10,13 +10,14 @@ import MyList from '../Components/MyList'
 import MobileList from '../Components/MobileList'
 import { FaInstagram } from 'react-icons/fa'
 import GameOfTheWeek from "../Components/GameOfTheWeek"
+import xplain from "../Videos/Xplain.mp4"
 
 export class Home extends Component {
     render() {
         return (
             <div>
                 <AppBar />
-                <div style={{position:'relative'}} >
+                <div style={{ position: 'relative' }} >
                     <div className="wallpaper" >
                     </div>
                     <div className="overlay wrap" >
@@ -31,10 +32,10 @@ export class Home extends Component {
                             </div>
                             <p className="intro" >
                                 We are an e-commerce startup that provides you products at wholesale rates. <br />The products are always the latest, new and genuine.
-                            <br />
-                            <br />
-                            How we work? How such low rates? It's explained below.
-                        </p>
+                                <br />
+                                <br />
+                                How we work? How such low rates? It's explained below.
+                            </p>
                             <div>
                                 <a href="#pow" >
                                     <button className="std-btn" >
@@ -53,16 +54,23 @@ export class Home extends Component {
                                 <div>
                                     <HowWeWork />
                                 </div>
+                                
                                 <div>
                                     <p>
                                         All products are from genuine
                                         retailer, these are the same retailers who are present on other e-commerce websites
                                         (like amazon, flipkart etc.).
                                     </p>
-                                    <br/>
+                                    <br />
                                     <p>
                                         To buy/explore join our <a href="https://www.instagram.com/brownbox_india/" >community</a>
                                     </p>
+                                </div>
+                                
+                                <div className="wrap" >
+                                    <video width="750" height="500" controls  >
+                                        <source src={xplain} type="video/mp4" />
+                                    </video>
                                 </div>
                             </div>
                         </div>
@@ -100,7 +108,7 @@ export class Home extends Component {
                     </div>
                 </div>
 
-                <GameOfTheWeek/>
+                <GameOfTheWeek />
 
                 <div className="wrap" >
                     <div className="desktop-ctn" >
@@ -116,10 +124,10 @@ export class Home extends Component {
                                         Join our community. We bring you new products every week.
                                     </p>
                                     <div className="wrap"  >
-                                        <a href="https://www.instagram.com/brownbox_india/" style={{textDecoration:"null"}} >
+                                        <a href="https://www.instagram.com/brownbox_india/" style={{ textDecoration: "null" }} >
                                             <button className="std-btn wrap" >
                                                 Join Us
-                                                <FaInstagram style={{fontSize:"30px", margin:"0px 5px"}} />
+                                                <FaInstagram style={{ fontSize: "30px", margin: "0px 5px" }} />
                                             </button>
                                         </a>
                                     </div>

@@ -4,6 +4,14 @@ import './ProductDisplay.css'
 
 const product = "https://rukminim1.flixcart.com/image/416/416/kmccosw0/gaming-accessory-kit/pubg-gamepad-trigger/d/v/j/pubg-gamepad-trigger-nehmaps-original-imagf8xjq72ewzw3.jpeg?q=70"
 
+const product_data = {
+    name: "AirLuk PUBG Mobile Trigger",
+    category: "MOBILE GAMING",
+    mrp: "399.00",
+    sp: "39.00",
+    discount: '92.48%',
+}
+
 export class ProductDisplay extends Component {
 
     render() {
@@ -26,21 +34,21 @@ export class ProductDisplay extends Component {
 
                                         <h2>
                                             <h1 className="h1" href="#">
-                                                AirLuk PUBG Mobile Trigger
+                                                {product_data.name}
                                             </h1>
                                             <h5 className='category' >
-                                                MOBILE GAMING
+                                                {product_data.category}
                                             </h5>
                                         </h2>
                                         <div style={{ marginTop: "10px" }}  >
                                             <div className="disdivlay-mrp" style={{ marginTop: "10px" }} >
-                                                <strike>&#8377;399.00</strike>
+                                                <strike>&#8377;{product_data.mrp}</strike>
                                             </div>
                                             <div class="u-price u-text-custom-color-1" style={{fontWeight: "700", margin:'10px 0px',fontSize:"25px" }}>
-                                                &#8377;45.00
+                                                &#8377;{product_data.sp}
                                             </div>
                                             <div className="display-mrp" >
-                                                Save &#8377;574
+                                                Save &#8377;{product_data.mrp - product_data.sp}
                                             </div>
                                         </div>
 

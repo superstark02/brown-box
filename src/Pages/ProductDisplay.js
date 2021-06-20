@@ -13,6 +13,7 @@ import Slider from '../Components/Slider'
 import { MyFooter } from '../Components/Footer'
 import { FaCheckCircle, FaExchangeAlt, FaShippingFast, FaUndo } from 'react-icons/fa'
 import getDoc from '../Database/getDoc'
+import Loading from '../Components/Loading'
 
 
 export default function ProductDisplay(props) {
@@ -198,6 +199,9 @@ export default function ProductDisplay(props) {
                                 </div>
                             </div>
 
+                            <ul className="nav nav-pills tab-nike" role="tablist">
+                                <li role="presentation" className=""><a aria-controls="home" role="tab" data-toggle="tab">Product Review</a></li>
+                            </ul>
                             <div className="wrap" >
                                 <iframe 
                                     width="956" 
@@ -234,9 +238,7 @@ export default function ProductDisplay(props) {
     }
     else{
         return(
-            <div>
-                Please Wait
-            </div>
+            <Loading/>
         )
     }
 }
