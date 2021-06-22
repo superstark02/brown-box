@@ -88,6 +88,7 @@ export class Cart extends React.Component {
     };
 
     componentDidMount() {
+        
         firebase.auth().onAuthStateChanged(user => {
             if (user) {
                 getDoc("Users", user.uid).then(data => {
@@ -101,9 +102,15 @@ export class Cart extends React.Component {
                     this.setState({ pincode: data.pincode })
                 })
 
-                getDoc("Products", "1").then(snap => {
-                    this.setState({product_data:snap})
-                })
+                if(this.props.match.params.id === "null"){
+                    getDoc("Products", "1").then(snap => {
+                        this.setState({product_data:snap})
+                    })
+                }else{
+                    getDoc("Games", "1").then(snap => {
+                        this.setState({product_data:snap})
+                    })
+                }
 
             } else {
                 alert("Please sign in to continue. Or contact support")
@@ -123,9 +130,9 @@ export class Cart extends React.Component {
             state: this.state.my_state,
             pincode: this.state.pincode,
             uid: this.state.data.uid,
-            product: this.state.product,
+            product: this.state.product + this.props.match.params.id,
             e: e,
-            total: parseFloat(this.state.product_data.sp)*this.state.quantity + shipping
+            total: parseFloat(this.state.product_data.sp.replace(/,/g, ''))*this.state.quantity + shipping
         }
 
         this.displayRazorpay(temp).then(res => {
@@ -218,7 +225,7 @@ export class Cart extends React.Component {
                                 <hr class="featurette-divider" />
                                 <ul class="total_price">
                                     <li class="last_price"> <h4>TOTAL</h4></li>
-                                    <li class="last_price"><span>₹{parseFloat(this.state.product_data.sp)*this.state.quantity + shipping}</span></li>
+                                    <li class="last_price"><span>₹{parseFloat(this.state.product_data.sp.replace(/,/g, ''))*this.state.quantity + shipping}</span></li>
                                     <div class="clearfix"> </div>
                                 </ul>
                                 <div class="clearfix"></div>
@@ -250,7 +257,10 @@ export class Cart extends React.Component {
                                                         </select>
                                                     </p>
                                                 </li>
-                                                <li><p>Price each : ₹{this.state.product_data.sp}</p></li>
+                                                <li>
+                                                    <p>Price each : ₹{this.state.product_data.sp} </p>
+                                                    <p>{this.props.match.params.id}</p>
+                                                </li>
                                             </ul>
                                             <div class="delivery">
                                                 <p>No hidden charges</p>

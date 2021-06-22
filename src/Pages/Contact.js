@@ -65,6 +65,17 @@ export class Contact extends Component {
                                 Mail: mail@pidgin.online
                             </p>
                         </div>
+
+                        <div style={{marginTop:"50px"}} >
+                            <h3>
+                                Adress
+                            </h3>
+                            <p>
+                                Shop 112, Pocket 8 <br/>
+                                Bazz Shopping Arcade, Sector 24, Rohini <br/>
+                                Delhi, 10085
+                            </p>
+                        </div>
                     </div>
                 </div>
                 <MyFooter />

@@ -80,7 +80,7 @@ export class MyList extends Component {
                                                                     Save:&#8377;{parseInt(item.mrp.replace(/\,/g, '')) - parseInt(item.sp.replace(/\,/g, ''))}
                                                                 </div>
                                                                 <div style={{ textAlign: "left", color: "grey" }} >
-                                                                    #WEEK {index + 1} (2/6/20)
+                                                                    #WEEK {index + 1} <div style={{color:"#f4bc57"}} > {item.from} to {item.to} </div>
                                                                 </div>
                                                             </div>
                                                         </div>

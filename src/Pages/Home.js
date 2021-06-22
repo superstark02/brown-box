@@ -68,7 +68,7 @@ export class Home extends Component {
                                 </div>
                                 
                                 <div className="wrap" >
-                                    <video width="750" height="500" controls  >
+                                    <video width="100%" controls  >
                                         <source src={xplain} type="video/mp4" />
                                     </video>
                                 </div>

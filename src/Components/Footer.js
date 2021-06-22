@@ -32,8 +32,9 @@ export class MyFooter extends Component {
                         <ul className="shot-links">
                             <li><a href="/contact">Contact Us</a></li>
                             <li><a href="/about">About Us</a></li>
-                            <li><a href="/return-policy">Return Policy</a></li>
-                            <li><a href="/terms-conditions">Terms & conditions</a></li>
+                            <li><a href="/terms-conditions/#privacy">Privacy Policy</a></li>
+                            <li><a href="/terms-conditions/#refunds">Refund Policy</a></li>
+                            <li><a href="/terms-conditions/#conditions">Terms & conditions</a></li>
                         </ul>
                     </div>
                     <div className="col-md-6 re-ft-grd">

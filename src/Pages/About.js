@@ -3,7 +3,7 @@ import "./About.css"
 import AppBar from '../Components/AppBar'
 import howwework from "../Images/howwework.png"
 import whatwedo from "../Images/WhatIsBrownBox.png"
-import Footer, { MyFooter } from '../Components/Footer'
+import { MyFooter } from '../Components/Footer'
 
 const tag = <a href="https://wa.me/919319977851?text=Hi">here</a>
 
@@ -72,13 +72,8 @@ export class About extends Component {
                             <div style={{ width: "100%", fontSize: "20px" }} >
                                 We provide products at very low rates. Wether it is latest phone or new game.<br /><br />
                                 Our products are genuine and new. We introduce the concept of team buying.<br /><br />
-
                                 <li>
-                                    We introduce the concept of team buying<br />
-                                </li>
-                                <br />
-                                <li>
-                                    We launch a product every week, when we recieve more than 20 orders of that product we ship it<br />
+                                    We launch a product every week, when we recieve more than 30 orders of that product we ship it<br />
                                 </li>
                                 <br />
                                 <li>
@@ -106,7 +101,7 @@ export class About extends Component {
                         <div className="std-ctn" style={{ alignItems: "center" }} >
                             <div style={{ width: "100%", fontSize: "20px" }} >
                                 <li>
-                                    When we receive more than 20 orders for a product, we place place the bulk order for that product to
+                                    When we receive more than 30 orders for a product, we place place the bulk order for that product to
                                     our partnered companies/retailers.
                                 </li>
                                 <br />

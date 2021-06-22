@@ -9,6 +9,8 @@ import PhoneVerify from './Pages/PhoneVerify';
 import Contact from './Pages/Contact';
 import ProductDisplay from './Pages/ProductDisplay';
 import About from './Pages/About';
+import TnC from './Pages/TnC';
+import GamePage from './Pages/GamePage';
 
 function App() {
   return (
@@ -16,11 +18,13 @@ function App() {
       <Router >
         <Switch>
           <Route exact path='/' component={Home} />
+          <Route exact path='/terms-conditions' component={TnC} />
           <Route exact path='/dashboard' component={Dashboard} />
           <Route exact path='/product' component={Single} />
           <Route exact path='/product/1' component={Single} />
           <Route exact path='/product/:id' component={ProductDisplay} />
-          <Route exact path='/cart' component={Cart} />
+          <Route exact path='/game-of-the-week' component={GamePage} />
+          <Route exact path='/cart/:id' component={Cart} />
           <Route exact path='/login' component={Login} />
           <Route exact path='/contact' component={Contact} />
           <Route exact path='/about' component={About} />

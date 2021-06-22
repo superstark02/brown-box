@@ -30,14 +30,14 @@ export class MyList extends Component {
 
                             <div className="list-container-m" >
                                 {
-                                    this.state.data.map(item => {
+                                    this.state.data.map((item, index) => {
                                         return (
                                             <div style={{ display: "inline-block" }} >
                                                 <ButtonBase className="w3-animate-opacity" style={{ height: "100%", marginRight: "20px" }}>
-                                                    <Link to={"/display/"}>
+                                                    <Link to={"/product/"+item.id}>
                                                         <div className="list-item-m" >
                                                             <div className="center-image" >
-                                                                <img src={item.image} width="80%" />
+                                                                <img src={item.image} width="90%" />
                                                             </div>
                                                             <div style={{width:"100%"}} >
                                                                 <div className="item-name" >
@@ -51,6 +51,9 @@ export class MyList extends Component {
                                                                 </div>
                                                                 <div className="sp" style={{fontSize:"17px"}} >
                                                                     &#8377;{item.sp}
+                                                                </div>
+                                                                <div style={{ textAlign: "left", color: "grey" }} >
+                                                                    #WEEK {index + 1} <div style={{color:"#f4bc57"}} > {item.from} to {item.to} </div>
                                                                 </div>
                                                             </div>
                                                         </div>

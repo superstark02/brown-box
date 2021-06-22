@@ -91,6 +91,35 @@ export function uploadProducts(data) {
 
 }
 
+export function uploadGames(data) {
+
+    for (var i = 0; i < 1; i++) {
+        db.collection("Games").doc(data[i].id)
+            .set({
+                id: data[i].id,
+                name: data[i].name,
+                image: data[i].image,
+                image1: data[i].image1,
+                mrp: data[i].mrp,
+                sp: data[i].sp,
+                category: data[i].category,
+                discount: data[i].discount,
+                description: data[i].description,
+                highlights: data[i].highlights,
+                from: data[i].from,
+                to: data[i].to,
+                amazon: data[i].amazon,
+                flipkart: data[i].flipkart,
+                video: data[i].video
+            }).then(result => {
+                console.log("Done")
+            }).catch(error => {
+                console.log(error)
+            })
+    }
+
+}
+
 
 
 

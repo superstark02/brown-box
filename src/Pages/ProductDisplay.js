@@ -21,7 +21,6 @@ export default function ProductDisplay(props) {
     const [data, setData] = React.useState(null)
 
     React.useEffect(() => {
-        console.log(props.match.params.id)
         getDoc("Products", props.match.params.id).then(snap => {
             setData(snap)
         })

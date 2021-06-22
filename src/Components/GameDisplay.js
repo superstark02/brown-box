@@ -55,7 +55,7 @@ export class GameDisplay extends Component {
                                             </div>
                                         </div>
 
-                                        <a href="/product"
+                                        <a href="/game-of-the-week"
                                             class="u-btn u-button-style u-custom-color-1 u-hover-grey-75 u-product-control u-text-white u-btn-1">VIEW
                                         </a>
                                     </div>
