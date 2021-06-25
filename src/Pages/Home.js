@@ -28,7 +28,7 @@ export class Home extends Component {
                                         <div class="hero-content-2 ">
 
                                             <h2>Buy Products<br /> at Wholesale Rates</h2>
-                                            <a href="shop.html" class="btn">SHOP NOW</a>
+                                            <a href="/how-we-work" class="btn">KNOW MORE</a>
 
                                         </div>
                                         {/*Hero Content end*/}
@@ -55,7 +55,7 @@ export class Home extends Component {
 
                 <HowLowRates />
 
-                <div class="blog-section section pt-65 pt-lg-45 pt-md-35 pt-sm-20 pt-xs-15 pb-65 pb-lg-45 pb-md-35 pb-sm-25 pb-xs-15">
+                {/*<div class="blog-section section pt-65 pt-lg-45 pt-md-35 pt-sm-20 pt-xs-15 pb-65 pb-lg-45 pb-md-35 pb-sm-25 pb-xs-15">
                     <div class="container">
 
                         <div class="row mb-50 mb-xs-20">
@@ -120,7 +120,7 @@ export class Home extends Component {
                         </div>
 
                     </div>
-                </div>
+                </div>*/}
 
                 <MyFooter />
             </div>

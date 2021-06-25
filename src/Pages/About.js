@@ -8,7 +8,7 @@ export class About extends Component {
             <div>
                 <MyAppBar />
 
-                <div class="page-banner-section section bg-image" data-bg="https://demo.hasthemes.com/nelson-preview/nelson/assets/images/bg/breadcrumb.png">
+                <div class="page-banner-section section bg-image" style={{backgroundImage:"url(https://demo.hasthemes.com/nelson-preview/nelson/assets/images/bg/breadcrumb.png)"}} >
                     <div class="container">
                         <div class="row">
                             <div class="col">

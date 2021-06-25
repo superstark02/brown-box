@@ -7,6 +7,9 @@ import Cart from './Pages/Cart';
 import About from './Pages/About';
 import Account from './Pages/Account';
 import Faq from './Pages/Faq';
+import Dashboard from './Pages/Dashboard';
+import HowWeWork from './Pages/HowWeWork';
+import BuyingSystem from './Pages/BuyingSystem';
 
 function App() {
   return (
@@ -20,17 +23,12 @@ function App() {
           <Route exact path='/about' component={About} />
           <Route exact path='/account' component={Account} />
           <Route exact path='/faq' component={Faq} />
-          {/*<Route exact path='/terms-conditions' component={TnC} />
           <Route exact path='/dashboard' component={Dashboard} />
-          <Route exact path='/product' component={Single} />
-          <Route exact path='/product/1' component={Single} />
-          <Route exact path='/product/:id' component={ProductDisplay} />
-          <Route exact path='/game-of-the-week' component={GamePage} />
+          <Route exact path='/basically-the-idea' component={HowWeWork} />
+          <Route exact path='/how-we-work' component={BuyingSystem} />
+          {/*<Route exact path='/terms-conditions' component={TnC} />
           <Route exact path='/cart/:id' component={Cart} />
-          <Route exact path='/login' component={Login} />
-          <Route exact path='/contact' component={Contact} />
-          <Route exact path='/about' component={About} />
-          <Route exact path='/phone-verify' component={PhoneVerify} />*/}
+          <Route exact path='/contact' component={Contact} />*/}
         </Switch>
       </Router>
     </div>

@@ -16,7 +16,7 @@ export class HowLowRates extends Component {
                                     <div class="countdown-area">
                                         <div class="product-countdown" data-countdown="2019/06/01"></div>
                                     </div>
-                                    <a href="shop.html" style={{color:"white"}} >KNOW MORE</a>
+                                    <a href="/basically-the-idea" style={{color:"white"}} >KNOW MORE</a>
                                 </div>
                             </div>
                         </div>

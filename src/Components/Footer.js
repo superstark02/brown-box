@@ -13,11 +13,10 @@ export class MyFooter extends Component {
 
                                 {/*Footer Widget start*/}
                                 <div class="footer-widget col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12 mb-40 mb-xs-35">
-                                    <h4 class="title"><span class="text">Opening Time</span></h4>
-                                    <p class="mb-15">Mon – Fri: 8AM – 10PM</p>
-                                    <p class="mb-15">Sat: 9AM-8PM</p>
-                                    <p class="mb-15">Sun: Closed</p>
-                                    <h4 class="opeaning-title">We Work All The Holidays</h4>
+                                    <h4 class="title"><span class="text">Timmings</span></h4>
+                                    <p class="mb-15">New Product: Every Monday</p>
+                                    <p class="mb-15">Support: Sun - Mon, 8am - 6pm</p>
+                                    <h4 class="opeaning-title">We Work On All The Holidays</h4>
                                 </div>
                                 {/*Footer Widget end*/}
 
@@ -26,9 +25,10 @@ export class MyFooter extends Component {
                                 <div class="footer-widget col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12 mb-40 mb-xs-35">
                                     <h4 class="title"><span class="text">Quick Link</span></h4>
                                     <ul class="ft-menu">
-                                        <li><a href="#">My account</a></li>
-                                        <li><a href="#">Wishlist</a></li>
+                                        <li><a href="/account">My account</a></li>
                                         <li><a href="#">Order Tracking</a></li>
+                                        <li><a href="#">Refunds</a></li>
+                                        <li><a href="#">Cancelation</a></li>
                                         <li><a href="#">Privacy Policy</a></li>
                                         <li><a href="#">Shipping Information</a></li>
                                     </ul>
@@ -39,20 +39,18 @@ export class MyFooter extends Component {
                                 <div class="footer-widget col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12 mb-40 mb-xs-35">
                                     <h4 class="title"><span class="text">Information</span></h4>
                                     <ul class="ft-menu">
-                                        <li><a href="#">About Us</a></li>
-                                        <li><a href="#">Shopping Guide</a></li>
-                                        <li><a href="#">Delivery Information</a></li>
+                                        <li><a href="/about">About Us</a></li>
                                         <li><a href="#">Privacy Policy</a></li>
-                                        <li><a href="#">Our Store</a></li>
+                                        <li><a href="#">Terms Of Use</a></li>
                                     </ul>
                                 </div>
                                 {/*Footer Widget end*/}
 
                                 {/*Footer Widget start*/}
                                 <div class="footer-widget text-lg-right text-left col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12 mb-40 mb-xs-35">
-                                    <h2>123 Widget Street Acmeville, AC-1209</h2>
-                                    <p class="contact-text">demo@example.com</p>
-                                    <p class="contact-text">+0123456789</p>
+                                    <h2 className="font-a" >brownbox.</h2>
+                                    <p class="contact-text">mail@brownbox.store</p>
+                                    <p class="contact-text">+91 99101 97196</p>
                                 </div>
                                 {/*Footer Widget end*/}
                             </div>
@@ -67,7 +65,7 @@ export class MyFooter extends Component {
                                     <div class="row justify-content-between align-items-center">
                                         <div class="col-lg-6 col-md-6 col-sm-12">
                                             <div class="copyright text-left">
-                                                <p class="copyright">&copy; 2021 <strong>Nelson</strong> Made with <i class="fa fa-heart text-danger" aria-hidden="true"></i> by <a href="https://hasthemes.com/"><strong>HasThemes</strong></a>.</p>
+                                                <p class="copyright">&copy; 2021 <strong>brownbox.store</strong> Made with <i class="fa fa-heart text-danger" aria-hidden="true"></i> by <a href="https://hasthemes.com/"><strong>brownbox</strong></a>.</p>
                                             </div>
                                         </div>
                                         <div class="col-lg-6 col-md-6 col-sm-12">

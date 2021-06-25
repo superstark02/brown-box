@@ -48,7 +48,7 @@ export class AppBar extends Component {
                                                     <ul class="sub-menu">
                                                         <li><a href="index.html">Product Of The Week</a></li>
                                                         <li><a href="index-2.html">Game Of The Week</a></li>
-                                                        <li><a href="index-2.html">How We Work</a></li>
+                                                        <li><a href="/how-we-work">How We Work</a></li>
                                                         <li><a href="index-2.html">Upcoming Product</a></li>
                                                         <li><a href="index-2.html">Next Week's Product</a></li>
                                                         <li><a href="index-2.html">How Such Low Rates?</a></li>
@@ -66,12 +66,15 @@ export class AppBar extends Component {
                                                         </li>
                                                         <li><a href="#" class="item-link">How We Work</a>
                                                             <ul>
-                                                                <li><a href="shop.html">How We Work</a></li>
-                                                                <li><a href="shop-three-column.html">Genuine</a></li>
-                                                                <li><a href="shop-three-column.html">Savings</a></li>
+                                                                <li><a href="/how-we-work">How We Work</a></li>
                                                                 <li><a href="shop-three-column.html">Shipping</a></li>
                                                                 <li><a href="shop-four-column.html">Refunds</a></li>
                                                                 <li><a href="shop-right-sidebar.html">Cancelation</a></li>
+                                                            </ul>
+                                                        </li>
+                                                        <li><a href="#" class="item-link">How Such Low Rates?</a>
+                                                            <ul>
+                                                                <li><a href="/basically-the-idea">Know Here</a></li>
                                                             </ul>
                                                         </li>
                                                     </ul>
@@ -95,8 +98,10 @@ export class AppBar extends Component {
                                     <div class="header-search-cart-area">
                                         <ul>
                                             {
-                                                this.state.login_btn ? (
-                                                    <img style={{borderRadius:"50%", width:'50px'}} src={this.state.image} />
+                                                !this.state.login_btn ? (
+                                                    <a href="/account" >
+                                                        <img style={{borderRadius:"50%", width:'50px'}} src={this.state.image} />
+                                                    </a>
                                                 ):(
                                                     <div className="btn" onClick={this.sign_in} >Login</div>
                                                 )
