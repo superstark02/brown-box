@@ -6,6 +6,7 @@ import NextProduct from "../Components/Products/NextProduct"
 import { MyFooter } from '../Components/Footer'
 import Procedure from '../Components/HomePage/Procedure'
 import { Brands } from '../Components/HomePage/Brands'
+import { Feedback } from '@material-ui/icons'
 
 export class Home extends Component {
     render() {
@@ -116,8 +117,6 @@ export class Home extends Component {
 
                     </div>
                 </div>
-
-                <Brands />
 
                 <MyFooter />
             </div>

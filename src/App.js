@@ -2,6 +2,12 @@ import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from './Pages/Home';
 import "./CSS/style.css"
+import ProductDetails from './Pages/ProductDetails';
+import Checkout from './Pages/Checkout';
+import Cart from './Pages/Cart';
+import About from './Pages/About';
+import Account from './Pages/Account';
+import Faq from './Pages/Faq';
 
 function App() {
   return (
@@ -9,6 +15,12 @@ function App() {
       <Router >
         <Switch>
           <Route exact path='/' component={Home} />
+          <Route exact path='/product/:id' component={ProductDetails} />
+          <Route exact path='/checkout' component={Checkout} />
+          <Route exact path='/cart' component={Cart} />
+          <Route exact path='/about' component={About} />
+          <Route exact path='/account' component={Account} />
+          <Route exact path='/faq' component={Faq} />
           {/*<Route exact path='/terms-conditions' component={TnC} />
           <Route exact path='/dashboard' component={Dashboard} />
           <Route exact path='/product' component={Single} />
