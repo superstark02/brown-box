@@ -1,43 +1,7 @@
-div{
-    font-family: medium;
-}
-
-html{
-    font-family: medium;
-}
-
-*{
-    font-family: medium;
-}
-
-.h1{
-    font-family: medium;
-}
-
 .wrap{
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.font-a{
-    font-family: neometric;
-    font-size: 5vw;
-}
-
-.desktop-ctn{
-    width: 1000px;
-    margin-top: 50px;
-}
-
-.std-ctn{
-    display: flex;
-    justify-content: space-between;
-    margin: 50px 0px;
-}
-
-.std-para{
-    width: 70%;
 }
 
 .std-btn{
