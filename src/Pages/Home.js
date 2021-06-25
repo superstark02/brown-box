@@ -5,8 +5,8 @@ import Products from "../Components/Products/ProductsList"
 import NextProduct from "../Components/Products/NextProduct"
 import { MyFooter } from '../Components/Footer'
 import Procedure from '../Components/HomePage/Procedure'
-import { Brands } from '../Components/HomePage/Brands'
-import { Feedback } from '@material-ui/icons'
+import Features from "../Components/HomePage/Features"
+import HowLowRates from '../Components/HomePage/HowLowRates'
 
 export class Home extends Component {
     render() {
@@ -19,15 +19,15 @@ export class Home extends Component {
                     <div class="hero-slider section">
 
                         {/*Hero Item start*/}
-                        <div class="hero-item  bg-image" style={{ backgroundImage: "url(https://demo.hasthemes.com/nelson-preview/nelson/assets/images/hero/hero-1.jpg)" }}>
+                        <div class="hero-item  bg-image" style={{ height:"70vh",backgroundImage: "url(https://g.foolcdn.com/image/?url=https%3A//g.foolcdn.com/editorial/images/593627/gettyimages-1185938530.jpg&w=2000&op=resize)" }}>
                             <div class="container">
                                 <div class="row">
                                     <div class="col-12">
 
                                         {/*Hero Content start*/}
-                                        <div class="hero-content-2 center">
+                                        <div class="hero-content-2 ">
 
-                                            <h2>Creative Design <br /> Modern & Exclusive Furniture</h2>
+                                            <h2>Buy Products<br /> at Wholesale Rates</h2>
                                             <a href="shop.html" class="btn">SHOP NOW</a>
 
                                         </div>
@@ -45,11 +45,15 @@ export class Home extends Component {
 
                 <Banner />
 
+                <Procedure />
+
                 <Products />
 
                 <NextProduct />
 
-                <Procedure />
+                <Features />
+
+                <HowLowRates />
 
                 <div class="blog-section section pt-65 pt-lg-45 pt-md-35 pt-sm-20 pt-xs-15 pb-65 pb-lg-45 pb-md-35 pb-sm-25 pb-xs-15">
                     <div class="container">

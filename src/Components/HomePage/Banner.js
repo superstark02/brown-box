@@ -11,12 +11,12 @@ export class Banner extends Component {
                             <div class="single-banner-item mb-30">
                                 <div class="banner-image">
                                     <a href="shop.html">
-                                        <img src="https://demo.hasthemes.com/nelson-preview/nelson/assets/images/banner/banner1.jpg" alt="" />
+                                        <img height="360px" src="https://wallpaperaccess.com/full/4021309.png" alt="" />
                                     </a>
                                 </div>
                                 <div class="banner-content">
-                                    <h3 class="title">OFFICE <br /> FURNITURE</h3>
-                                    <a href="shop.html">SHOP NOW</a>
+                                    <h3 class="title" style={{color:"white"}} >Resident Evil <br /> Village ( XBOX - PS4/5 )</h3>
+                                    <a href="shop.html" style={{color:"white"}} >VIEW PRODUCT</a>
                                 </div>
                             </div>
                             {/* Single Banner End */}
@@ -26,12 +26,12 @@ export class Banner extends Component {
                             <div class="single-banner-item mb-30">
                                 <div class="banner-image">
                                     <a href="shop-left-sidebar.html">
-                                        <img src="https://demo.hasthemes.com/nelson-preview/nelson/assets/images/banner/banner2.jpg" alt="" />
+                                        <img height="360px" src="https://coolthemestores.com/wp-content/uploads/2021/01/pubg_featured.jpg" alt="" />
                                     </a>
                                 </div>
-                                <div class="banner-content tr-right">
-                                    <h3 class="title">HOME <br /> FURNITURE</h3>
-                                    <a href="shop.html">SHOP NOW</a>
+                                <div class="banner-content">
+                                    <h3 class="title"style={{color:"white"}}>MOBILE TRIGGER<br />PUBG-BGMI-CODM</h3>
+                                    <a href="shop.html"style={{color:"white"}}>VIEW PRODUCT</a>
                                 </div>
                             </div>
                             {/* Single Banner End */}

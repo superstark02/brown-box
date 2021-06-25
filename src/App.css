@@ -4,6 +4,10 @@
     align-items: center;
 }
 
+.font-a{
+    font-family: neometric;
+    font-size: 30px;
+}
 .std-btn{
     outline: none;
     background-color: #f4bc57;
@@ -53,4 +57,10 @@ link , a, a:hover{
     .mobile{
         display: block;
     }
+}
+
+
+a, a:any-link, a:active, a:blank, a:hover, a:visited, a:link{
+    color: inherit;
+    text-decoration: inherit;
 }

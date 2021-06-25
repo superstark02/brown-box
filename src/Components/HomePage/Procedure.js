@@ -11,22 +11,22 @@ export class Procedure extends Component {
                             <div class="col-lg-4 col-md-6">
                                 <div class="single-feature mb-30">
                                     <div class="feature-image">
-                                        <img src="https://demo.hasthemes.com/nelson-preview/nelson/assets/images/icons/feature-1.png" class="img-fluid" alt="" />
+                                        <img src="https://img.icons8.com/ios/50/000000/controller.png" class="img-fluid" alt="" />
                                     </div>
                                     <div class="feature-content">
-                                        <h4 class="title">Free home delivery</h4>
-                                        <p class="short-desc">Provide free home delivery for the all product over $100 </p>
+                                        <h4 class="title">New Product Every Week</h4>
+                                        <p class="short-desc">We post a <b>product</b> and a <b>game</b> for a week. Several buyers buy it every week.</p>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-6">
                                 <div class="single-feature mb-30">
                                     <div class="feature-image">
-                                        <img src="https://demo.hasthemes.com/nelson-preview/nelson/assets/images/icons/feature-2.png" class="img-fluid" alt="" />
+                                        <img src="https://img.icons8.com/ios/50/000000/discount--v1.png" class="img-fluid" alt="" />
                                     </div>
                                     <div class="feature-content">
-                                        <h4 class="title">Quality Products</h4>
-                                        <p class="short-desc">We ensure the product quality that is our main goal </p>
+                                        <h4 class="title">Heavy Discounts</h4>
+                                        <p class="short-desc">Since 100+ users buy a product together. You get the product in wholesale rates</p>
                                     </div>
                                 </div>
                             </div>
@@ -36,8 +36,10 @@ export class Procedure extends Component {
                                         <img src="https://demo.hasthemes.com/nelson-preview/nelson/assets/images/icons/feature-3.png" class="img-fluid" alt="" />
                                     </div>
                                     <div class="feature-content">
-                                        <h4 class="title">3 Days Return</h4>
-                                        <p class="short-desc">Provide free home delivery for the all product over $100 </p>
+                                        <h4 class="title">Quick Shipping</h4>
+                                        <p class="short-desc">
+                                            If buyers are less than 30, we do not ship the product and refund your money instantly.
+                                        </p>
                                     </div>
                                 </div>
                             </div>

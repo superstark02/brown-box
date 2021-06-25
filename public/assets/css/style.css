@@ -506,6 +506,11 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   color: #ffffff;
 }
 
+a, a:any-link, a:active, a:blank, a:hover, a:visited, a:link{
+  color: inherit !important;
+  text-decoration: inherit;
+}
+
 @media only screen and (max-width: 767px) {
   .btn {
     font-size: 14px;
