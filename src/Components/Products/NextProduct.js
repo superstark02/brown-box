@@ -4,7 +4,7 @@ import product from "../../Images/NextProduct/product.jpg"
 export class NextProduct extends Component {
     render() {
         return (
-            <div class="banner-section section pb-40 pb-sm-30 pb-xs-0">
+            <div class="banner-section section pb-40 pb-sm-30 pb-xs-0" id="next-product" >
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-12">

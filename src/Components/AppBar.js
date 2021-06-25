@@ -46,13 +46,10 @@ export class AppBar extends Component {
                                             <ul>
                                                 <li><a href="index.html">Home</a>
                                                     <ul class="sub-menu">
-                                                        <li><a href="index.html">Product Of The Week</a></li>
-                                                        <li><a href="index-2.html">Game Of The Week</a></li>
-                                                        <li><a href="/how-we-work">How We Work</a></li>
-                                                        <li><a href="index-2.html">Upcoming Product</a></li>
-                                                        <li><a href="index-2.html">Next Week's Product</a></li>
-                                                        <li><a href="index-2.html">How Such Low Rates?</a></li>
-                                                        <li><a href="index-2.html">Refunds/Return/Cancelation</a></li>
+                                                        <li><a href="/product/1">Product Of The Week</a></li>
+                                                        <li><a href="/product/2">Game Of The Week</a></li>
+                                                        <li><a href="#upcoming-products">Upcoming Products</a></li>
+                                                        <li><a href="#next-product">Next Week's Product</a></li>
                                                     </ul>
                                                 </li>
                                                 <li><a href="shop.html">About Us</a>
@@ -60,16 +57,17 @@ export class AppBar extends Component {
                                                         <li><a href="#" class="item-link">About Us</a>
                                                             <ul>
                                                                 <li><a href="about.html">About Products</a></li>
-                                                                <li><a href="compare.html">Warranty</a></li>
-                                                                <li><a href="faq.html">Frequently Asked Questions</a></li>
+                                                                <li><a href="/faq">FAQs</a></li>
                                                             </ul>
                                                         </li>
                                                         <li><a href="#" class="item-link">How We Work</a>
                                                             <ul>
                                                                 <li><a href="/how-we-work">How We Work</a></li>
-                                                                <li><a href="shop-three-column.html">Shipping</a></li>
-                                                                <li><a href="shop-four-column.html">Refunds</a></li>
-                                                                <li><a href="shop-right-sidebar.html">Cancelation</a></li>
+                                                                <li><a href="/how-we-work/#warranty">Warranty/Garauntee</a></li>
+                                                                <li><a href="/how-we-work/#cancelation">Cancelation</a></li>
+                                                                <li><a href="/how-we-work/#shipping">Shipping</a></li>
+                                                                <li><a href="/how-we-work/#refunds">Refunds</a></li>
+                                                                <li><a href="/how-we-work/#retun">Returns</a></li>
                                                             </ul>
                                                         </li>
                                                         <li><a href="#" class="item-link">How Such Low Rates?</a>
@@ -85,7 +83,6 @@ export class AppBar extends Component {
                                                         <li><a href="blog-two-column.html">Support</a></li>
                                                         <li><a href="blog-left-sidebar.html">Phone</a></li>
                                                         <li><a href="blog-right-sidebar.html">Mail</a></li>
-                                                        <li><a href="blog-details.html">Blog Details</a></li>
                                                     </ul>
                                                 </li>
                                             </ul>

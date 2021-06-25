@@ -16,7 +16,7 @@ export class ProductsList extends Component {
     render() {
         if (this.state.data) {
             return (
-                <div class="product-section section pt-70 pt-lg-50 pt-md-40 pt-sm-30 pt-xs-20 pb-55 pb-lg-35 pb-md-25 pb-sm-15 pb-xs-5">
+                <div id="upcoming-products" class="product-section section pt-70 pt-lg-50 pt-md-40 pt-sm-30 pt-xs-20 pb-55 pb-lg-35 pb-md-25 pb-sm-15 pb-xs-5">
                     <div class="container">
                         <div class="row">
                             <div class="col">

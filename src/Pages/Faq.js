@@ -7,13 +7,13 @@ export class Faq extends Component {
         return (
             <div>
                 <MyAppBar />
-                <div class="page-banner-section section bg-image" data-bg="https://demo.hasthemes.com/nelson-preview/nelson/assets/images/bg/breadcrumb.png">
+                <div class="page-banner-section section bg-image" style={{backgroundImage:"url(https://images.unsplash.com/photo-1580234831315-438a4813685c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=747&q=80)"}}>
                     <div class="container">
                         <div class="row">
                             <div class="col">
 
                                 <div class="page-banner text-left">
-                                    <h2>Faq</h2>
+                                    <h2>FAQs</h2>
                                     <ul class="page-breadcrumb">
                                         <li><a href="index.html">Home</a></li>
                                         <li>Faq</li>
@@ -32,8 +32,7 @@ export class Faq extends Component {
                                 <div class="faq-content">
                                     <div class="faq-desc">
                                         <h3>Below are frequently asked questions, you may find the answer for yourself</h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id erat sagittis, faucibus metus malesuada, eleifend turpis. Mauris semper augue id nisl aliquet, a porta lectus mattis. Nulla at tortor augue. In eget enim diam. Donec gravida tortor sem, ac fermentum nibh rutrum sit amet. Nulla convallis mauris vitae congue consequat. Donec interdum nunc purus, vitae vulputate arcu fringilla quis. Vivamus iaculis euismod dui.</p>
-                                    </div>
+                                      </div>
                                 </div>
                                 {/*FAQ Accordin Start*/}
                                 <div class="faq-accordion">
