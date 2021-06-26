@@ -17,7 +17,7 @@ export class NextProduct extends Component {
                                     <h2 class="title">UBON WU660 6 IN 1 CABLE</h2>
                                     <span class="normat-text">NEXT WEEK'S PRODUCT</span>
                                     <MyCountdown/>
-                                    <a href="shop.html" className="btn" >VIEW</a>
+                                    <a href="/display/Products/2" className="btn" >VIEW</a>
                                 </div>
                             </div>
                         </div>

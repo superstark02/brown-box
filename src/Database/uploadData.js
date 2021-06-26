@@ -38,7 +38,6 @@ export function uploadData(data, response, photo) {
                             pincode: data.pincode,
                             payment_id: response.razorpay_payment_id,
                             order_id: response.razorpay_order_id,
-                            razorpay_sign: response.razorpay_signature,
                             product: data.product,
                             photo: photo
                         })
@@ -93,7 +92,7 @@ export function uploadProducts(data) {
 
 export function uploadGames(data) {
 
-    for (var i = 0; i < 1; i++) {
+    for (var i = 0; i < 2; i++) {
         db.collection("Games").doc(data[i].id)
             .set({
                 id: data[i].id,

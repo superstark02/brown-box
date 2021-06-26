@@ -13,7 +13,7 @@ export class ProductDetails extends Component {
     }
 
     componentDidMount() {
-        getDoc("Products", this.props.match.params.id).then(snap => {
+        getDoc(this.props.match.params.doc, this.props.match.params.id).then(snap => {
             this.setState({ data: snap })
         })
     }
@@ -87,8 +87,8 @@ export class ProductDetails extends Component {
                                                 <div className="product-countdown-two" data-countdown2="2020/06/01"></div>
                                                 <div className="single-product-quantity">
                                                     {
-                                                        this.state.data.id === "1pow" ? (
-                                                            <a href="/cart" className="add-to-link">
+                                                        this.state.data.id === "1pow" || this.state.data.id === "1gow" ? (
+                                                            <a href={"/cart/"+this.props.match.params.doc+"/"+this.state.data.id} className="add-to-link">
                                                                 <button className="btn" style={{ padding: "10px 30px" }} ><i className="fa fa-shopping-bag"></i>buy</button>
                                                             </a>
                                                         ) : (
@@ -96,6 +96,10 @@ export class ProductDetails extends Component {
                                                         )
                                                     }
                                                 </div>
+                                                <p style={{color:"grey"}} >
+                                                    This product will be shipped on the last day of the week - {this.state.data.to}<br/>
+                                                    for all buyers. To know the process go <a href="/how-we-work" ><b>here</b></a>.
+                                                </p>
                                                 <div className="product-meta">
                                                     <span className="posted-in">
                                                         Category: {this.state.data.category}

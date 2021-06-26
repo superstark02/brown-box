@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import MyAppBar from "../Components/AppBar"
 import { MyFooter } from '../Components/Footer'
 import getDoc from '../Database/getDoc'
+import { getSubCollection } from '../Database/getCollection'
 import firebase from 'firebase'
 import { useHistory } from "react-router-dom";
 
@@ -24,14 +25,19 @@ function Redirect() {
 export class Account extends Component {
 
     state = {
-        user_data: null
+        user_data: null,
+        orders: null
     }
 
     componentDidMount() {
         firebase.auth().onAuthStateChanged(user => {
             if (user) {
-                return getDoc("Users", user.uid).then(user_data => {
+                getDoc("Users", user.uid).then(user_data => {
                     this.setState({ user_data: user_data })
+                })
+
+                getSubCollection("Users", user.uid, "Orders").then(item => {
+                    this.setState({ orders: item })
                 })
             } else {
                 return alert("Please login to order")
@@ -86,7 +92,7 @@ export class Account extends Component {
 
                                                 <a href="#address-edit" data-toggle="tab"><i class="fa fa-map-marker"></i> address</a>
 
-                                                <Redirect/>
+                                                <Redirect />
                                             </div>
                                         </div>
                                         {/* My Account Tab Menu End */}
@@ -128,32 +134,28 @@ export class Account extends Component {
                                                                     </tr>
                                                                 </thead>
 
-                                                                <tbody>
-                                                                    <tr>
-                                                                        <td>1</td>
-                                                                        <td>Mostarizing Oil</td>
-                                                                        <td>Aug 22, 2018</td>
-                                                                        <td>Pending</td>
-                                                                        <td>$45</td>
-                                                                        <td><a href="cart.html" class="btn">View</a></td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>2</td>
-                                                                        <td>Katopeno Altuni</td>
-                                                                        <td>July 22, 2018</td>
-                                                                        <td>Approved</td>
-                                                                        <td>$100</td>
-                                                                        <td><a href="cart.html" class="btn">View</a></td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>3</td>
-                                                                        <td>Murikhete Paris</td>
-                                                                        <td>June 12, 2017</td>
-                                                                        <td>On Hold</td>
-                                                                        <td>$99</td>
-                                                                        <td><a href="cart.html" class="btn">View</a></td>
-                                                                    </tr>
-                                                                </tbody>
+                                                                {
+                                                                    this.state.orders ? (
+                                                                        this.state.orders.map((item,index) => {
+                                                                            return (
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <td>{index+1}</td>
+                                                                                        <td>{item.order_id}</td>
+                                                                                        <td>Aug 22, 2018</td>
+                                                                                        <td>Pending</td>
+                                                                                        <td>$45</td>
+                                                                                        <td><a href="cart.html" class="btn">View</a></td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            )
+                                                                        })
+                                                                    ) : (
+                                                                        <div>
+                                                                            No orders yet
+                                                                        </div>
+                                                                    )
+                                                                }
                                                             </table>
                                                         </div>
                                                     </div>
@@ -168,14 +170,18 @@ export class Account extends Component {
                                                             <p><strong>{this.state.user_data.name}</strong></p>
                                                             <p>
                                                                 {this.state.user_data.address}<br />
-                                                                {this.state.user_data.city} <br/>
-                                                                {this.state.user_data.state} <br/>
+                                                                {this.state.user_data.city} <br />
+                                                                {this.state.user_data.state} <br />
                                                                 {this.state.user_data.pincode}
                                                             </p>
                                                             <p>Mobile: {this.state.user_data.phone}</p>
                                                         </address>
 
-                                                        <a href="#" class="btn d-inline-block edit-address-btn"><i class="fa fa-edit"></i>Edit Address</a>
+                                                        <p>
+                                                            <b>
+                                                                You can set your adress and mobile while placing an order.
+                                                            </b>
+                                                        </p>
                                                     </div>
                                                 </div>
                                                 {/* Single Tab Content End */}

@@ -8,7 +8,7 @@ export class ProductsList extends Component {
     }
 
     componentDidMount() {
-        getCollection("Products").then(snap => {
+        getCollection(this.props.doc).then(snap => {
             this.setState({ data: snap })
         })
     }
@@ -21,7 +21,7 @@ export class ProductsList extends Component {
                         <div class="row">
                             <div class="col">
                                 <div class="section-title text-center mb-15">
-                                    <h2>Upcoming Products</h2>
+                                    <h2>{this.props.title}</h2>
                                 </div>
                                 <div class="product-tab mb-50 mb-sm-30 mb-xs-20">
                                     <ul class="nav">
@@ -41,7 +41,7 @@ export class ProductsList extends Component {
                                                     {/* Single Grid product Start */}
                                                     <div class="single-grid-product mb-40">
                                                         <div class="product-image" style={{ height: "300px" }} >
-                                                            <a href={"/product/" + item.id}>
+                                                            <a href={"/display/"+ this.props.doc + "/" + item.id}>
                                                                 <img src={item.image} width="50%" alt="" />
                                                             </a>
 
@@ -60,7 +60,7 @@ export class ProductsList extends Component {
                                                         <div class="product-content">
                                                             <p class="product-price">
                                                                 {
-                                                                    item.id === "1pow" ? (
+                                                                    item.id === "1pow" || item.id === "1gow" ? (
                                                                         <span class="discounted-price">Product Of The Week</span>
                                                                     ):(
                                                                         <span class="main-price">Avaialble From {item.from}</span>

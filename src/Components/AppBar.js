@@ -46,17 +46,17 @@ export class AppBar extends Component {
                                             <ul>
                                                 <li><a href="index.html">Home</a>
                                                     <ul class="sub-menu">
-                                                        <li><a href="/product/1">Product Of The Week</a></li>
-                                                        <li><a href="/product/2">Game Of The Week</a></li>
+                                                        <li><a href="/display/Products/1pow">Product Of The Week</a></li>
+                                                        <li><a href="/display/Games/1">Game Of The Week</a></li>
                                                         <li><a href="#upcoming-products">Upcoming Products</a></li>
                                                         <li><a href="#next-product">Next Week's Product</a></li>
                                                     </ul>
                                                 </li>
                                                 <li><a href="shop.html">About Us</a>
                                                     <ul class="mega-menu four-column left-0">
-                                                        <li><a href="#" class="item-link">About Us</a>
+                                                        <li><a href="/about" class="item-link">About Us</a>
                                                             <ul>
-                                                                <li><a href="about.html">About Products</a></li>
+                                                                <li><a href="/about">About Us</a></li>
                                                                 <li><a href="/faq">FAQs</a></li>
                                                             </ul>
                                                         </li>
@@ -77,12 +77,10 @@ export class AppBar extends Component {
                                                         </li>
                                                     </ul>
                                                 </li>
-                                                <li><a href="blog.html">Contact</a>
+                                                <li><a href="/contact">Contact</a>
                                                     <ul class="sub-menu">
-                                                        <li><a href="blog.html">Cancel Order</a></li>
-                                                        <li><a href="blog-two-column.html">Support</a></li>
-                                                        <li><a href="blog-left-sidebar.html">Phone</a></li>
-                                                        <li><a href="blog-right-sidebar.html">Mail</a></li>
+                                                        <li><a href="/contact">Cancel Order</a></li>
+                                                        <li><a href="/contact">Support</a></li>
                                                     </ul>
                                                 </li>
                                             </ul>

@@ -55,6 +55,16 @@ export class HowWeWork extends Component {
                     </div>
                 </div>
 
+
+                <div class="row mb-50 mb-xs-20">
+                    <div class="col">
+                        <div class="section-title text-center">
+                            <h2>Explaination Video</h2>
+                            <span>WHAT IS BROWN BOX</span>
+                        </div>
+                    </div>
+                </div>
+
                 {/* Banner section start */}
                 <div class="banner-section section pb-40 pb-sm-30 pb-xs-0">
                     <div class="container">

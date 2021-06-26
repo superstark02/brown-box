@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { MyFooter } from '../Components/Footer'
 import MyAppBar from "../Components/AppBar"
+import bg from "../Images/AboutUs/about-us.png"
 
 export class About extends Component {
     render() {
@@ -8,13 +9,13 @@ export class About extends Component {
             <div>
                 <MyAppBar />
 
-                <div class="page-banner-section section bg-image" style={{backgroundImage:"url(https://demo.hasthemes.com/nelson-preview/nelson/assets/images/bg/breadcrumb.png)"}} >
+                <div class="page-banner-section section bg-image" style={{backgroundImage:"url("+bg+")"}} >
                     <div class="container">
                         <div class="row">
                             <div class="col">
 
                                 <div class="page-banner text-left">
-                                    <h2>About</h2>
+                                    <h2>About Us</h2>
                                     <ul class="page-breadcrumb">
                                         <li><a href="index.html">Home</a></li>
                                         <li>About</li>
@@ -42,9 +43,11 @@ export class About extends Component {
                                 {/*About Us Content Start*/}
                                 <div class="about-us-content pl-30 pl-md-0 pl-sm-0 pl-xs-0">
                                     <span>Since 2019</span>
-                                    <h2>Provide Best Quality Furnitures for Our Cleint</h2>
-                                    <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam ?</p>
-                                    <p>consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam</p>
+                                    <h2>Provide Best Quality Products In Lowest Rates Possible</h2>
+                                    <p>What's our idea/ Know it <a href="/basically-the-idea" >here</a></p>
+                                    <p>
+                                        We enable <a href="/basically-the-idea" >team buying</a>, which eanables heavy discounts for you.
+                                    </p>
                                 </div>
                                 {/*About Us Content End*/}
                             </div>
@@ -134,7 +137,7 @@ export class About extends Component {
 
 
                 {/*About Us Team Start*/}
-                <div class="about-us-team-area section pt-65 pt-lg-45 pt-md-35 pt-sm-20 pt-xs-15 pb-70 pb-lg-50 pb-md-40 pb-sm-30 pb-xs-20">
+                {/*<div class="about-us-team-area section pt-65 pt-lg-45 pt-md-35 pt-sm-20 pt-xs-15 pb-70 pb-lg-50 pb-md-40 pb-sm-30 pb-xs-20">
                     <div class="container">
                         <div class="row">
                             <div class="col">
@@ -145,7 +148,6 @@ export class About extends Component {
                         </div>
                         <div class="row">
                             <div class="col-md-4 col-sm-6">
-                                {/*Single Team Start*/}
                                 <div class="single-team mb-30">
                                     <div class="team-image img-full">
                                         <a href="#"><img src="https://demo.hasthemes.com/nelson-preview/nelson/assets/images/team/team-1.jpg" alt="" /></a>
@@ -162,10 +164,8 @@ export class About extends Component {
                                         </div>
                                     </div>
                                 </div>
-                                {/*Single Team End*/}
                             </div>
                             <div class="col-md-4 col-sm-6">
-                                {/*Single Team Start*/}
                                 <div class="single-team mb-30">
                                     <div class="team-image img-full">
                                         <a href="#"><img src="https://demo.hasthemes.com/nelson-preview/nelson/assets/images/team/team-2.jpg" alt="" /></a>
@@ -182,10 +182,8 @@ export class About extends Component {
                                         </div>
                                     </div>
                                 </div>
-                                {/*Single Team End*/}
                             </div>
                             <div class="col-md-4 col-sm-6">
-                                {/*Single Team Start*/}
                                 <div class="single-team mb-30">
                                     <div class="team-image img-full">
                                         <a href="#"><img src="https://demo.hasthemes.com/nelson-preview/nelson/assets/images/team/team-3.jpg" alt="" /></a>
@@ -202,11 +200,10 @@ export class About extends Component {
                                         </div>
                                     </div>
                                 </div>
-                                {/*Single Team End*/}
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>/*}
                 {/*About Us Team End*/}
 
 

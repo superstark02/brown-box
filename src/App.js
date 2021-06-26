@@ -10,6 +10,7 @@ import Faq from './Pages/Faq';
 import Dashboard from './Pages/Dashboard';
 import HowWeWork from './Pages/HowWeWork';
 import BuyingSystem from './Pages/BuyingSystem';
+import Contact from "./Pages/Contact"
 import "./css/style.css"
 import "./css/vendor/bootstrap.min.css"
 import "./css/vendor/helper.css"
@@ -21,18 +22,18 @@ function App() {
       <Router >
         <Switch>
           <Route exact path='/' component={Home} />
-          <Route exact path='/product/:id' component={ProductDetails} />
+          <Route exact path='/display/:doc/:id' component={ProductDetails} />
           <Route exact path='/checkout' component={Checkout} />
-          <Route exact path='/cart' component={Cart} />
+          <Route exact path='/cart/:doc/:id' component={Cart} />
           <Route exact path='/about' component={About} />
           <Route exact path='/account' component={Account} />
           <Route exact path='/faq' component={Faq} />
           <Route exact path='/dashboard' component={Dashboard} />
           <Route exact path='/basically-the-idea' component={HowWeWork} />
           <Route exact path='/how-we-work' component={BuyingSystem} />
+          <Route exact path='/contact' component={Contact} />
           {/*<Route exact path='/terms-conditions' component={TnC} />
-          <Route exact path='/cart/:id' component={Cart} />
-          <Route exact path='/contact' component={Contact} />*/}
+          <Route exact path='/cart/:id' component={Cart} />*/}
         </Switch>
       </Router>
     </div>

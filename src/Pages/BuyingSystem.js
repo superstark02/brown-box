@@ -84,8 +84,17 @@ export class BuyingSystem extends Component {
 
                         </div>
 
+
+
+                    </div>
+
+                    <div className="wrap" >
+                        <a className="btn" href="/basically-the-idea" >
+                            Know About The Idea
+                        </a>
                     </div>
                 </div>
+
 
                 <div class="page-section section pt-90 pt-lg-70 pt-md-60 pt-sm-50 pt-xs-40   pb-100 pb-lg-80 pb-md-70 pb-sm-60 pb-xs-50">
                     <div class="container">
