@@ -11,7 +11,7 @@ export class Banner extends Component {
                             <div class="single-banner-item mb-30">
                                 <div class="banner-image">
                                     <a href="/display/Games/1gow">
-                                        <img height="360px" src="https://wallpaperaccess.com/full/4021309.png" alt="" />
+                                        <img style={{maxHeight:"305px"}} src="https://wallpaperaccess.com/full/4021309.png" alt="banner" />
                                     </a>
                                 </div>
                                 <div class="banner-content">
@@ -26,7 +26,7 @@ export class Banner extends Component {
                             <div class="single-banner-item mb-30">
                                 <div class="banner-image">
                                     <a href="/display/Products/1pow">
-                                        <img height="360px" src="https://coolthemestores.com/wp-content/uploads/2021/01/pubg_featured.jpg" alt="" />
+                                        <img style={{maxHeight:"360px"}} src="https://coolthemestores.com/wp-content/uploads/2021/01/pubg_featured.jpg" alt="banner" />
                                     </a>
                                 </div>
                                 <div class="banner-content">

@@ -54,7 +54,7 @@ export class ProductsList extends Component {
                                                             </div>*/}
                                                         </div>
                                                         <div class="product-content">
-                                                            <h3 class="title"> <a href={"/product/" + item.id}>{item.name}</a></h3>
+                                                            <h3 class="title"> <a href={"/display/"+ this.props.doc + "/" + item.id}>{item.name}</a></h3>
                                                             <p class="product-price"><span class="discounted-price">&#8377;{item.sp}</span> <span class="main-price discounted">$&#8377;{item.mrp}</span></p>
                                                         </div>
                                                         <div class="product-content">

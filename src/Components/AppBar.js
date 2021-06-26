@@ -7,7 +7,8 @@ export class AppBar extends Component {
 
     state = {
         login_btn: true,
-        image: null
+        image: null,
+        show_appbar: { visibility: "hidden", height: "0px" }
     }
 
     componentDidMount() {
@@ -95,12 +96,12 @@ export class AppBar extends Component {
                                             {
                                                 !this.state.login_btn ? (
                                                     <a href="/account" >
-                                                        <img style={{borderRadius:"50%", width:'50px'}} src={this.state.image} />
+                                                        <img style={{ borderRadius: "50%", width: '50px' }} src={this.state.image} />
                                                     </a>
-                                                ):(
+                                                ) : (
                                                     <div className="btn" onClick={this.sign_in} >Login</div>
                                                 )
-                                            }                                                
+                                            }
                                         </ul>
                                     </div>
                                     {/*Header Search And Mini Cart Area End*/}
@@ -130,16 +131,13 @@ export class AppBar extends Component {
                                             <div class="col-6 col-md-6">
                                                 <div class="mobile-navigation text-right">
                                                     <div class="header-icon-wrapper">
-                                                        <ul class="icon-list justify-content-end">
-                                                            <li>
-                                                                <div class="header-cart-icon">
-                                                                    <a href="cart.html"><i class="flaticon-shopping-cart"></i></a>
-                                                                </div>
-                                                            </li>
-                                                            <li>
-                                                                <a href="javascript:void(0)" class="mobile-menu-icon" id="mobile-menu-trigger"><i class="fa fa-bars"></i></a>
-                                                            </li>
-                                                        </ul>
+                                                        <div onClick={() => {
+                                                            if (this.state.show_appbar.visibility === "hidden") {
+                                                                this.setState({ show_appbar: { visibility: "visible" } })
+                                                            } else {
+                                                                this.setState({ show_appbar: { visibility: "hidden", height: "0px" } })
+                                                            }
+                                                        }} class="mobile-menu-icon" id="mobile-menu-trigger"><i class="fa fa-bars"></i></div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -162,152 +160,54 @@ export class AppBar extends Component {
                 {/*Header Mobile section end*/}
 
                 {/* Offcanvas Menu Start */}
-                <div class="offcanvas-mobile-menu d-block d-lg-none" id="offcanvas-mobile-menu">
-                    <a href="javascript:void(0)" class="offcanvas-menu-close" id="offcanvas-menu-close-trigger">
-                        <i class="fa fa-times"></i>
-                    </a>
+                <div class="d-block" style={this.state.show_appbar} >
 
                     <div class="offcanvas-wrapper">
 
                         <div class="offcanvas-inner-content">
-                            <div class="offcanvas-mobile-search-area">
-                                <form action="#">
-                                    <input type="search" placeholder="Search ..." />
-                                    <button type="submit"><i class="fa fa-search"></i></button>
-                                </form>
-                            </div>
                             <nav class="offcanvas-navigation">
                                 <ul>
                                     <li class="menu-item-has-children"><a href="#">Home</a>
                                         <ul class="submenu2">
-                                            <li><a href="index.html">Home 01</a></li>
-                                            <li><a href="index-2.html">Home 02</a></li>
+                                            <li><a href="/display/Products/1pow">Product Of The Week</a></li>
+                                            <li><a href="/display/Games/1gow">Game Of The Week</a></li>
+                                            <li><a href="#upcoming-products">Upcoming Products</a></li>
+                                            <li><a href="#next-product">Next Week's Product</a></li>
                                         </ul>
                                     </li>
-                                    <li class="menu-item-has-children"><a href="#">Shop</a>
+                                    <li class="menu-item-has-children"><a href="#">Brown Box</a>
                                         <ul class="submenu2">
                                             <li class="menu-item-has-children"><a href="#">Pages</a>
                                                 <ul class="submenu2">
-                                                    <li><a href="about.html">About</a></li>
-                                                    <li><a href="compare.html">Compare</a></li>
-                                                    <li><a href="cart.html">Shopping Cart</a></li>
-                                                    <li><a href="checkout.html">Checkout</a></li>
-                                                    <li><a href="wishlist.html">Wishlist</a></li>
-                                                    <li><a href="my-account.html">My Account</a></li>
-                                                    <li><a href="login-register.html">Login Register</a></li>
-                                                    <li><a href="faq.html">Frequently Questions</a></li>
-                                                    <li><a href="404.html">Error 404</a></li>
+                                                    <li><a href="/about">About Us</a></li>
+                                                    <li><a href="/faq">FAQs</a></li>
                                                 </ul>
                                             </li>
-                                            <li class="menu-item-has-children"><a href="#">Shop Layout</a>
+                                            <li class="menu-item-has-children"><a href="#">How We Work</a>
                                                 <ul class="submenu2">
-                                                    <li><a href="shop.html">Shop</a></li>
-                                                    <li><a href="shop-three-column.html">Shop Three Column</a></li>
-                                                    <li><a href="shop-four-column.html">Shop Four Column</a></li>
-                                                    <li><a href="shop-right-sidebar.html">Shop Right Sidebar</a></li>
-                                                    <li><a href="shop-list-nosidebar.html">Shop List No Sidebar</a></li>
-                                                    <li><a href="shop-list-left-sidebar.html">Shop List Left Sidebar</a>
-                                                    </li>
-                                                    <li><a href="shop-list-right-sidebar.html">Shop List Right
-                                                        Sidebar</a></li>
+                                                    <li><a href="/how-we-work">How We Work</a></li>
+                                                    <li><a href="/how-we-work/#warranty">Warranty/Garauntee</a></li>
+                                                    <li><a href="/how-we-work/#cancelation">Cancelation</a></li>
+                                                    <li><a href="/how-we-work/#shipping">Shipping</a></li>
+                                                    <li><a href="/how-we-work/#refunds">Refunds</a></li>
+                                                    <li><a href="/how-we-work/#retun">Returns</a></li>
                                                 </ul>
                                             </li>
-                                            <li class="menu-item-has-children"><a href="#">Product Details</a>
+                                            <li class="menu-item-has-children"><a href="#">How Such Low Rates?</a>
                                                 <ul class="submenu2">
-                                                    <li><a href="single-product.html">Single Product</a></li>
-                                                    <li><a href="single-product-variable.html">Variable Product</a></li>
-                                                    <li><a href="single-product-affiliate.html">Affiliate Product</a>
-                                                    </li>
-                                                    <li><a href="single-product-group.html">Group Product</a></li>
-                                                    <li><a href="single-product-tabstyle-2.html">Product Left Tab</a>
-                                                    </li>
-                                                    <li><a href="single-product-tabstyle-3.html">Product Right Tab</a>
-                                                    </li>
-                                                    <li><a href="single-product-gallery-left.html">Product Gallery
-                                                        Left</a></li>
-                                                    <li><a href="single-product-gallery-right.html">Product Gallery
-                                                        Right</a></li>
+                                                    <li><a href="/basically-the-idea">Know Here</a></li>
                                                 </ul>
                                             </li>
-                                            <li class="menu-item-has-children"><a href="#">Product Details</a>
-                                                <ul class="submenu2">
-                                                    <li><a href="single-product-sticky-left.html">Product Sticky
-                                                        Left</a></li>
-                                                    <li><a href="single-product-sticky-right.html">Product Sticky
-                                                        Right</a></li>
-                                                    <li><a href="single-product-slider-box.html">Product Box Slider</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-
                                         </ul>
                                     </li>
-                                    <li><a href="shop.html">New Arrivals</a></li>
-                                    <li class="menu-item-has-children"><a href="#">Pages</a>
+                                    <li class="menu-item-has-children"><a href="#">Contact</a>
                                         <ul class="submenu2">
-                                            <li><a href="blog.html">Blog</a></li>
-                                            <li><a href="blog-two-column.html">Blog Two Column</a></li>
-                                            <li><a href="blog-left-sidebar.html">Blog Left Sidebar</a></li>
-                                            <li><a href="blog-right-sidebar.html">Blog Right Sidebar</a></li>
-                                            <li><a href="blog-details.html">Blog Details</a></li>
-                                            <li><a href="blog-details-gallery.html">Blog Details Gallery</a></li>
-                                            <li><a href="blog-details-audio.html">Blog Details Audio</a></li>
-                                            <li><a href="blog-details-video.html">Blog Details Video</a></li>
+                                            <li><a href="/contact">Cancel Order</a></li>
+                                            <li><a href="/contact">Support</a></li>
                                         </ul>
                                     </li>
-                                    <li class="menu-item-has-children"><a href="contact.html">Contact</a>
-                                    </li>
-
                                 </ul>
                             </nav>
-
-                            <div class="offcanvas-settings">
-                                <nav class="offcanvas-navigation">
-                                    <ul>
-                                        <li class="menu-item-has-children"><a href="#">MY ACCOUNT </a>
-                                            <ul class="submenu2">
-                                                <li><a href="login-register.html">Login</a></li>
-                                                <li><a href="checkout.html">Checkout</a></li>
-                                                <li><a href="my-account.html">My account</a></li>
-                                                <li><a href="cart.html">Cart</a></li>
-                                                <li><a href="wishlist.html">Wishlist</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="menu-item-has-children"><a href="#">CURRENCY: USD </a>
-                                            <ul class="submenu2">
-                                                <li><a href="javascript:void(0)">€ Euro</a></li>
-                                                <li><a href="javascript:void(0)">$ US Dollar</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="menu-item-has-children"><a href="#">LANGUAGE: EN-GB </a>
-                                            <ul class="submenu2">
-                                                <li><a href="javascript:void(0)"><img src="./https://demo.hasthemes.com/nelson-preview/nelson/assets/images/icons/en-gb.png" alt="" /> English</a></li>
-                                                <li><a href="javascript:void(0)"><img src="./https://demo.hasthemes.com/nelson-preview/nelson/assets/images/icons/de-de.png" alt="" /> Germany</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </nav>
-                            </div>
-
-                            <div class="offcanvas-widget-area">
-                                <div class="off-canvas-contact-widget">
-                                    <div class="header-contact-info">
-                                        <ul class="header-contact-info-list">
-                                            <li><i class="ion-android-phone-portrait"></i> <a href="tel://12452456012">(1245) 2456 012 </a></li>
-                                            <li><i class="ion-android-mail"></i> <a href="mailto:info@yourdomain.com">info@yourdomain.com</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                {/*Off Canvas Widget Social Start*/}
-                                <div class="off-canvas-widget-social">
-                                    <a href="#" title="Facebook"><i class="fa fa-facebook"></i></a>
-                                    <a href="#" title="Twitter"><i class="fa fa-twitter"></i></a>
-                                    <a href="#" title="LinkedIn"><i class="fa fa-linkedin"></i></a>
-                                    <a href="#" title="Youtube"><i class="fa fa-youtube-play"></i></a>
-                                    <a href="#" title="Vimeo"><i class="fa fa-vimeo-square"></i></a>
-                                </div>
-                                {/*Off Canvas Widget Social End*/}
-                            </div>
                         </div>
                     </div>
 
