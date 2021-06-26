@@ -10,6 +10,10 @@ import Faq from './Pages/Faq';
 import Dashboard from './Pages/Dashboard';
 import HowWeWork from './Pages/HowWeWork';
 import BuyingSystem from './Pages/BuyingSystem';
+import "./css/style.css"
+import "./css/vendor/bootstrap.min.css"
+import "./css/vendor/helper.css"
+import "./css/plugins/plugins.css"
 
 function App() {
   return (
