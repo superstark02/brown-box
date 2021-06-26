@@ -40,8 +40,8 @@ export class ProductsList extends Component {
                                                 <div class="col-lg-3 col-md-4 col-sm-6">
                                                     {/* Single Grid product Start */}
                                                     <div class="single-grid-product mb-40">
-                                                        <div class="product-image" style={{height:"300px"}} >
-                                                            <a href={"/product/"+item.id}>
+                                                        <div class="product-image" style={{ height: "300px" }} >
+                                                            <a href={"/product/" + item.id}>
                                                                 <img src={item.image} width="50%" alt="" />
                                                             </a>
 
@@ -54,8 +54,19 @@ export class ProductsList extends Component {
                                                             </div>*/}
                                                         </div>
                                                         <div class="product-content">
-                                                            <h3 class="title"> <a href="single-product.html">{item.name}</a></h3>
-                                                            <p class="product-price"><span class="discounted-price">${item.sp}</span> <span class="main-price discounted">${item.mrp}</span></p>
+                                                            <h3 class="title"> <a href={"/product/" + item.id}>{item.name}</a></h3>
+                                                            <p class="product-price"><span class="discounted-price">&#8377;{item.sp}</span> <span class="main-price discounted">$&#8377;{item.mrp}</span></p>
+                                                        </div>
+                                                        <div class="product-content">
+                                                            <p class="product-price">
+                                                                {
+                                                                    item.id === "1pow" ? (
+                                                                        <span class="discounted-price">Product Of The Week</span>
+                                                                    ):(
+                                                                        <span class="main-price">Avaialble From {item.from}</span>
+                                                                    )
+                                                                }
+                                                            </p>
                                                         </div>
                                                     </div>
                                                     {/* Single Grid product End */}

@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import AppBar from "../Components/AppBar"
 import { MyFooter } from "../Components/Footer"
 import getDoc from '../Database/getDoc'
+import Slider from '../Components/Products/Slider'
 
 const shipping = 45;
 
@@ -33,7 +34,24 @@ export class ProductDetails extends Component {
                                         <div className="col-md-6 pr-35 pr-lg-15 pr-md-15 pr-sm-15 pr-xs-15">
                                             {/* Product Details Left */}
                                             <div className="product-details-left">
-
+                                                <Slider images={[
+                                                    {
+                                                        original: this.state.data.image,
+                                                        thumbnail: this.state.data.image
+                                                    },
+                                                    {
+                                                        original: this.state.data.image1,
+                                                        thumbnail: this.state.data.image1
+                                                    },
+                                                    {
+                                                        original: this.state.data.image2,
+                                                        thumbnail: this.state.data.image2
+                                                    },
+                                                    {
+                                                        original: this.state.data.image3,
+                                                        thumbnail: this.state.data.image3
+                                                    },
+                                                ]} />
                                             </div>
                                             {/*Product Details Left */}
                                         </div>
@@ -57,8 +75,8 @@ export class ProductDetails extends Component {
                                                 <div className="single-product-sharing">
                                                     <h3>COMPARE PRICE: </h3>
                                                     <ul>
-                                                        <li><a href="#"><i className="fa fa-amazon"></i></a></li>
-                                                        <li><a href="#"><i className="fa fa-facebook"></i></a></li>
+                                                        <li><a href={this.state.data.amazon}><img src={"https://www.pngarea.com/pngm/6/5103627_amazon-logo-png-icon-amazon-logo-png-transparent.png"} width="40px" /></a></li>
+                                                        <li><a href={this.state.data.flipkart}><img src={"http://www.mountaincolours.in/uploads/clients/1551518604.jpg"} width="40px" /></a></li>
                                                     </ul>
                                                 </div>
                                                 <div className="product-description">
@@ -68,9 +86,15 @@ export class ProductDetails extends Component {
                                                 </div>
                                                 <div className="product-countdown-two" data-countdown2="2020/06/01"></div>
                                                 <div className="single-product-quantity">
-                                                    <a href="/cart" className="add-to-link">
-                                                        <button className="btn" style={{ padding: "10px 30px" }} ><i className="fa fa-shopping-bag"></i>buy</button>
-                                                    </a>
+                                                    {
+                                                        this.state.data.id === "1pow" ? (
+                                                            <a href="/cart" className="add-to-link">
+                                                                <button className="btn" style={{ padding: "10px 30px" }} ><i className="fa fa-shopping-bag"></i>buy</button>
+                                                            </a>
+                                                        ) : (
+                                                            <button className="btn" style={{ padding: "10px 30px" }} ><i className="fa fa-shopping-bag"></i>Avaialble From {this.state.data.from}</button>
+                                                        )
+                                                    }
                                                 </div>
                                                 <div className="product-meta">
                                                     <span className="posted-in">
@@ -81,6 +105,72 @@ export class ProductDetails extends Component {
                                             </div>
                                             {/*Product Details Content End*/}
                                         </div>
+
+                                        {/*Product Description Review Section Start*/}
+                                        <div class="product-description-review-section section">
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div class="product-review-tab section">
+                                                            {/*Review And Description Tab Menu Start*/}
+                                                            <ul class="nav dec-and-review-menu">
+                                                                <li>
+                                                                    <a class="active" data-toggle="tab" href="#description">Description</a>
+                                                                </li>
+                                                            </ul>
+                                                            {/*Review And Description Tab Menu End*/}
+                                                            {/*Review And Description Tab Content Start*/}
+                                                            <div class="tab-content product-review-content-tab" id="myTabContent-4">
+
+                                                                <div class="tab-pane fade active show" id="description">
+                                                                    <div class="single-product-description">
+                                                                        {this.state.data.description}
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            {/*Review And Description Tab Content End*/}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-description-review-section section">
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div class="product-review-tab section">
+                                                            {/*Review And Description Tab Menu Start*/}
+                                                            <ul class="nav dec-and-review-menu">
+                                                                <li>
+                                                                    <a class="active" data-toggle="tab" href="#reviews">Product Review</a>
+                                                                </li>
+                                                            </ul>
+                                                            {/*Review And Description Tab Menu End*/}
+                                                            {/*Review And Description Tab Content Start*/}
+                                                            <div class="tab-content product-review-content-tab" id="myTabContent-4">
+
+                                                                <div class="tab-pane fade active show" id="description">
+                                                                    <div class="single-product-description">
+                                                                        <iframe
+                                                                            width="100%"
+                                                                            height="500"
+                                                                            src={this.state.data.video}
+                                                                            title="YouTube video player"
+                                                                            frameborder="0"
+                                                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                                                            allowfullscreen>
+                                                                        </iframe>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            {/*Review And Description Tab Content End*/}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {/*Product Description Review Section Start*/}
                                     </div>
                                 </div>
                             </div>
@@ -88,99 +178,6 @@ export class ProductDetails extends Component {
                     </div>
                 </div>
                 {/* Single Product Section End */}
-
-                <div className="product-section section pt-100 pt-lg-80 pt-md-70 pt-sm-60 pt-xs-50 pb-60 pb-lg-40 pb-md-30 pb-sm-20 pb-xs-15">
-                    <div className="container">
-
-                        <div className="row">
-                            <div className="col">
-                                <div className="section-title text-center mb-50 mb-xs-20">
-                                    <h2>Related Products</h2>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="row product-slider">
-                            <div className="col">
-                                <div className="single-grid-product mb-40">
-                                    <div className="product-image">
-                                        <div className="product-label">
-                                            <span>-20%</span>
-                                        </div>
-                                        <a href="single-product.html">
-                                            <img src="https://demo.hasthemes.com/nelson-preview/nelson/assets/images/product/product-1.jpg" className="img-fluid" alt="" />
-                                            <img src="https://demo.hasthemes.com/nelson-preview/nelson/assets/images/product/product-2.jpg" className="img-fluid" alt="" />
-                                        </a>
-
-                                        <div className="product-action">
-                                            <ul>
-                                                <li><a href="cart.html"><i className="fa fa-cart-plus"></i></a></li>
-                                                <li><a href="#quick-view-modal-container" data-toggle="modal" title="Quick View"><i className="fa fa-eye"></i></a></li>
-                                                <li><a href="wishlit.html"><i className="fa fa-heart-o"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div className="product-content">
-                                        <h3 className="title"> <a href="single-product.html">Stylish Design Chair</a></h3>
-                                        <p className="product-price"><span className="discounted-price">$190.00</span> <span className="main-price discounted">$230.00</span></p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="col">
-                                <div className="single-grid-product mb-40">
-                                    <div className="product-image">
-                                        <div className="product-label">
-                                            <span>-20%</span>
-                                        </div>
-                                        <a href="single-product.html">
-                                            <img src="https://demo.hasthemes.com/nelson-preview/nelson/assets/images/product/product-1.jpg" className="img-fluid" alt="" />
-                                            <img src="https://demo.hasthemes.com/nelson-preview/nelson/assets/images/product/product-2.jpg" className="img-fluid" alt="" />
-                                        </a>
-
-                                        <div className="product-action">
-                                            <ul>
-                                                <li><a href="cart.html"><i className="fa fa-cart-plus"></i></a></li>
-                                                <li><a href="#quick-view-modal-container" data-toggle="modal" title="Quick View"><i className="fa fa-eye"></i></a></li>
-                                                <li><a href="wishlit.html"><i className="fa fa-heart-o"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div className="product-content">
-                                        <h3 className="title"> <a href="single-product.html">Stylish Design Chair</a></h3>
-                                        <p className="product-price"><span className="discounted-price">$190.00</span> <span className="main-price discounted">$230.00</span></p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="col">
-                                <div className="single-grid-product mb-40">
-                                    <div className="product-image">
-                                        <div className="product-label">
-                                            <span>-20%</span>
-                                        </div>
-                                        <a href="single-product.html">
-                                            <img src="https://demo.hasthemes.com/nelson-preview/nelson/assets/images/product/product-1.jpg" className="img-fluid" alt="" />
-                                            <img src="https://demo.hasthemes.com/nelson-preview/nelson/assets/images/product/product-2.jpg" className="img-fluid" alt="" />
-                                        </a>
-
-                                        <div className="product-action">
-                                            <ul>
-                                                <li><a href="cart.html"><i className="fa fa-cart-plus"></i></a></li>
-                                                <li><a href="#quick-view-modal-container" data-toggle="modal" title="Quick View"><i className="fa fa-eye"></i></a></li>
-                                                <li><a href="wishlit.html"><i className="fa fa-heart-o"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div className="product-content">
-                                        <h3 className="title"> <a href="single-product.html">Stylish Design Chair</a></h3>
-                                        <p className="product-price"><span className="discounted-price">$190.00</span> <span className="main-price discounted">$230.00</span></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
 
                 <MyFooter />
             </div>

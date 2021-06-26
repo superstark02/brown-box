@@ -15,7 +15,7 @@ export class Procedure extends Component {
                                     </div>
                                     <div class="feature-content">
                                         <h4 class="title">New Product Every Week</h4>
-                                        <p class="short-desc">We post a <b>product</b> and a <b>game</b> for a week. Several buyers buy it every week.</p>
+                                        <p class="short-desc">We post a <b>product</b> and a <b>game</b> for a week. Interested users buy that product.</p>
                                     </div>
                                 </div>
                             </div>

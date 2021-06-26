@@ -54,26 +54,6 @@ export class Cart extends Component {
                                                 <td class="pro-subtotal"><span>$25.00</span></td>
                                                 <td class="pro-remove"><a href="#"><i class="fa fa-trash-o"></i></a></td>
                                             </tr>
-                                            <tr>
-                                                <td class="pro-thumbnail"><a href="#"><img src="https://demo.hasthemes.com/nelson-preview/nelson/assets/images/product/product-5.jpg" alt="Product" /></a></td>
-                                                <td class="pro-title"><a href="#">Black Die Grinder</a></td>
-                                                <td class="pro-price"><span>$25.00</span></td>
-                                                <td class="pro-quantity">
-                                                    <div class="pro-qty"><input type="number" value="1" /></div>
-                                                </td>
-                                                <td class="pro-subtotal"><span>$25.00</span></td>
-                                                <td class="pro-remove"><a href="#"><i class="fa fa-trash-o"></i></a></td>
-                                            </tr>
-                                            <tr>
-                                                <td class="pro-thumbnail"><a href="#"><img src="https://demo.hasthemes.com/nelson-preview/nelson/assets/images/product/product-7.jpg" alt="Product" /></a></td>
-                                                <td class="pro-title"><a href="#">Orange Decker drill</a></td>
-                                                <td class="pro-price"><span>$25.00</span></td>
-                                                <td class="pro-quantity">
-                                                    <div class="pro-qty"><input type="number" value="1" /></div>
-                                                </td>
-                                                <td class="pro-subtotal"><span>$25.00</span></td>
-                                                <td class="pro-remove"><a href="#"><i class="fa fa-trash-o"></i></a></td>
-                                            </tr>
                                         </tbody>
                                     </table>
                                 </div>
@@ -82,7 +62,7 @@ export class Cart extends Component {
 
                                     <div class="col-lg-6 col-12 mb-5">
                                         {/* Calculate Shipping */}
-                                        <div class="calculate-shipping">
+                                        {/*<div class="calculate-shipping">
                                             <h4>Calculate Shipping</h4>
                                             <form action="#">
                                                 <div class="row">
@@ -113,7 +93,8 @@ export class Cart extends Component {
                                                 </div>
                                             </form>
                                         </div>
-                                        {/* Discount Coupon */}
+                                        {/* Discount Coupon 
+                                        
                                         <div class="discount-coupon">
                                             <h4>Discount Coupon Code</h4>
                                             <form action="#">
@@ -126,7 +107,7 @@ export class Cart extends Component {
                                                     </div>
                                                 </div>
                                             </form>
-                                        </div>
+                                        </div>*/}
                                     </div>
 
                                     {/* Cart Summary */}
@@ -140,7 +121,6 @@ export class Cart extends Component {
                                             </div>
                                             <div class="cart-summary-button">
                                                 <button class="btn">Checkout</button>
-                                                <button class="btn">Update Cart</button>
                                             </div>
                                         </div>
                                     </div>
