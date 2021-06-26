@@ -11,12 +11,16 @@ export class Banner extends Component {
                             <div class="single-banner-item mb-30">
                                 <div class="banner-image">
                                     <a href="/display/Games/1gow">
-                                        <img style={{maxHeight:"305px"}} src="https://wallpaperaccess.com/full/4021309.png" alt="banner" />
+                                        <img style={{ maxHeight: "305px" }} src="https://wallpaperaccess.com/full/4021309.png" alt="banner" />
                                     </a>
                                 </div>
                                 <div class="banner-content">
-                                    <h3 class="title" style={{color:"white"}} >Resident Evil <br /> Village ( XBOX - PS4/5 )</h3>
-                                    <a href="/display/Games/1gow" style={{color:"white"}} >GAME OF THE WEEK</a>
+                                    <h3 class="title" style={{ color: "white" }} >Resident Evil <br /> Village ( XBOX - PS4/5 )</h3>
+                                    <a href="/display/Games/1gow" style={{ color: "white" }} >
+                                        <div  style={{ color: "white" }} >
+                                            GAME OF THE WEEK
+                                        </div>
+                                    </a>
                                 </div>
                             </div>
                             {/* Single Banner End */}
@@ -26,12 +30,16 @@ export class Banner extends Component {
                             <div class="single-banner-item mb-30">
                                 <div class="banner-image">
                                     <a href="/display/Products/1pow">
-                                        <img style={{maxHeight:"360px"}} src="https://coolthemestores.com/wp-content/uploads/2021/01/pubg_featured.jpg" alt="banner" />
+                                        <img style={{ maxHeight: "360px" }} src="https://coolthemestores.com/wp-content/uploads/2021/01/pubg_featured.jpg" alt="banner" />
                                     </a>
                                 </div>
                                 <div class="banner-content">
-                                    <h3 class="title"style={{color:"white"}}>MOBILE TRIGGER<br />PUBG-BGMI-CODM</h3>
-                                    <a href="/display/Products/1pow"style={{color:"white"}}>PRODUCT OF THE WEEK</a>
+                                    <h3 class="title" style={{ color: "white" }}>MOBILE TRIGGER<br />PUBG-BGMI-CODM</h3>
+                                    <a href="/display/Products/1pow">
+                                        <div  style={{ color: "white" }} >
+                                            PRODUCT OF THE WEEK
+                                        </div>
+                                    </a>
                                 </div>
                             </div>
                             {/* Single Banner End */}

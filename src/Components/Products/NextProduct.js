@@ -16,8 +16,10 @@ export class NextProduct extends Component {
                                     <span class="normat-text">DISCOUNTED UP TO 50%</span>
                                     <h2 class="title">UBON WU660 6 IN 1 CABLE</h2>
                                     <span class="normat-text">NEXT WEEK'S PRODUCT</span>
-                                    <MyCountdown/>
-                                    <a href="/display/Products/2" className="btn" >VIEW</a>
+                                    <MyCountdown />
+                                    <a href="/display/Products/2">
+                                        <div style={{ color: "white" }} className="btn" >VIEW</div>
+                                    </a>
                                 </div>
                             </div>
                         </div>

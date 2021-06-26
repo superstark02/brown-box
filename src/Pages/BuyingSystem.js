@@ -89,8 +89,10 @@ export class BuyingSystem extends Component {
                     </div>
 
                     <div className="wrap" >
-                        <a className="btn" href="/basically-the-idea" >
-                            Know About The Idea
+                        <a>
+                            <div className="btn" style={{ color: "white" }} href="/basically-the-idea" >
+                                Know About The Idea
+                            </div>
                         </a>
                     </div>
                 </div>

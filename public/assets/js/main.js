@@ -450,7 +450,7 @@
         ScrollUp Active
     -----------------------------------*/
     $.scrollUp({
-        scrollText: '<i class="fa fa-angle-up"></i>',
+        scrollText: '<i style="color:white" class="fa fa-angle-up"></i>',
         easingType: 'linear',
         scrollSpeed: 900,
         animation: 'fade'

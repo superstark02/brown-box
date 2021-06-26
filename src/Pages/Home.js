@@ -28,8 +28,12 @@ export class Home extends Component {
                                         <div class="hero-content-2 ">
 
                                             <h2>Buy Products<br /> at Wholesale Rates</h2>
-                                            <a href="/how-we-work" class="btn">KNOW MORE</a>
-
+                                            <p style={{color:"black"}} >
+                                                Buy together. Save together.
+                                            </p>
+                                            <a  href="/how-we-work" >
+                                                <button class="btn" style={{color:"white"}} >KNOW MORE</button>
+                                            </a>
                                         </div>
                                         {/*Hero Content end*/}
 

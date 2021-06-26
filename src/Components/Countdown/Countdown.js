@@ -27,7 +27,7 @@ export class MyCountdown extends Component {
     render() {
         return (
             <div>
-                <Countdown date="06-27-2021" renderer={this.renderer} />
+                <Countdown date="07-27-2021" renderer={this.renderer} />
             </div>
         )
     }
