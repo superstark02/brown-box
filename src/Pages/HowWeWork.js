@@ -4,6 +4,11 @@ import AppBar from '../Components/AppBar'
 import xplain from "../Videos/Xplain.mp4"
 import teambuy from "../Images/WhatIsBrownBox.png"
 import idea from "../Images/howwework.png"
+import warehouse from '../Images/HowWeWork/warehouse.png'
+import retailer from '../Images/HowWeWork/wholeseller.png'
+import shop from '../Images/HowWeWork/shop.png'
+import customer from '../Images/HowWeWork/customer.png'
+import "../css/howwework.css"
 
 export class HowWeWork extends Component {
     render() {
@@ -122,6 +127,73 @@ export class HowWeWork extends Component {
                 <div class="banner-section section pb-40 pb-sm-30 pb-xs-0">
                     <div class="container wrap">
                         <img width="60%" src={idea} ></img>
+                    </div>
+                </div>
+
+                <div class="row mb-50 mb-xs-20">
+                    <div class="col">
+                        <div class="section-title text-center">
+                            <h2>Efficient Supply Chain</h2>
+                            <span>DIRECT SHIPPING</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="container" >
+                    <div className="how-we-work-cnt" >
+                        <div className="how-we-work-child" >
+                            <div className="wrap" >
+                                <img src={warehouse} alt="i" width="80%" />
+                            </div>
+                            <div>
+                                Warehouse
+                            </div>
+                        </div>
+
+                        <div>
+                            <img className="chev" src="https://img.icons8.com/fluent/48/000000/chevron-right.png" />
+                        </div>
+
+                        <div className="how-we-work-child" >
+                            <div className="wrap" >
+                                <img src={retailer} alt="i" width="80%" />
+                            </div>
+                            <div>
+                                Retailer
+                            </div>
+                            <div className="skip" >
+                                <i class="fa fa-ban skip"></i>
+                            </div>
+                        </div>
+
+                        <div>
+                            <img className="chev" src="https://img.icons8.com/fluent/48/000000/chevron-right.png" />
+                        </div>
+
+                        <div className="how-we-work-child" >
+                            <div className="wrap" >
+                                <img src={shop} alt="i" width="80%" />
+                            </div>
+                            <div>
+                                Showroom
+                            </div>
+                            <div className="skip" >
+                                <i class="fa fa-ban skip"></i>
+                            </div>
+                        </div>
+
+                        <div>
+                            <img className="chev" src="https://img.icons8.com/fluent/48/000000/chevron-right.png" />
+                        </div>
+
+                        <div className="how-we-work-child" >
+                            <div className="wrap" style={{ height: "100%" }} >
+                                <img src={customer} alt="i" width="80%" />
+                            </div>
+                            <div>
+                                To You
+                            </div>
+                        </div>
                     </div>
                 </div>
 

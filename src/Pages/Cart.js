@@ -6,6 +6,7 @@ import firebase from 'firebase'
 import sendMail from '../Database/sendMail'
 import { uploadData } from '../Database/uploadData'
 import Dialog from '@material-ui/core/Dialog';
+import "../css/cart.css"
 
 const dev = "http://localhost:1337/razorpay";
 const production = "https://us-central1-pine-valley-7820d.cloudfunctions.net/pay/razorpay";
@@ -64,7 +65,7 @@ export class Cart extends Component {
         data: null,
         user_data: null,
         quantity: 1,
-        open: false,
+        open: true,
 
         name: null,
         phone: null,
@@ -464,8 +465,9 @@ export class Cart extends Component {
                                             <i class="material-icons">&#xE876;</i>
                                         </div>
                                     </div>
-                                    <h4 class="modal-title">Awesome!</h4>
+                                    
                                 </div>
+                                <h4 style={{textAlign:"center"}} class="modal-title">Awesome!</h4>
                                 <div class="modal-body">
                                     <p class="text-center">Your order is placed!! Check your email for details.</p>
                                 </div>

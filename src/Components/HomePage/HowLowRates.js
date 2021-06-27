@@ -15,7 +15,7 @@ export class HowLowRates extends Component {
                                     <span class="normat-text" style={{color:"white"}} >HOW SUCH LOW RATES?</span>
                                     <h2 class="title" style={{color:"white"}} >KNOW HOW WE WORK</h2>
                                     <span class="normat-text" style={{color:"white"}} >MORE ON TEAM BUYING</span>
-                                    <a href="/basically-the-idea" style={{color:"white"}} >KNOW MORE</a>
+                                    <a href="/basically-the-idea" style={{color:"white"}} ><div style={{color:"white"}} >KNOW MORE</div></a>
                                 </div>
                             </div>
                         </div>
