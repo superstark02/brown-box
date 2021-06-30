@@ -34,7 +34,7 @@ export class About extends Component {
                                 {/*About Us Image Start*/}
                                 <div class="about-us-img-wrapper mb-30 mb-xs-15">
                                     <div class="about-us-image img-full">
-                                        <a href="#"><img src="https://demo.hasthemes.com/nelson-preview/nelson/assets/images/blog/blog-6.jpg" alt="" /></a>
+                                        <a href="#"><img src="https://static.digit.in/default/6cf17f8516c5b554860c732e2f07980aaef7aa3b.jpeg" alt="" /></a>
                                     </div>
                                 </div>
                                 {/*About Us Image End*/}
@@ -44,7 +44,7 @@ export class About extends Component {
                                 <div class="about-us-content pl-30 pl-md-0 pl-sm-0 pl-xs-0">
                                     <span>Since 2019</span>
                                     <h2>Provide Best Quality Products In Lowest Rates Possible</h2>
-                                    <p>What's our idea/ Know it <a href="/basically-the-idea" >here</a></p>
+                                    <p>What's our idea? Know it <a href="/basically-the-idea" >here</a></p>
                                     <p>
                                         We enable <a href="/basically-the-idea" >team buying</a>, which eanables heavy discounts for you.
                                     </p>
@@ -80,61 +80,6 @@ export class About extends Component {
                     </div>
                 </div>
                 {/* Banner section End */}
-
-
-
-
-                {/*Features section start*/}
-                <div class="features-section section pt-30 pt-lg-15 pt-md-0 pt-sm-0 pt-xs-15">
-                    <div class="container">
-                        <div class="row">
-
-                            <div class="col-lg-4 col-md-6">
-                                {/* Single Feature Start */}
-                                <div class="single-feature mb-30">
-                                    <div class="feature-image">
-                                        <img src="https://demo.hasthemes.com/nelson-preview/nelson/assets/images/icons/feature-1.png" class="img-fluid" alt="" />
-                                    </div>
-                                    <div class="feature-content">
-                                        <h4 class="title">Free home delivery</h4>
-                                        <p class="short-desc">Provide free home delivery for the all product over $100 </p>
-                                    </div>
-                                </div>
-                                {/* Single Feature End */}
-                            </div>
-                            <div class="col-lg-4 col-md-6">
-                                {/* Single Feature Start */}
-                                <div class="single-feature mb-30">
-                                    <div class="feature-image">
-                                        <img src="https://demo.hasthemes.com/nelson-preview/nelson/assets/images/icons/feature-2.png" class="img-fluid" alt="" />
-                                    </div>
-                                    <div class="feature-content">
-                                        <h4 class="title">Quality Products</h4>
-                                        <p class="short-desc">We ensure the product quality that is our main goal </p>
-                                    </div>
-                                </div>
-                                {/* Single Feature End */}
-                            </div>
-                            <div class="col-lg-4 col-md-6">
-                                {/* Single Feature Start */}
-                                <div class="single-feature mb-30">
-                                    <div class="feature-image">
-                                        <img src="https://demo.hasthemes.com/nelson-preview/nelson/assets/images/icons/feature-3.png" class="img-fluid" alt="" />
-                                    </div>
-                                    <div class="feature-content">
-                                        <h4 class="title">3 Days Return</h4>
-                                        <p class="short-desc">Provide free home delivery for the all product over $100 </p>
-                                    </div>
-                                </div>
-                                {/* Single Feature End */}
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-                {/*Features section end*/}
-
-
 
                 {/*About Us Team Start*/}
                 {/*<div class="about-us-team-area section pt-65 pt-lg-45 pt-md-35 pt-sm-20 pt-xs-15 pb-70 pb-lg-50 pb-md-40 pb-sm-30 pb-xs-20">
@@ -205,85 +150,6 @@ export class About extends Component {
                     </div>
                 </div>/*}
                 {/*About Us Team End*/}
-
-
-                {/* Testimonial Area Start */}
-                <div class="testimonial-section section pb-100 pb-lg-80 pb-md-70 pb-sm-60 pb-xs-50">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="testimonial-wrap bg-gray-two pt-45 pb-30">
-                                    <div class="row justify-content-center">
-                                        <div class="col-lg-12">
-                                            <div class="testimonial-wrapper section-space--inner">
-                                                <div class="testimonial-slider-content">
-                                                    <div class="item">
-                                                        <div class="row align-items-center">
-                                                            <div class="col-md-5">
-                                                                <div class="testimonial-image">
-                                                                    <img src="https://demo.hasthemes.com/nelson-preview/nelson/assets/images/testimonial/testimonial-2.png" alt="" />
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-7">
-                                                                <div class="testimonial testimonial-style-2 gutter-item">
-                                                                    <div class="testimonial-inner">
-                                                                        <div class="testimonial-author">
-                                                                            <div class="author-thumb">
-                                                                                <img src="https://demo.hasthemes.com/nelson-preview/nelson/assets/images/author/author-1.png" alt="" />
-                                                                            </div>
-                                                                            <div class="author-info">
-                                                                                <h4>Zeniyea Henderson</h4>
-                                                                                <span>CTO & CO Founder, Axels</span>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="testimonial-description">
-                                                                            <blockquote class="testimonials-text">
-                                                                                <p>“I am very much happy to buy product from nelson, the provide the best quality of product. Product quality is very satisfactory. Also the creative design of their Furniture make me happy.”</p>
-                                                                            </blockquote>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="item">
-                                                        <div class="row align-items-center">
-                                                            <div class="col-md-5">
-                                                                <div class="testimonial-image">
-                                                                    <img src="https://demo.hasthemes.com/nelson-preview/nelson/assets/images/testimonial/testimonial-1.png" alt="" />
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-7">
-                                                                <div class="testimonial testimonial-style-2 gutter-item">
-                                                                    <div class="testimonial-inner">
-                                                                        <div class="testimonial-author">
-                                                                            <div class="author-thumb">
-                                                                                <img src="https://demo.hasthemes.com/nelson-preview/nelson/assets/images/author/author-1.png" alt="" />
-                                                                            </div>
-                                                                            <div class="author-info">
-                                                                                <h4>Zeniyea Henderson</h4>
-                                                                                <span>CTO & CO Founder, Axels</span>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="testimonial-description">
-                                                                            <blockquote class="testimonials-text">
-                                                                                <p>“I am very much happy to buy product from nelson, the provide the best quality of product. Product quality is very satisfactory. Also the creative design of their Furniture make me happy.”</p>
-                                                                            </blockquote>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
                 <MyFooter />
             </div>
