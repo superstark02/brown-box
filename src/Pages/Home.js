@@ -53,8 +53,6 @@ export class Home extends Component {
 
                 <Products doc="Products" title="Upcoming Products" />
 
-                <Products doc="Games" title="Upcoming Games" />
-
                 <NextProduct />
 
                 <Features />

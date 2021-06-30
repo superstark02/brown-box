@@ -26,11 +26,10 @@ export class MyFooter extends Component {
                                     <h4 class="title"><span class="text">Quick Link</span></h4>
                                     <ul class="ft-menu">
                                         <li><a href="/account">My account</a></li>
-                                        <li><a href="#">Order Tracking</a></li>
-                                        <li><a href="#">Refunds</a></li>
-                                        <li><a href="#">Cancelation</a></li>
-                                        <li><a href="#">Privacy Policy</a></li>
-                                        <li><a href="#">Shipping Information</a></li>
+                                        <li><a href="https://www.shiprocket.in/shipment-tracking/">Order Tracking</a></li>
+                                        <li><a href="/how-we-work/#refunds">Refunds</a></li>
+                                        <li><a href="/how-we-work/#cancellation">cancellation</a></li>
+                                        <li><a href="/how-we-work/#shipping">Shipping Information</a></li>
                                     </ul>
                                 </div>
                                 {/*Footer Widget end*/}
@@ -40,8 +39,9 @@ export class MyFooter extends Component {
                                     <h4 class="title"><span class="text">Information</span></h4>
                                     <ul class="ft-menu">
                                         <li><a href="/about">About Us</a></li>
-                                        <li><a href="#">Privacy Policy</a></li>
-                                        <li><a href="#">Terms Of Use</a></li>
+                                        <li><a href="/tnc/#privacy">Privacy Policy</a></li>
+                                        <li><a href="/tnc/#conditions">Terms Of Use</a></li>
+                                        <li><a href="/tnc/#refunds">Refunds</a></li>
                                     </ul>
                                 </div>
                                 {/*Footer Widget end*/}
@@ -51,6 +51,11 @@ export class MyFooter extends Component {
                                     <h2 className="font-a" >brownbox.</h2>
                                     <p class="contact-text">mail@brownbox.store</p>
                                     <p class="contact-text">+91 99101 97196</p>
+                                    <p class="contact-text">
+                                        112, Bazz Shopping Complex <br/>
+                                        Pocket 8, Sector 24 <br/>
+                                        Rohini, Delhi - 110085
+                                    </p>
                                 </div>
                                 {/*Footer Widget end*/}
                             </div>

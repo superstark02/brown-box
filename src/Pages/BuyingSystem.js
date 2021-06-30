@@ -114,8 +114,8 @@ export class BuyingSystem extends Component {
                                                         </p>
                                                     </td>
                                                 </tr>
-                                                <tr id="cancelation" >
-                                                    <td class="first-column">Cancelation</td>
+                                                <tr id="cancellation" >
+                                                    <td class="first-column">cancellation</td>
                                                     <td class="pro-desc">
                                                         <p>
                                                             You can cancel your order before last day (Sun) of the week. You cancel by contacting <a href="/contact" > here</a>

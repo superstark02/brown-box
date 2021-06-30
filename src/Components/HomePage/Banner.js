@@ -1,48 +1,25 @@
 import React, { Component } from 'react'
+import  bg from "../../Images/pubgbg.png"
 
 export class Banner extends Component {
     render() {
         return (
-            <div class="banner-section section pt-30">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-6 col-md-6 col-sm-12">
-                            {/* Single Banner Start */}
-                            <div class="single-banner-item mb-30">
-                                <div class="banner-image">
-                                    <a href="/display/Games/1gow">
-                                        <img style={{ maxHeight: "305px" }} src="https://wallpaperaccess.com/full/4021309.png" alt="banner" />
-                                    </a>
-                                </div>
-                                <div class="banner-content">
-                                    <h3 class="title" style={{ color: "white" }} >Resident Evil <br /> Village ( XBOX - PS4/5 )</h3>
-                                    <a href="/display/Games/1gow" style={{ color: "white" }} >
-                                        <div  style={{ color: "white" }} >
-                                            GAME OF THE WEEK
-                                        </div>
-                                    </a>
+            <div class="banner-section section pb-40 pb-sm-30 pb-xs-0" style={{ backgroundColor: "transparent", marginTop:"100px" }} >
+                <div class="container" style={{ backgroundColor: "transparent" }}  >
+                    <div class="row" style={{ backgroundColor: "transparent" }}  >
+                        <div class="col-lg-12" style={{ backgroundColor: "transparent" }}  >
+                            <div class="single-banner-item pt-100 pt-md-80 pt-sm-70 pt-xs-50 pb-120 pb-md-100 pb-sm-90 pb-xs-50 mb-30 bg-image"
+                                style={{
+                                    backgroundImage: "url("+bg+")",
+
+                                }}>
+                                <div class="sp-banner-content" style={{ background: "transparent" }} >
+                                    <span class="normat-text" style={{ color: "white" }} >IMPROVE YOUR GAME</span>
+                                    <h2 class="title" style={{ color: "white" }} >MOBILE TRIGGER</h2>
+                                    <span class="normat-text" style={{ color: "white" }} >PUBG-BGMI-CODM-FREE FIRE</span>
+                                    <a href="/display/Products/1pow" style={{ color: "white" }} ><div style={{ color: "white" }} >VIEW PRODUCT</div></a>
                                 </div>
                             </div>
-                            {/* Single Banner End */}
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-12">
-                            {/* Single Banner Start */}
-                            <div class="single-banner-item mb-30">
-                                <div class="banner-image">
-                                    <a href="/display/Products/1pow">
-                                        <img style={{ maxHeight: "360px" }} src="https://coolthemestores.com/wp-content/uploads/2021/01/pubg_featured.jpg" alt="banner" />
-                                    </a>
-                                </div>
-                                <div class="banner-content">
-                                    <h3 class="title" style={{ color: "white" }}>MOBILE TRIGGER<br />PUBG-BGMI-CODM</h3>
-                                    <a href="/display/Products/1pow">
-                                        <div  style={{ color: "white" }} >
-                                            PRODUCT OF THE WEEK
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            {/* Single Banner End */}
                         </div>
                     </div>
                 </div>

@@ -45,7 +45,7 @@ export class AppBar extends Component {
                                     <div class="header-menu-area text-center">
                                         <nav class="main-menu">
                                             <ul>
-                                                <li><a href="index.html">Home</a>
+                                                <li><a href="/">Home</a>
                                                     <ul class="sub-menu">
                                                         <li><a href="/display/Products/1pow">Product Of The Week</a></li>
                                                         <li><a href="/display/Games/1">Game Of The Week</a></li>
@@ -53,7 +53,7 @@ export class AppBar extends Component {
                                                         <li><a href="#next-product">Next Week's Product</a></li>
                                                     </ul>
                                                 </li>
-                                                <li><a href="shop.html">About Us</a>
+                                                <li><a >About Us</a>
                                                     <ul class="mega-menu four-column left-0">
                                                         <li><a href="/about" class="item-link">About Us</a>
                                                             <ul>
@@ -65,7 +65,7 @@ export class AppBar extends Component {
                                                             <ul>
                                                                 <li><a href="/how-we-work">How We Work</a></li>
                                                                 <li><a href="/how-we-work/#warranty">Warranty/Garauntee</a></li>
-                                                                <li><a href="/how-we-work/#cancelation">Cancelation</a></li>
+                                                                <li><a href="/how-we-work/#cancellation">cancellation</a></li>
                                                                 <li><a href="/how-we-work/#shipping">Shipping</a></li>
                                                                 <li><a href="/how-we-work/#refunds">Refunds</a></li>
                                                                 <li><a href="/how-we-work/#retun">Returns</a></li>
@@ -187,7 +187,7 @@ export class AppBar extends Component {
                                                 <ul class="submenu2">
                                                     <li><a href="/how-we-work">How We Work</a></li>
                                                     <li><a href="/how-we-work/#warranty">Warranty/Garauntee</a></li>
-                                                    <li><a href="/how-we-work/#cancelation">Cancelation</a></li>
+                                                    <li><a href="/how-we-work/#cancellation">cancellation</a></li>
                                                     <li><a href="/how-we-work/#shipping">Shipping</a></li>
                                                     <li><a href="/how-we-work/#refunds">Refunds</a></li>
                                                     <li><a href="/how-we-work/#retun">Returns</a></li>

@@ -115,7 +115,7 @@ export class HowWeWork extends Component {
                                         <img src="https://demo.hasthemes.com/nelson-preview/nelson/assets/images/icons/feature-3.png" class="img-fluid" alt="" />
                                     </div>
                                     <div class="feature-content">
-                                        <h4 class="title">Easy Cancelations</h4>
+                                        <h4 class="title">Easy cancellations</h4>
                                         <p class="short-desc">You can cancel your order anytime, before shpping.</p>
                                     </div>
                                 </div>
