@@ -14,7 +14,7 @@ export default class Instagram extends Component {
     }
 
     componentDidMount() {
-        axios.get("https://newsapi.org/v2/everything?q=gaming&apiKey=906f69ea6da5466498519417d6aee54b")
+        axios.get("https://newsapi.org/v2/everything?q=technology&apiKey=906f69ea6da5466498519417d6aee54b")
             .then(res => {
 
                 console.log(res.data)
