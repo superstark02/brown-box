@@ -36,7 +36,7 @@ export class Procedure extends Component {
                                         <img src="https://demo.hasthemes.com/nelson-preview/nelson/assets/images/icons/feature-3.png" class="img-fluid" alt="" />
                                     </div>
                                     <div class="feature-content">
-                                        <h4 class="title">Quick Shipping</h4>
+                                        <h4 class="title">Instant Refunds</h4>
                                         <p class="short-desc">
                                             If buyers are less than 30, we do not ship the product and refund your money instantly.
                                         </p>

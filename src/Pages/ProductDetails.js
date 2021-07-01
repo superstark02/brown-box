@@ -3,6 +3,7 @@ import AppBar from "../Components/AppBar"
 import { MyFooter } from "../Components/Footer"
 import getDoc from '../Database/getDoc'
 import Slider from '../Components/Products/Slider'
+import Loading from '../Components/Loading'
 
 const shipping = 45;
 
@@ -20,7 +21,7 @@ export class ProductDetails extends Component {
 
     render() {
         if (!this.state.data) {
-            return <div>Please Wait</div>
+            return <div className="wrap" style={{height:"100vh"}} ><Loading/></div>
         }
         return (
             <div>
@@ -70,7 +71,14 @@ export class ProductDetails extends Component {
                                                 <div className="single-product-price">
                                                     <span className="price new-price">&#8377;{this.state.data.sp}</span><br />
                                                     <span className="regular-price" style={{ fontSize: "15px" }} >&#8377;{this.state.data.mrp}</span> <br></br>
-                                                    <span style={{ fontSize: "15px" }} >Shipping (ALL INDIA): &#8377;{shipping}</span>
+                                                    
+                                                    {
+                                                        this.state.data.id === "1pow" || this.state.data.id === "1gow" ? (
+                                                            <span style={{ fontSize: "15px" }} >Shipping (ALL INDIA): &#8377;{shipping}</span>
+                                                        ) : (
+                                                            <span style={{ fontSize: "15px" }} >Shipping (ALL INDIA): Will be revealed after the launch of the product </span>
+                                                        )
+                                                    }
                                                 </div>
                                                 <div className="single-product-sharing">
                                                     <h3>COMPARE PRICE: </h3>

@@ -7,6 +7,8 @@ import { MyFooter } from '../Components/Footer'
 import Procedure from '../Components/HomePage/Procedure'
 import Features from "../Components/HomePage/Features"
 import HowLowRates from '../Components/HomePage/HowLowRates'
+import Instagram from '../Components/HomePage/Instagram'
+import Brands from '../Components/HomePage/Brands'
 
 export class Home extends Component {
     render() {
@@ -55,7 +57,11 @@ export class Home extends Component {
 
                 <NextProduct />
 
-                <Features />
+                {/*<Features />*/}
+
+                <Instagram />
+
+                <Brands/>
 
                 <HowLowRates />
 

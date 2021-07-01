@@ -7,6 +7,8 @@ import sendMail from '../Database/sendMail'
 import { uploadData } from '../Database/uploadData'
 import Dialog from '@material-ui/core/Dialog';
 import "../css/cart.css"
+import Loading from '../Components/Loading'
+import LoginPage from '../Pages/LoginPage'
 
 const dev = "http://localhost:1337/razorpay";
 const production = "https://us-central1-pine-valley-7820d.cloudfunctions.net/pay/razorpay";
@@ -74,6 +76,8 @@ export class Cart extends Component {
         city: null,
         my_state: null,
         pincode: null,
+
+        login_page: false
     }
 
     componentDidMount() {
@@ -96,7 +100,7 @@ export class Cart extends Component {
                 })
 
             } else {
-                alert("Please sign in to continue. Or contact support")
+                this.setState({login_page:true})
             }
         });
     }
@@ -180,9 +184,14 @@ export class Cart extends Component {
     }
 
     render() {
-        if (!this.state.data) {
-            return <div>Please Wait</div>
+        if(this.state.login_page){
+            return(<LoginPage/>)
         }
+        
+        if (!this.state.data || !this.state.login_page) {
+            return <div className="wrap" style={{height:"100vh"}} ><Loading/></div>
+        }
+        
         return (
             <div>
                 <MyAppBar />

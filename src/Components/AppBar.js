@@ -48,7 +48,6 @@ export class AppBar extends Component {
                                                 <li><a href="/">Home</a>
                                                     <ul class="sub-menu">
                                                         <li><a href="/display/Products/1pow">Product Of The Week</a></li>
-                                                        <li><a href="/display/Games/1">Game Of The Week</a></li>
                                                         <li><a href="#upcoming-products">Upcoming Products</a></li>
                                                         <li><a href="#next-product">Next Week's Product</a></li>
                                                     </ul>
@@ -170,7 +169,6 @@ export class AppBar extends Component {
                                     <li class="menu-item-has-children"><a href="#">Home</a>
                                         <ul class="submenu2">
                                             <li><a href="/display/Products/1pow">Product Of The Week</a></li>
-                                            <li><a href="/display/Games/1gow">Game Of The Week</a></li>
                                             <li><a href="#upcoming-products">Upcoming Products</a></li>
                                             <li><a href="#next-product">Next Week's Product</a></li>
                                         </ul>
