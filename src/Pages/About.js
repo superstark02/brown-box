@@ -17,7 +17,7 @@ export class About extends Component {
                                 <div class="page-banner text-left">
                                     <h2>About Us</h2>
                                     <ul class="page-breadcrumb">
-                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="/">Home</a></li>
                                         <li>About</li>
                                     </ul>
                                 </div>
@@ -63,15 +63,18 @@ export class About extends Component {
                         <div class="row">
                             <div class="col-lg-12">
                                 {/* Single Banner Start */}
-                                <div class="single-banner-item pt-100 pt-md-80 pt-sm-70 pt-xs-50 pb-120 pb-md-100 pb-sm-90 pb-xs-50 mb-30 bg-image" data-bg="https://demo.hasthemes.com/nelson-preview/nelson/assets/images/banner/banner3.jpg">
+                                <div class="single-banner-item pt-100 pt-md-80 pt-sm-70 pt-xs-50 pb-120 pb-md-100 pb-sm-90 pb-xs-50 mb-30 bg-image" style={{backgroundImage:"url(https://res.cloudinary.com/oxfaa/image/upload/images/category/slider/75/shopping110220.jpg)"}}>
                                     <div class="sp-banner-content">
-                                        <span class="normat-text">DISCOUNTED UP TO 50%</span>
-                                        <h2 class="title">Zigzag King Chair</h2>
-                                        <span class="normat-text">LIMITED TIME OFEER</span>
+                                        <span class="normat-text">OUR VISION</span>
+                                        <h2 class="title">Brown Box</h2>
+                                        <span class="">
+                                            To make Brown Box an e-commerce platform, where <br/> our users can buy products at wholesale rates. <br/>
+                                            Weather it is gaming accessories or groceries,<br/> everthing at lowest rates possible
+                                        </span>
                                         <div class="countdown-area">
                                             <div class="product-countdown" data-countdown="2019/06/01"></div>
                                         </div>
-                                        <a href="shop.html">SHOP NOW</a>
+                                        <a href="/basically-the-idea">HOW WE WORK</a>
                                     </div>
                                 </div>
                                 {/* Single Banner End */}

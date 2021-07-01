@@ -9,6 +9,7 @@ import Dialog from '@material-ui/core/Dialog';
 import "../css/cart.css"
 import Loading from '../Components/Loading'
 import LoginPage from '../Pages/LoginPage'
+import login from '../Database/Login'
 
 const dev = "http://localhost:1337/razorpay";
 const production = "https://us-central1-pine-valley-7820d.cloudfunctions.net/pay/razorpay";
@@ -67,7 +68,7 @@ export class Cart extends Component {
         data: null,
         user_data: null,
         quantity: 1,
-        open: true,
+        open: false,
 
         name: null,
         phone: null,
@@ -100,7 +101,7 @@ export class Cart extends Component {
                 })
 
             } else {
-                this.setState({login_page:true})
+                login()
             }
         });
     }
@@ -184,11 +185,7 @@ export class Cart extends Component {
     }
 
     render() {
-        if(this.state.login_page){
-            return(<LoginPage/>)
-        }
-        
-        if (!this.state.data || !this.state.login_page) {
+        if (!this.state.data) {
             return <div className="wrap" style={{height:"100vh"}} ><Loading/></div>
         }
         
@@ -372,11 +369,13 @@ export class Cart extends Component {
                                                             <h4>Product <span>Total</span></h4>
 
                                                             <ul>
-                                                                <li>Teritory Quentily X {this.state.quantity} <span>&#8377;{parseFloat(this.state.data.sp.replace(/,/g, '')) * this.state.quantity}</span></li>
+                                                                <li>{this.state.data.name} X {this.state.quantity} <span>&#8377;{parseFloat(this.state.data.sp.replace(/,/g, '')) * this.state.quantity}</span></li>
                                                             </ul>
 
                                                             <p>Sub Total <span>&#8377;{this.state.data.sp}</span></p>
                                                             <p>Shipping Fee <span>&#8377;{shipping}</span></p>
+
+                                                            <p>Sorry, Cash On Delivery is not available at the moment. We are working on that.</p>
 
                                                             <h4>Grand Total <span>&#8377;{parseFloat(this.state.data.sp.replace(/,/g, '')) * this.state.quantity + shipping}</span></h4>
 
