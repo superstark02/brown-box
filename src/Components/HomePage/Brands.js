@@ -17,7 +17,7 @@ export class Brands extends Component {
         return (
             <div class="brand-section section pb-100 pb-lg-80 pb-md-70 pb-sm-60 pb-xs-50">
                 <div class="container">
-                    <Carousel itemsToShow={4} itemsToScroll={4} className=" rec rec-arrow " >
+                    <Carousel itemsToShow={3} itemsToScroll={3} className=" rec rec-arrow " >
                         {
                             brands.map(item=>{
                                 return(
