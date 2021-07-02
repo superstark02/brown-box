@@ -48,7 +48,7 @@ export default class Instagram extends Component {
     }
 
     render() {
-        if (this.state.news) {
+        if (true) {
             return (
                 <div>
                     <div class="blog-section section pt-65 pt-lg-45 pt-md-35 pt-sm-20 pt-xs-15 pb-65 pb-lg-45 pb-md-35 pb-sm-25 pb-xs-15">

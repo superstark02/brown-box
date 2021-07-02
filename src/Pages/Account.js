@@ -129,8 +129,7 @@ export class Account extends Component {
                                                                         <th>Name</th>
                                                                         <th>Date</th>
                                                                         <th>Status</th>
-                                                                        <th>Total</th>
-                                                                        <th>Action</th>
+                                                                        <th>Total (Rs.)</th>
                                                                     </tr>
                                                                 </thead>
 
@@ -141,11 +140,10 @@ export class Account extends Component {
                                                                                 <tbody>
                                                                                     <tr>
                                                                                         <td>{index+1}</td>
-                                                                                        <td>{item.order_id}</td>
-                                                                                        <td>Aug 22, 2018</td>
+                                                                                        <td>{item.product}</td>
+                                                                                        <td>{item.date}</td>
                                                                                         <td>Pending</td>
-                                                                                        <td>$45</td>
-                                                                                        <td><a href="cart.html" class="btn">View</a></td>
+                                                                                        <td>{item.amount/100}</td>
                                                                                     </tr>
                                                                                 </tbody>
                                                                             )
@@ -179,7 +177,7 @@ export class Account extends Component {
 
                                                         <p>
                                                             <b>
-                                                                You can set your adress and mobile while placing an order.
+                                                                You can set your address and mobile while placing an order.
                                                             </b>
                                                         </p>
                                                     </div>

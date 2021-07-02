@@ -161,14 +161,14 @@ export class Cart extends Component {
         )
 
         const options = {
-            key: __DEV__ ? 'rzp_test_0NgOX9f0NSb8Cy' : 'rzp_test_0NgOX9f0NSb8Cy',
+            key: __DEV__ ? 'rzp_live_ilxFCKRqkPAAxy' : 'rzp_live_ilxFCKRqkPAAxy',
             currency: data.currency,
             amount: data.amount.toString(),
             order_id: data.id,
             name: 'Brown Box',
             description: 'Thank you for choosing us',
             handler: (response) => {
-                uploadData(user_data, response, this.state.user_data.photo).then(res => {
+                uploadData(user_data, response, this.state.user_data.photo, data.amount).then(res => {
                     sendMail(user_data.e);
                     this.setState({ open: true });
                 })
