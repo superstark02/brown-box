@@ -2,7 +2,7 @@ import { db } from "../firebase";
 import axios from 'axios'
 //import {getByWord} from './getCollectionQuery'
 
-export function uploadData(data, response, photo, amount) {
+export function uploadData(data, photo, amount) {
 
     var today = new Date();
 
@@ -17,9 +17,9 @@ export function uploadData(data, response, photo, amount) {
                 state: data.state,
                 pincode: data.pincode,
                 amount: amount,
-                payment_id: response.razorpay_payment_id,
+                /*payment_id: response.razorpay_payment_id,
                 order_id: response.razorpay_order_id,
-                razorpay_sign: response.razorpay_signature,
+                razorpay_sign: response.razorpay_signature,*/
                 product: data.product,
                 amount: amount,
                 date: today.getDate().toString().padStart(2, '0') + "/" + today.getMonth().toString().padStart(2, '0') + "/" + today.getFullYear()
@@ -42,8 +42,8 @@ export function uploadData(data, response, photo, amount) {
                             city: data.city,
                             state: data.state,
                             pincode: data.pincode,
-                            payment_id: response.razorpay_payment_id,
-                            order_id: response.razorpay_order_id,
+                            /*payment_id: response.razorpay_payment_id,
+                            order_id: response.razorpay_order_id,*/
                             product: data.product,
                             photo: photo
                         })

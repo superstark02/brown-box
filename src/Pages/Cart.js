@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, useState } from 'react'
 import MyAppBar from "../Components/AppBar"
 import { MyFooter } from '../Components/Footer'
 import getDoc from '../Database/getDoc'
@@ -10,11 +10,23 @@ import "../css/cart.css"
 import Loading from '../Components/Loading'
 import LoginPage from '../Pages/LoginPage'
 import login from '../Database/Login'
+import { useHistory } from "react-router-dom";
 
 const dev = "http://localhost:1337/razorpay";
 const production = "https://us-central1-pine-valley-7820d.cloudfunctions.net/pay/razorpay";
 
 const shipping = 45.00;
+
+function GoToUpay() {
+    const history = useHistory();
+
+    return <div>
+        <a style={{width: "135px", backgroundColor: "#0D1E29", textAlign: "center", fontWeight: "800", padding: "11px 0px", color: "white", fontSize: "12px", display: "inline-block", textDecoration: "none"}} 
+        href='https://pmny.in/Qrh0EfW5DlcG' >
+            Buy Now
+        </a>
+    </div>
+}
 
 function loadScript(src) {
     return new Promise((resolve) => {
@@ -78,7 +90,9 @@ export class Cart extends Component {
         my_state: null,
         pincode: null,
 
-        login_page: false
+        login_page: false,
+        showUpay: false,
+        buttonText: "Place Order"
     }
 
     componentDidMount() {
@@ -113,6 +127,8 @@ export class Cart extends Component {
     check_details = (e) => {
         e.preventDefault();
 
+        this.setState({buttonText:"Checking Details Please Wait"})
+
         var temp = {
             name: this.state.name,
             phone: this.state.phone,
@@ -127,9 +143,14 @@ export class Cart extends Component {
             total: parseFloat(this.state.data.sp.replace(/,/g, '')) * this.state.quantity + shipping
         }
 
-        this.displayRazorpay(temp).then(res => {
+        /*this.displayRazorpay(temp).then(res => {
             this.setState({ open: res })
+        })*/
+
+        uploadData(temp, this.state.user_data.photo, parseFloat(this.state.data.sp.replace(/,/g, '')) * this.state.quantity + shipping).then(res => {
+            this.setState({ showUpay: true })
         })
+
         return
     }
 
@@ -140,7 +161,7 @@ export class Cart extends Component {
     }
 
 
-    displayRazorpay = async (user_data) => {
+    /*displayRazorpay = async (user_data) => {
         const res = await loadScript('https://checkout.razorpay.com/v1/checkout.js');
 
         if (!res) {
@@ -182,13 +203,13 @@ export class Cart extends Component {
 
         const paymentObject = new window.Razorpay(options)
         paymentObject.open()
-    }
+    }*/
 
     render() {
         if (!this.state.data) {
-            return <div className="wrap" style={{height:"100vh"}} ><Loading/></div>
+            return <div className="wrap" style={{ height: "100vh" }} ><Loading /></div>
         }
-        
+
         return (
             <div>
                 <MyAppBar />
@@ -298,7 +319,14 @@ export class Cart extends Component {
                                                                 <input required name="pincode" onChange={this.myChangeHandler} value={this.state.user_data.pincode} defaultValue={this.state.user_data.pincode} type="text" placeholder="Zip Code" />
                                                             </div>
                                                         </div>
-                                                        <input style={{ backgroundColor: "black", color: "white" }} type="submit" value="Place Order" class="place-order btn btn-lg btn-round" />
+
+                                                        {
+                                                            this.state.showUpay ? (
+                                                                <GoToUpay />
+                                                            ) : (
+                                                                <input style={{ backgroundColor: "black", color: "white" }} type="submit" value="Proceed To Pay" class="place-order btn btn-lg " />
+                                                            )
+                                                        }
                                                     </div>
                                                 </form>
 
@@ -473,11 +501,11 @@ export class Cart extends Component {
                                             <i class="material-icons">&#xE876;</i>
                                         </div>
                                     </div>
-                                    
+
                                 </div>
-                                <h4 style={{textAlign:"center"}} class="modal-title">Awesome!</h4>
+                                <h4 style={{ textAlign: "center" }} class="modal-title">Awesome!</h4>
                                 <div class="modal-body">
-                                    <p class="text-center">Your order is placed!! Check your email for details.</p>
+                                    <p class="text-center">Your order is placed!! Click <a href="/account" >here</a> for details.</p>
                                 </div>
                                 <h3 style={{ textAlign: "center" }} >
                                     Thank You <br /> For Shopping With Us<br />🙏
