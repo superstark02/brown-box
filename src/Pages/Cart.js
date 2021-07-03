@@ -22,7 +22,7 @@ function GoToUpay() {
 
     return <div>
         <a style={{width: "135px", backgroundColor: "#0D1E29", textAlign: "center", fontWeight: "800", padding: "11px 0px", color: "white", fontSize: "12px", display: "inline-block", textDecoration: "none"}} 
-        href='https://pmny.in/Qrh0EfW5DlcG' >
+        href='https://imjo.in/gFCH3u' >
             Buy Now
         </a>
     </div>
