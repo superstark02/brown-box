@@ -3,12 +3,10 @@ import MyAppBar from "../Components/AppBar"
 import { MyFooter } from '../Components/Footer'
 import getDoc from '../Database/getDoc'
 import firebase from 'firebase'
-import sendMail from '../Database/sendMail'
 import { uploadData } from '../Database/uploadData'
 import Dialog from '@material-ui/core/Dialog';
 import "../css/cart.css"
 import Loading from '../Components/Loading'
-import LoginPage from '../Pages/LoginPage'
 import login from '../Database/Login'
 
 const dev = "http://localhost:1337/razorpay";
