@@ -143,7 +143,7 @@ export class Account extends Component {
                                                                                         <td>{item.product}</td>
                                                                                         <td>{item.date}</td>
                                                                                         <td>Pending</td>
-                                                                                        <td>{item.amount/100}</td>
+                                                                                        <td>&#8377;{item.amount/100}</td>
                                                                                     </tr>
                                                                                 </tbody>
                                                                             )

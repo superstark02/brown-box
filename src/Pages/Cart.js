@@ -161,7 +161,7 @@ export class Cart extends Component {
         )
 
         const options = {
-            key: __DEV__ ? 'rzp_live_ilxFCKRqkPAAxy' : 'rzp_live_ilxFCKRqkPAAxy',
+            key: __DEV__ ? 'rzp_test_0NgOX9f0NSb8Cy' : 'rzp_test_0NgOX9f0NSb8Cy',
             currency: data.currency,
             amount: data.amount.toString(),
             order_id: data.id,
@@ -186,9 +186,9 @@ export class Cart extends Component {
 
     render() {
         if (!this.state.data) {
-            return <div className="wrap" style={{height:"100vh"}} ><Loading/></div>
+            return <div className="wrap" style={{ height: "100vh" }} ><Loading /></div>
         }
-        
+
         return (
             <div>
                 <MyAppBar />
@@ -253,6 +253,8 @@ export class Cart extends Component {
                                                     {/* Billing Address */}
                                                     <div id="billing-form" class="mb-10">
                                                         <h4 class="checkout-title">Billing Address</h4>
+                                                        <input type="hidden" id="product_name" name="product_name" value={this.state.data.name} />
+                                                        <input type="hidden" id="amount" name="amount" value={parseFloat(this.state.data.sp.replace(/,/g, '')) * this.state.quantity + shipping} />
 
                                                         <div class="row">
 
@@ -290,7 +292,7 @@ export class Cart extends Component {
 
                                                             <div class="col-md-6 col-12 mb-20">
                                                                 <label>State*</label>
-                                                                <input required name="my_state" onChange={this.myChangeHandler} type="text" defaultValue={this.state.user_data.my_state} placeholder="State" />
+                                                                <input required name="my_state" onChange={this.myChangeHandler} type="text" defaultValue={this.state.user_data.state} placeholder="State" />
                                                             </div>
 
                                                             <div class="col-md-6 col-12 mb-20">
@@ -302,57 +304,58 @@ export class Cart extends Component {
                                                     </div>
                                                 </form>
 
-                                                {/* Shipping Address */}
+                                                {/* Shipping Address 
                                                 <div id="shipping-form">
                                                     <h4 class="checkout-title">Shipping Address</h4>
 
                                                     <div class="row">
+                                                        <form>
 
-                                                        <div class="col-md-6 col-12 mb-20">
-                                                            <label>Full Name*</label>
-                                                            <input name="name" onChange={this.myChangeHandler} type="text" value={this.state.user_data.name} defaultValue={this.state.user_data.name} placeholder="First Name" />
-                                                        </div>
+                                                            <div class="col-md-6 col-12 mb-20">
+                                                                <label>Full Name*</label>
+                                                                <input name="name" onChange={this.myChangeHandler} type="text" value={this.state.user_data.name} defaultValue={this.state.user_data.name} placeholder="First Name" />
+                                                            </div>
 
-                                                        <div class="col-md-6 col-12 mb-20">
-                                                            <label>Email Address*</label>
-                                                            <input name="email" onChange={this.myChangeHandler} value={this.state.user_data.email} defaultValue={this.state.user_data.email} type="email" placeholder="Email Address" />
-                                                        </div>
+                                                            <div class="col-md-6 col-12 mb-20">
+                                                                <label>Email Address*</label>
+                                                                <input name="email" onChange={this.myChangeHandler} value={this.state.user_data.email} defaultValue={this.state.user_data.email} type="email" placeholder="Email Address" />
+                                                            </div>
 
-                                                        <div class="col-md-6 col-12 mb-20">
-                                                            <label>Phone no*</label>
-                                                            <input name="phone" onChange={this.myChangeHandler} value={this.state.user_data.phone} defaultValue={this.state.user_data.phone} type="text" placeholder="Phone number" />
-                                                        </div>
+                                                            <div class="col-md-6 col-12 mb-20">
+                                                                <label>Phone no*</label>
+                                                                <input name="phone" onChange={this.myChangeHandler} value={this.state.user_data.phone} defaultValue={this.state.user_data.phone} type="text" placeholder="Phone number" />
+                                                            </div>
 
-                                                        <div class="col-12 mb-20">
-                                                            <label>Address*</label>
-                                                            <input name="address" onChange={this.myChangeHandler} value={this.state.user_data.address} type="text" defaultValue={this.state.user_data.address} placeholder="Address line" />
-                                                        </div>
+                                                            <div class="col-12 mb-20">
+                                                                <label>Address*</label>
+                                                                <input name="address" onChange={this.myChangeHandler} value={this.state.user_data.address} type="text" defaultValue={this.state.user_data.address} placeholder="Address line" />
+                                                            </div>
 
-                                                        <div class="col-md-6 col-12 mb-20">
-                                                            <label>Country*</label>
-                                                            <select class="nice-select" value="India" >
-                                                                <option>India</option>
-                                                            </select>
-                                                        </div>
+                                                            <div class="col-md-6 col-12 mb-20">
+                                                                <label>Country*</label>
+                                                                <select class="nice-select" value="India" >
+                                                                    <option>India</option>
+                                                                </select>
+                                                            </div>
 
-                                                        <div class="col-md-6 col-12 mb-20">
-                                                            <label>Town/City*</label>
-                                                            <input name="city" onChange={this.myChangeHandler} value={this.state.user_data.city} defaultValue={this.state.user_data.city} type="text" placeholder="Town/City" />
-                                                        </div>
+                                                            <div class="col-md-6 col-12 mb-20">
+                                                                <label>Town/City*</label>
+                                                                <input name="city" onChange={this.myChangeHandler} value={this.state.user_data.city} defaultValue={this.state.user_data.city} type="text" placeholder="Town/City" />
+                                                            </div>
 
-                                                        <div class="col-md-6 col-12 mb-20">
-                                                            <label>State*</label>
-                                                            <input name="my_state" onChange={this.myChangeHandler} value={this.state.user_data.my_state} type="text" defaultValue={this.state.user_data.my_state} placeholder="State" />
-                                                        </div>
+                                                            <div class="col-md-6 col-12 mb-20">
+                                                                <label>State*</label>
+                                                                <input name="my_state" onChange={this.myChangeHandler} value={this.state.user_data.state} type="text" defaultValue={this.state.user_data.my_state} placeholder="State" />
+                                                            </div>
 
-                                                        <div class="col-md-6 col-12 mb-20">
-                                                            <label>Zip Code*</label>
-                                                            <input name="pincode" onChange={this.myChangeHandler} value={this.state.user_data.picode} type="text" defaultValue={this.state.user_data.pincode} placeholder="Zip Code" />
-                                                        </div>
+                                                            <div class="col-md-6 col-12 mb-20">
+                                                                <label>Zip Code*</label>
+                                                                <input name="pincode" onChange={this.myChangeHandler} value={this.state.user_data.picode} type="text" defaultValue={this.state.user_data.pincode} placeholder="Zip Code" />
+                                                            </div>
+                                                        </form>
+                                                    </div
 
-                                                    </div>
-
-                                                </div>
+                                                </div>>*/}
 
                                             </div>
 
@@ -473,9 +476,9 @@ export class Cart extends Component {
                                             <i class="material-icons">&#xE876;</i>
                                         </div>
                                     </div>
-                                    
+
                                 </div>
-                                <h4 style={{textAlign:"center"}} class="modal-title">Awesome!</h4>
+                                <h4 style={{ textAlign: "center" }} class="modal-title">Awesome!</h4>
                                 <div class="modal-body">
                                     <p class="text-center">Your order is placed!! Check your email for details.</p>
                                 </div>

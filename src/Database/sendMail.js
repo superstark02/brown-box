@@ -1,7 +1,7 @@
 import emailjs from 'emailjs-com';
 
 function sendMail(e) {
-    emailjs.sendForm('gmail', 'template_060u1yu', e.target, 'user_rdnQ08wROAm4vj2HIcVdc')
+    emailjs.sendForm('service_wnng1k5', 'template_79oc4tk', e.target, 'user_4y4gw3JRalVlGfHP1RZJS')
       .then((result) => {
           console.log(result.text);
           return true
