@@ -10,7 +10,6 @@ import "../css/cart.css"
 import Loading from '../Components/Loading'
 import LoginPage from '../Pages/LoginPage'
 import login from '../Database/Login'
-import { useHistory } from "react-router-dom";
 
 const dev = "http://localhost:1337/razorpay";
 const production = "https://us-central1-pine-valley-7820d.cloudfunctions.net/pay/razorpay";
@@ -18,12 +17,9 @@ const production = "https://us-central1-pine-valley-7820d.cloudfunctions.net/pay
 const shipping = 45.00;
 
 function GoToUpay() {
-    const history = useHistory();
-
     return <div>
-        <a style={{width: "135px", backgroundColor: "#0D1E29", textAlign: "center", fontWeight: "800", padding: "11px 0px", color: "white", fontSize: "12px", display: "inline-block", textDecoration: "none"}} 
-        href='https://imjo.in/gFCH3u' >
-            Buy Now
+        <a href='https://imjo.in/gFCH3u' >
+            <button style={{ backgroundColor: "black", color: "white" }} class="place-order btn " >Proceed To Pay</button>
         </a>
     </div>
 }
@@ -311,7 +307,7 @@ export class Cart extends Component {
 
                                                             <div class="col-md-6 col-12 mb-20">
                                                                 <label>State*</label>
-                                                                <input required name="my_state" onChange={this.myChangeHandler} type="text" defaultValue={this.state.user_data.my_state} placeholder="State" />
+                                                                <input required name="my_state" onChange={this.myChangeHandler} type="text" defaultValue={this.state.user_data.state} placeholder="State" />
                                                             </div>
 
                                                             <div class="col-md-6 col-12 mb-20">
@@ -324,7 +320,7 @@ export class Cart extends Component {
                                                             this.state.showUpay ? (
                                                                 <GoToUpay />
                                                             ) : (
-                                                                <input style={{ backgroundColor: "black", color: "white" }} type="submit" value="Proceed To Pay" class="place-order btn btn-lg " />
+                                                                <input style={{ backgroundColor: "black", color: "white" }} type="submit" value="Verify Details" class="place-order btn btn-lg " />
                                                             )
                                                         }
                                                     </div>
