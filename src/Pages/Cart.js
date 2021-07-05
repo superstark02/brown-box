@@ -21,58 +21,13 @@ function GoToUpay() {
     const history = useHistory();
 
     return <div>
-        <a style={{width: "135px", backgroundColor: "#0D1E29", textAlign: "center", fontWeight: "800", padding: "11px 0px", color: "white", fontSize: "12px", display: "inline-block", textDecoration: "none"}} 
-        href='https://pmny.in/Qrh0EfW5DlcG' >
+        <a style={{ width: "135px", backgroundColor: "#0D1E29", textAlign: "center", fontWeight: "800", padding: "11px 0px", color: "white", fontSize: "12px", display: "inline-block", textDecoration: "none" }}
+            href='https://pmny.in/Qrh0EfW5DlcG' >
             Buy Now
         </a>
     </div>
 }
 
-function loadScript(src) {
-    return new Promise((resolve) => {
-        const script = document.createElement('script')
-        script.src = src
-        script.onload = () => {
-            resolve(true)
-        }
-        script.onerror = () => {
-            resolve(false)
-        }
-        document.body.appendChild(script)
-    })
-}
-
-const __DEV__ = document.domain === 'localhost'
-
-/*async function displayRazorpay(user_data) {
-    const res = await loadScript('https://checkout.razorpay.com/v1/checkout.js')
-    if (!res) {
-        alert('Razorpay SDK failed to load. Are you online?')
-        return
-    }
-    const data = await fetch('https://us-central1-pine-valley-7820d.cloudfunctions.net/widgets/razorpay', { method: 'POST' }).then((t) =>
-        t.json()
-    )
-    const options = {
-        key: __DEV__ ? 'rzp_test_XG2R08Y3JGV5fg' : 'rzp_test_XG2R08Y3JGV5fg',
-        currency: data.currency,
-        amount: data.amount.toString(),
-        order_id: data.id,
-        name: 'Donation',
-        description: 'Thank you for nothing. Please give us some money',
-        handler: function (response) {
-            uploadData(user_data, response)
-            return true
-        },
-        prefill: {
-            name: user_data.name,
-            email: user_data.email,
-            phone_number: user_data.phone
-        }
-    }
-    const paymentObject = new window.Razorpay(options)
-    paymentObject.open()
-}*/
 
 export class Cart extends Component {
 
@@ -99,19 +54,9 @@ export class Cart extends Component {
 
         firebase.auth().onAuthStateChanged(user => {
             if (user) {
-                getDoc("Users", user.uid).then(data => {
-                    this.setState({ user_data: data })
-                    this.setState({ name: data.name })
-                    this.setState({ email: data.email })
-                    this.setState({ phone: data.phone })
-                    this.setState({ address: data.address })
-                    this.setState({ city: data.city })
-                    this.setState({ my_state: data.state })
-                    this.setState({ pincode: data.pincode })
-                })
-
                 getDoc(this.props.match.params.doc, this.props.match.params.id).then(snap => {
                     this.setState({ data: snap })
+                    this.setState({ user_data: user })
                 })
 
             } else {
@@ -127,7 +72,7 @@ export class Cart extends Component {
     check_details = (e) => {
         e.preventDefault();
 
-        this.setState({buttonText:"Checking Details Please Wait"})
+        this.setState({ buttonText: "Checking Details Please Wait" })
 
         var temp = {
             name: this.state.name,
@@ -143,14 +88,9 @@ export class Cart extends Component {
             total: parseFloat(this.state.data.sp.replace(/,/g, '')) * this.state.quantity + shipping
         }
 
-        /*this.displayRazorpay(temp).then(res => {
-            this.setState({ open: res })
-        })*/
-
-        uploadData(temp, this.state.user_data.photo, parseFloat(this.state.data.sp.replace(/,/g, '')) * this.state.quantity + shipping).then(res => {
+        uploadData(temp, this.state.user_data.photo).then(res => {
             this.setState({ showUpay: true })
         })
-
         return
     }
 
@@ -160,53 +100,8 @@ export class Cart extends Component {
         this.setState({ [nam]: val });
     }
 
-
-    /*displayRazorpay = async (user_data) => {
-        const res = await loadScript('https://checkout.razorpay.com/v1/checkout.js');
-
-        if (!res) {
-            alert('Razorpay SDK failed to load. Are you online?')
-            return
-        }
-
-        let send_data = {
-            amount: user_data.total
-        }
-
-        const data = await fetch(production, {
-            method: 'POST',
-            body: JSON.stringify(send_data),
-            headers: { 'Content-Type': 'application/json' }
-        }).then((t) =>
-            t.json()
-        )
-
-        const options = {
-            key: __DEV__ ? 'rzp_live_ilxFCKRqkPAAxy' : 'rzp_live_ilxFCKRqkPAAxy',
-            currency: data.currency,
-            amount: data.amount.toString(),
-            order_id: data.id,
-            name: 'Brown Box',
-            description: 'Thank you for choosing us',
-            handler: (response) => {
-                uploadData(user_data, response, this.state.user_data.photo, data.amount).then(res => {
-                    sendMail(user_data.e);
-                    this.setState({ open: true });
-                })
-            },
-            prefill: {
-                name: user_data.name,
-                email: user_data.email,
-                phone_number: user_data.phone
-            }
-        }
-
-        const paymentObject = new window.Razorpay(options)
-        paymentObject.open()
-    }*/
-
     render() {
-        if (!this.state.data) {
+        if (!this.state.data || !this.state.user_data) {
             return <div className="wrap" style={{ height: "100vh" }} ><Loading /></div>
         }
 
@@ -279,22 +174,22 @@ export class Cart extends Component {
 
                                                             <div class="col-md-6 col-12 mb-20">
                                                                 <label>Full Name*</label>
-                                                                <input required name="name" onChange={this.myChangeHandler} type="text" defaultValue={this.state.user_data.name} placeholder="First Name" />
+                                                                <input required name="name" onChange={this.myChangeHandler} type="text" placeholder="First Name" />
                                                             </div>
 
                                                             <div class="col-md-6 col-12 mb-20">
                                                                 <label>Email Address*</label>
-                                                                <input required name="email" onChange={this.myChangeHandler} type="email" defaultValue={this.state.user_data.email} placeholder="Email Address" />
+                                                                <input required name="email" value={this.state.user_data.email} />
                                                             </div>
 
                                                             <div class="col-md-6 col-12 mb-20">
                                                                 <label>Phone no*</label>
-                                                                <input required name="phone" onChange={this.myChangeHandler} type="text" defaultValue={this.state.user_data.phone} placeholder="Phone number" />
+                                                                <input required name="phone" onChange={this.myChangeHandler} type="text" placeholder="Phone number" />
                                                             </div>
 
                                                             <div class="col-12 mb-20">
                                                                 <label>Address*</label>
-                                                                <input required name="address" onChange={this.myChangeHandler} type="text" defaultValue={this.state.user_data.address} placeholder="Address line" />
+                                                                <input required name="address" onChange={this.myChangeHandler} type="text" placeholder="Address line" />
                                                             </div>
 
                                                             <div class="col-md-6 col-12 mb-20">
@@ -306,17 +201,17 @@ export class Cart extends Component {
 
                                                             <div class="col-md-6 col-12 mb-20">
                                                                 <label>Town/City*</label>
-                                                                <input required name="city" onChange={this.myChangeHandler} defaultValue={this.state.user_data.city} type="text" placeholder="Town/City" />
+                                                                <input required name="city" onChange={this.myChangeHandler} type="text" placeholder="Town/City" />
                                                             </div>
 
                                                             <div class="col-md-6 col-12 mb-20">
                                                                 <label>State*</label>
-                                                                <input required name="my_state" onChange={this.myChangeHandler} type="text" defaultValue={this.state.user_data.my_state} placeholder="State" />
+                                                                <input required name="my_state" onChange={this.myChangeHandler} type="text" placeholder="State" />
                                                             </div>
 
                                                             <div class="col-md-6 col-12 mb-20">
                                                                 <label>Zip Code*</label>
-                                                                <input required name="pincode" onChange={this.myChangeHandler} value={this.state.user_data.pincode} defaultValue={this.state.user_data.pincode} type="text" placeholder="Zip Code" />
+                                                                <input required name="pincode" onChange={this.myChangeHandler} type="text" placeholder="Zip Code" />
                                                             </div>
                                                         </div>
 
@@ -324,64 +219,11 @@ export class Cart extends Component {
                                                             this.state.showUpay ? (
                                                                 <GoToUpay />
                                                             ) : (
-                                                                <input style={{ backgroundColor: "black", color: "white" }} type="submit" value="Proceed To Pay" class="place-order btn btn-lg " />
+                                                                <input style={{ backgroundColor: "black", color: "white" }} type="submit" value={this.state.buttonText} class="place-order btn btn-lg " />
                                                             )
                                                         }
                                                     </div>
                                                 </form>
-
-                                                {/* Shipping Address */}
-                                                <div id="shipping-form">
-                                                    <h4 class="checkout-title">Shipping Address</h4>
-
-                                                    <div class="row">
-
-                                                        <div class="col-md-6 col-12 mb-20">
-                                                            <label>Full Name*</label>
-                                                            <input name="name" onChange={this.myChangeHandler} type="text" value={this.state.user_data.name} defaultValue={this.state.user_data.name} placeholder="First Name" />
-                                                        </div>
-
-                                                        <div class="col-md-6 col-12 mb-20">
-                                                            <label>Email Address*</label>
-                                                            <input name="email" onChange={this.myChangeHandler} value={this.state.user_data.email} defaultValue={this.state.user_data.email} type="email" placeholder="Email Address" />
-                                                        </div>
-
-                                                        <div class="col-md-6 col-12 mb-20">
-                                                            <label>Phone no*</label>
-                                                            <input name="phone" onChange={this.myChangeHandler} value={this.state.user_data.phone} defaultValue={this.state.user_data.phone} type="text" placeholder="Phone number" />
-                                                        </div>
-
-                                                        <div class="col-12 mb-20">
-                                                            <label>Address*</label>
-                                                            <input name="address" onChange={this.myChangeHandler} value={this.state.user_data.address} type="text" defaultValue={this.state.user_data.address} placeholder="Address line" />
-                                                        </div>
-
-                                                        <div class="col-md-6 col-12 mb-20">
-                                                            <label>Country*</label>
-                                                            <select class="nice-select" value="India" >
-                                                                <option>India</option>
-                                                            </select>
-                                                        </div>
-
-                                                        <div class="col-md-6 col-12 mb-20">
-                                                            <label>Town/City*</label>
-                                                            <input name="city" onChange={this.myChangeHandler} value={this.state.user_data.city} defaultValue={this.state.user_data.city} type="text" placeholder="Town/City" />
-                                                        </div>
-
-                                                        <div class="col-md-6 col-12 mb-20">
-                                                            <label>State*</label>
-                                                            <input name="my_state" onChange={this.myChangeHandler} value={this.state.user_data.my_state} type="text" defaultValue={this.state.user_data.my_state} placeholder="State" />
-                                                        </div>
-
-                                                        <div class="col-md-6 col-12 mb-20">
-                                                            <label>Zip Code*</label>
-                                                            <input name="pincode" onChange={this.myChangeHandler} value={this.state.user_data.picode} type="text" defaultValue={this.state.user_data.pincode} placeholder="Zip Code" />
-                                                        </div>
-
-                                                    </div>
-
-                                                </div>
-
                                             </div>
 
                                             <div class="col-lg-5">
@@ -490,35 +332,6 @@ export class Cart extends Component {
                         </div>
                     </div>
                 </div>
-
-                <Dialog onClose={this.handleClose} style={{ backgroundColor: "transparent" }} open={this.state.open}>
-                    <div style={{ background: "transparent" }} >
-                        <div class="modal-dialog modal-confirm">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <div className="wrap" >
-                                        <div class="icon-box">
-                                            <i class="material-icons">&#xE876;</i>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <h4 style={{ textAlign: "center" }} class="modal-title">Awesome!</h4>
-                                <div class="modal-body">
-                                    <p class="text-center">Your order is placed!! Click <a href="/account" >here</a> for details.</p>
-                                </div>
-                                <h3 style={{ textAlign: "center" }} >
-                                    Thank You <br /> For Shopping With Us<br />🙏
-                                </h3>
-                                <div class="modal-footer">
-                                    <a href="/" >
-                                        <button class="btn btn-success btn-block" data-dismiss="modal">OK</button>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </Dialog>
 
                 <MyFooter />
             </div>

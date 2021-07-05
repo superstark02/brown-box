@@ -16,6 +16,8 @@ import "./css/vendor/bootstrap.min.css"
 import "./css/vendor/helper.css"
 import "./css/plugins/plugins.css"
 import TnC from './Pages/TnC';
+import Success from './Pages/Success';
+import Failed from './Pages/Failed';
 
 function App() {
   return (
@@ -33,6 +35,8 @@ function App() {
           <Route exact path='/basically-the-idea' component={HowWeWork} />
           <Route exact path='/how-we-work' component={BuyingSystem} />
           <Route exact path='/contact' component={Contact} />
+          <Route exact path='/payment-success' component={Success} />
+          <Route exact path='/payment-failed' component={Failed} />
           <Route exact path='/tnc' component={TnC} />
           {/*<Route exact path='/terms-conditions' component={TnC} />
           <Route exact path='/cart/:id' component={Cart} />*/}
