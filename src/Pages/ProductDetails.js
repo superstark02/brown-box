@@ -5,6 +5,7 @@ import getDoc from '../Database/getDoc'
 import Slider from '../Components/Products/Slider'
 import Loading from '../Components/Loading'
 import axios from 'axios'
+import firebase from 'firebase'
 
 const shipping = 45;
 
@@ -13,17 +14,27 @@ export class ProductDetails extends Component {
     state = {
         data: null,
         pincode: null,
-        status: ""
+        status: "",
+
+        href: "/login"
     }
 
     componentDidMount() {
-        getDoc(this.props.match.params.doc, this.props.match.params.id).then(snap => {
-            this.setState({ data: snap })
-        })
+        firebase.auth().onAuthStateChanged(user => {
+            getDoc(this.props.match.params.doc, this.props.match.params.id).then(snap => {
+                this.setState({ data: snap })
+            })
+            if (user) {
+                this.setState({ href: "/login" })
+            } else {
+                this.setState({ href: "/cart/" + this.props.match.params.doc + "/1pow" })
+            }
+        });
     }
 
     checkService = (e) => {
         e.preventDefault();
+        this.setState({ status: "Please Wait" })
 
         axios.post('https://us-central1-pine-valley-7820d.cloudfunctions.net/checkService', { pincode: this.state.pincode }).then(res => {
             if (res.data.status.toString() === "200") {
@@ -113,9 +124,9 @@ export class ProductDetails extends Component {
                                                         <label style={{ color: "grey", fontSize: "10px" }} >Check Delivery Service Avaialbility</label>
                                                         <div>
                                                             <input required placeholder="Pincode" onChange={(e) => { this.setState({ pincode: e.target.value }) }} />
-                                                            <input type="submit" />
+                                                            <input type="submit" style={{ backgroundColor: "black", color: "white" }} />
                                                         </div>
-                                                        <p style={{fontSize:"12px", color:"green"}} >
+                                                        <p style={{ fontSize: "12px", color: "green", outline: "none" }} >
                                                             {this.state.status}
                                                         </p>
                                                     </form>
@@ -124,7 +135,7 @@ export class ProductDetails extends Component {
                                                 <div className="single-product-quantity">
                                                     {
                                                         this.state.data.id === "1pow" || this.state.data.id === "1gow" ? (
-                                                            <a href={"/cart/" + this.props.match.params.doc + "/" + this.state.data.id} className="add-to-link">
+                                                            <a href={"/cart/" + this.props.match.params.doc + "/1pow"} className="add-to-link">
                                                                 <button className="btn" style={{ padding: "10px 30px" }} ><i className="fa fa-shopping-bag"></i>buy</button>
                                                             </a>
                                                         ) : (

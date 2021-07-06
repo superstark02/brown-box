@@ -18,6 +18,7 @@ import "./css/plugins/plugins.css"
 import TnC from './Pages/TnC';
 import Success from './Pages/Success';
 import Failed from './Pages/Failed';
+import LoginPage from './Pages/LoginPage';
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
           <Route exact path='/payment-success' component={Success} />
           <Route exact path='/payment-failed' component={Failed} />
           <Route exact path='/tnc' component={TnC} />
+          <Route exact path='/login' component={LoginPage} />
           {/*<Route exact path='/terms-conditions' component={TnC} />
           <Route exact path='/cart/:id' component={Cart} />*/}
         </Switch>

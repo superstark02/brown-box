@@ -3,17 +3,11 @@ import MyAppBar from "../Components/AppBar"
 import { MyFooter } from '../Components/Footer'
 import getDoc from '../Database/getDoc'
 import firebase from 'firebase'
-import sendMail from '../Database/sendMail'
 import { uploadData } from '../Database/uploadData'
-import Dialog from '@material-ui/core/Dialog';
 import "../css/cart.css"
 import Loading from '../Components/Loading'
-import LoginPage from '../Pages/LoginPage'
 import login from '../Database/Login'
 import { useHistory } from "react-router-dom";
-
-const dev = "http://localhost:1337/razorpay";
-const production = "https://us-central1-pine-valley-7820d.cloudfunctions.net/pay/razorpay";
 
 const shipping = 45.00;
 
@@ -21,9 +15,10 @@ function GoToUpay() {
     const history = useHistory();
 
     return <div>
-        <a style={{ width: "135px", backgroundColor: "#0D1E29", textAlign: "center", fontWeight: "800", padding: "11px 0px", color: "white", fontSize: "12px", display: "inline-block", textDecoration: "none" }}
-            href='https://pmny.in/Qrh0EfW5DlcG' >
-            Buy Now
+        <a href='https://pmny.in/Qrh0EfW5DlcG' >
+            <button style={{ width: "135px", backgroundColor: "#0D1E29", textAlign: "center", fontWeight: "800", padding: "11px 0px", color: "white", fontSize: "12px", display: "inline-block", textDecoration: "none" }} >
+                Buy Now
+            </button>
         </a>
     </div>
 }

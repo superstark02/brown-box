@@ -19,7 +19,7 @@ export default class LoginPage extends Component {
                                         <h2>Login Register</h2>
                                         <ul class="page-breadcrumb" style={{ color: "white" }}  >
                                             <li><a href="/" style={{ color: "white" }}  >Home</a></li>
-                                            <li style={{ color: "white" }}  >Login Register</li>
+                                            <li style={{ color: "white" }}  >Login / Register</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -40,9 +40,9 @@ export default class LoginPage extends Component {
                                     </div>
                                     <div class="login-form">
                                         <div>
-                                            <div className="wrap" >
+                                            <button className="wrap" style={{border:"none", background: "none"}} onClick={login} >
                                                 <img width="200px" src="https://miro.medium.com/max/1192/1*f5xLXkJMq8sMk79B6O8WCA.png" />
-                                            </div>
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
