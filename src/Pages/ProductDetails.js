@@ -4,6 +4,7 @@ import { MyFooter } from "../Components/Footer"
 import getDoc from '../Database/getDoc'
 import Slider from '../Components/Products/Slider'
 import Loading from '../Components/Loading'
+import checkService from '../Database/checkService'
 
 const shipping = 45;
 
@@ -17,6 +18,8 @@ export class ProductDetails extends Component {
         getDoc(this.props.match.params.doc, this.props.match.params.id).then(snap => {
             this.setState({ data: snap })
         })
+
+        checkService();
     }
 
     render() {
