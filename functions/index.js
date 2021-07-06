@@ -1,81 +1,124 @@
-const functions = require("firebase-functions");
+const functions = require('firebase-functions');
+const axios = require('axios')
+const cors = require('cors')({ origin: true });
 
+exports.checkService = functions.https.onRequest(async (req, res) => {
+
+	cors(req, res, () => {
+		var data = JSON.stringify({
+			"email": "superstark02@gmail.com",
+			"password": "Gun007us@@@@"
+		});
+
+		var config = {
+			method: 'post',
+			url: 'https://apiv2.shiprocket.in/v1/external/auth/login',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			data: data
+		};
+
+		axios(config)
+			.then(function (first_res) {
+				console.log(req.body)
+				var con = {
+					method: 'get',
+					url: 'https://apiv2.shiprocket.in/v1/external/courier/serviceability/',
+					params: {
+						pickup_postcode: 110085,
+						delivery_postcode: req.body.pincode,
+						cod: 0,
+						weight: 0.5
+					},
+					headers: {
+						'Content-Type': 'application/json',
+						'Authorization': 'Bearer ' + first_res.data.token
+					}
+				};
+
+				axios(con)
+					.then(function (sec_res) {
+						res.send(sec_res.data)
+					})
+					.catch(function (error) {
+						console.log(error);
+					});
+
+			})
+			.catch(function (error) {
+				console.log(error);
+			});
+	})
+
+});
+
+/*
+const functions = require("firebase-functions");
 const app = require('express')()
 const express = require('express')
-const path = require('path')
-const shortid = require('nanoid')
-const Razorpay = require('razorpay')
 const cors = require('cors')
-const crypto = require("crypto-js")
+const axios = require('axios')
 
 app.use(cors())
 app.use(express.json())
-app.use(express.urlencoded({extended:true}))
+app.use(express.urlencoded({ extended: true }))
 
-const razorpay = new Razorpay({
-	key_id: 'rzp_test_0NgOX9f0NSb8Cy',
-	key_secret: 'qGIZeOXI1o77pq4B1xsD3dui'
-})
 
-app.get('/logo.svg', (req, res) => {
-	res.sendFile(path.join(__dirname, 'logo512.png'))
-})
+app.get('/get-service', (req, res) => {
 
-app.post('/verification', (req, res) => {
-	// do a validation
-	const secret = '12345678'
+	var data = JSON.stringify({
+		"email": "superstark02@gmail.com",
+		"password": "Gun007us@@@@"
+	});
 
-	console.log(req.body)
+	var config = {
+		method: 'post',
+		url: 'https://apiv2.shiprocket.in/v1/external/auth/login',
+		headers: {
+			'Content-Type': 'application/json'
+		},
+		data: data
+	};
 
-	const crypto = require('crypto')
+	axios(config)
+		.then(function (first_res) {
+			console.log(JSON.stringify(first_res.data));
 
-	const shasum = crypto.createHmac('sha256', secret)
-	shasum.update(JSON.stringify(req.body))
-	const digest = shasum.digest('hex')
+			var con = {
+				method: 'get',
+				url: 'https://apiv2.shiprocket.in/v1/external/courier/serviceability/',
+				params:{
+					pickup_postcode: 110085,
+					delivery_postcode: 623153,
+					cod: 0,
+					weight: 0.5
+				},
+				headers: {
+					'Content-Type': 'application/json',
+					'Authorization': 'Bearer '+first_res.data.token
+				}
+			};
 
-	console.log(digest, req.headers['x-razorpay-signature'])
+			axios(con)
+				.then(function (first_res) {
+					console.log(JSON.stringify(first_res.data));
+					res.send(first_res.data)
+				})
+				.catch(function (error) {
+					console.log(error);
+				});
 
-	if (digest === req.headers['x-razorpay-signature']) {
-		console.log('request is legit')
-		// process it
-		require('fs').writeFileSync('payment1.json', JSON.stringify(req.body, null, 4))
-	} else {
-		// pass it
-	}
-	res.json({ status: 'ok' })
-})
-
-app.post('/razorpay', async (req, res) => {
-	console.log("Here: "+req.body.amount)
-	const payment_capture = 1
-	const amount = req.body.amount
-	const currency = 'INR'
-
-	const options = {
-		amount: amount * 100,
-		currency,
-		receipt: shortid.nanoid(),
-		payment_capture
-	}
-
-	try {
-		const response = await razorpay.orders.create(options)
-		console.log(response)
-		res.json({
-			id: response.id,
-			currency: response.currency,
-			amount: response.amount
 		})
-	} catch (error) {
-		console.log(error)
-		console.log("yaha")
-	}
+		.catch(function (error) {
+			console.log(error);
+		});
+
 
 })
 
 app.listen(1337, () => {
 	console.log('Listening on 1337')
-})
+})*/
 
 
-exports.pay = functions.https.onRequest(app);

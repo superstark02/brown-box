@@ -4,27 +4,40 @@ import { MyFooter } from "../Components/Footer"
 import getDoc from '../Database/getDoc'
 import Slider from '../Components/Products/Slider'
 import Loading from '../Components/Loading'
-import checkService from '../Database/checkService'
+import axios from 'axios'
 
 const shipping = 45;
 
 export class ProductDetails extends Component {
 
     state = {
-        data: null
+        data: null,
+        pincode: null,
+        status: ""
     }
 
     componentDidMount() {
         getDoc(this.props.match.params.doc, this.props.match.params.id).then(snap => {
             this.setState({ data: snap })
         })
+    }
 
-        checkService();
+    checkService = (e) => {
+        e.preventDefault();
+
+        axios.post('https://us-central1-pine-valley-7820d.cloudfunctions.net/checkService', { pincode: this.state.pincode }).then(res => {
+            if (res.data.status.toString() === "200") {
+                this.setState({ status: "Delivery Available" })
+            }
+            else {
+                this.setState({ status: "Sorry, delivery not available in your area" })
+            }
+        });
     }
 
     render() {
         if (!this.state.data) {
-            return <div className="wrap" style={{height:"100vh"}} ><Loading/></div>
+            return <div className="wrap" style={{ height: "100vh" }} ><Loading /></div>
         }
         return (
             <div>
@@ -74,7 +87,7 @@ export class ProductDetails extends Component {
                                                 <div className="single-product-price">
                                                     <span className="price new-price">&#8377;{this.state.data.sp}</span><br />
                                                     <span className="regular-price" style={{ fontSize: "15px" }} >&#8377;{this.state.data.mrp}</span> <br></br>
-                                                    
+
                                                     {
                                                         this.state.data.id === "1pow" || this.state.data.id === "1gow" ? (
                                                             <span style={{ fontSize: "15px" }} >Shipping (ALL INDIA): &#8377;{shipping}</span>
@@ -95,11 +108,23 @@ export class ProductDetails extends Component {
                                                         {this.state.data.highlights}
                                                     </p>
                                                 </div>
-                                                <div className="product-countdown-two" data-countdown2="2020/06/01"></div>
+                                                <div>
+                                                    <form onSubmit={this.checkService} >
+                                                        <label style={{ color: "grey", fontSize: "10px" }} >Check Delivery Service Avaialbility</label>
+                                                        <div>
+                                                            <input required placeholder="Pincode" onChange={(e) => { this.setState({ pincode: e.target.value }) }} />
+                                                            <input type="submit" />
+                                                        </div>
+                                                        <p style={{fontSize:"12px", color:"green"}} >
+                                                            {this.state.status}
+                                                        </p>
+                                                    </form>
+
+                                                </div>
                                                 <div className="single-product-quantity">
                                                     {
                                                         this.state.data.id === "1pow" || this.state.data.id === "1gow" ? (
-                                                            <a href={"/cart/"+this.props.match.params.doc+"/"+this.state.data.id} className="add-to-link">
+                                                            <a href={"/cart/" + this.props.match.params.doc + "/" + this.state.data.id} className="add-to-link">
                                                                 <button className="btn" style={{ padding: "10px 30px" }} ><i className="fa fa-shopping-bag"></i>buy</button>
                                                             </a>
                                                         ) : (
@@ -107,8 +132,8 @@ export class ProductDetails extends Component {
                                                         )
                                                     }
                                                 </div>
-                                                <p style={{color:"grey"}} >
-                                                    This product will be shipped on the last day of the week - {this.state.data.to}<br/>
+                                                <p style={{ color: "grey" }} >
+                                                    This product will be shipped on the last day of the week - {this.state.data.to}<br />
                                                     for all buyers. To know the process go <a href="/how-we-work" ><b>here</b></a>.
                                                 </p>
                                                 <div className="product-meta">
