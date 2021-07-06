@@ -129,24 +129,28 @@ export class Account extends Component {
                                                                         <th>Name</th>
                                                                         <th>Date</th>
                                                                         <th>Status</th>
+                                                                        <th>Payment</th>
                                                                         <th>Total (Rs.)</th>
                                                                     </tr>
                                                                 </thead>
 
                                                                 {
                                                                     this.state.orders ? (
-                                                                        this.state.orders.map((item,index) => {
-                                                                            return (
-                                                                                <tbody>
-                                                                                    <tr>
-                                                                                        <td>{index+1}</td>
-                                                                                        <td>{item.product}</td>
-                                                                                        <td>{item.date}</td>
-                                                                                        <td>Pending</td>
-                                                                                        <td>{item.amount/100}</td>
-                                                                                    </tr>
-                                                                                </tbody>
-                                                                            )
+                                                                        this.state.orders.map((item, index) => {
+                                                                            if (item.payment) {
+                                                                                return (
+                                                                                    <tbody>
+                                                                                        <tr>
+                                                                                            <td>{index + 1}</td>
+                                                                                            <td>{item.product}</td>
+                                                                                            <td>{item.date}</td>
+                                                                                            <td>Pending</td>
+                                                                                            <td>Success</td>
+                                                                                            <td>{item.amount / 100}</td>
+                                                                                        </tr>
+                                                                                    </tbody>
+                                                                                )
+                                                                            }
                                                                         })
                                                                     ) : (
                                                                         <div>

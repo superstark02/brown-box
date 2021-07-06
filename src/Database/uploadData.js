@@ -49,7 +49,7 @@ export function uploadData(data, photo) {
 
 export function updatePayment(data) {
     return new Promise((resolve, reject) => {
-        db.collection("Users").doc(data.uid).collection("Orders").doc(data.product)
+        db.collection("Users").doc(data.user_id).collection("Orders").doc(data.pow)
             .set({
                 payment: true
             }).then(res=>{

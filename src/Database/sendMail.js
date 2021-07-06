@@ -1,15 +1,17 @@
 import emailjs from 'emailjs-com';
 
-async function sendMail(e) {
+function sendMail(e) {
 
-    emailjs.sendForm('gmail', 'template_060u1yu', e.target, 'user_rdnQ08wROAm4vj2HIcVdc')
-      .then((result) => {
-          console.log(result.text);
-          return true
-      }, (error) => {
-          console.log(error.text);
-          return false
-      });
+    return new Promise((resolve, reject) => {
+        emailjs.sendForm('gmail', 'template_060u1yu', e, 'user_rdnQ08wROAm4vj2HIcVdc')
+            .then((result) => {
+                console.log(result.text);
+                resolve(true)
+            }, (error) => {
+                console.log(error.text);
+                reject(false)
+            });
+    });
 
     /*const data = {
         fromAddress: "order@brownboxindia.store",
