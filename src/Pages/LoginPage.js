@@ -16,7 +16,7 @@ export default class LoginPage extends Component {
                             <div class="row">
                                 <div class="col">
                                     <div class="page-banner text-left" style={{ color: "white" }} >
-                                        <h2>Login Register</h2>
+                                        <h2>Login / Register</h2>
                                         <ul class="page-breadcrumb" style={{ color: "white" }}  >
                                             <li><a href="/" style={{ color: "white" }}  >Home</a></li>
                                             <li style={{ color: "white" }}  >Login / Register</li>

@@ -5,6 +5,7 @@ import getDoc from '../Database/getDoc'
 import { getSubCollection } from '../Database/getCollection'
 import firebase from 'firebase'
 import { useHistory } from "react-router-dom";
+import LoginPage from './LoginPage'
 
 function Redirect() {
     const history = useHistory();
@@ -26,7 +27,8 @@ export class Account extends Component {
 
     state = {
         user_data: null,
-        orders: null
+        orders: null,
+        login: false
     }
 
     componentDidMount() {
@@ -40,7 +42,7 @@ export class Account extends Component {
                     this.setState({ orders: item })
                 })
             } else {
-                return alert("Please login to order")
+                this.setState({login:true})
             }
         });
     }
@@ -201,6 +203,11 @@ export class Account extends Component {
                     </div>
                     <MyFooter />
                 </div>
+            )
+        }
+        if(this.state.login){
+            return(
+                <LoginPage/>
             )
         }
         else {
