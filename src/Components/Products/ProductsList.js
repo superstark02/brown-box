@@ -40,7 +40,7 @@ export class ProductsList extends Component {
                                                 <div class="col-lg-3 col-md-4 col-sm-6">
                                                     {/* Single Grid product Start */}
                                                     <div class="single-grid-product mb-40">
-                                                        <div class="product-image" style={{ height: "300px" }} >
+                                                        <div class="product-image" style={{ height: "300px", position:"relative" }} >
                                                             <a href={"/display/"+ this.props.doc + "/" + item.id}>
                                                                 <img src={item.image} width="50%" alt="" />
                                                             </a>
@@ -53,7 +53,7 @@ export class ProductsList extends Component {
                                                                 </ul>
                                                             </div>*/}
                                                         </div>
-                                                        <div class="product-content">
+                                                        <div class="product-content" style={{position:"relative"}} >
                                                             <h3 class="title"> <a href={"/display/"+ this.props.doc + "/" + item.id}>{item.name}</a></h3>
                                                             <p class="product-price"><span class="discounted-price">&#8377;{item.sp}</span> <span class="main-price discounted">&#8377;{item.mrp}</span></p>
                                                         </div>

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { MyFooter } from '../Components/Footer'
 import MyAppBar from "../Components/AppBar"
+import xplain from "../Videos/Xplain.mp4"
 
 export class BuyingSystem extends Component {
     render() {
@@ -24,6 +25,25 @@ export class BuyingSystem extends Component {
                         </div>
                     </div>
                 </div>
+
+                <div class="row mb-50 mb-xs-20" style={{maxWidth:"100%"}} >
+                    <div class="col"  style={{marginTop:"70px"}} >
+                        <div class="section-title text-center">
+                            <h2>Explaination Video</h2>
+                            <span>WHAT IS BROWN BOX</span>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Banner section start */}
+                <div class="banner-section section pb-40 pb-sm-30 pb-xs-0">
+                    <div class="container">
+                        <video width="100%" controls  >
+                            <source src={xplain} />
+                        </video>
+                    </div>
+                </div>
+                {/* Banner section End */}
 
                 <div class="blog-section section pt-65 pt-lg-45 pt-md-35 pt-sm-20 pt-xs-15 pb-65 pb-lg-45 pb-md-35 pb-sm-25 pb-xs-15">
                     <div class="container">
@@ -89,7 +109,7 @@ export class BuyingSystem extends Component {
                     </div>
 
                     <div className="wrap" >
-                        <a>
+                        <a href="/basically-the-idea" >
                             <div className="btn" style={{ color: "white" }} href="/basically-the-idea" >
                                 Know About The Idea
                             </div>

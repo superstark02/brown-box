@@ -61,7 +61,7 @@ export class HowWeWork extends Component {
                 </div>
 
 
-                <div class="row mb-50 mb-xs-20">
+                <div class="row mb-50 mb-xs-20" style={{maxWidth:"100%"}}  >
                     <div class="col">
                         <div class="section-title text-center">
                             <h2>Explaination Video</h2>

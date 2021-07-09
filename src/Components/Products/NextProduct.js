@@ -13,7 +13,7 @@ export class NextProduct extends Component {
                             <div class="single-banner-item pt-100 pt-md-80 pt-sm-70 pt-xs-50 pb-120 pb-md-100 pb-sm-90 pb-xs-50 mb-30 bg-image"
                                 style={{ backgroundImage: "url(" + product + ")" }}>
                                 <div class="sp-banner-content" style={{ textAlign: "center" }} >
-                                    <span class="normat-text">DISCOUNTED UP TO 50%</span>
+                                    <span class="normat-text">DISCOUNTED UP TO 62%</span>
                                     <h2 class="title">UBON WU660 6 IN 1 CABLE</h2>
                                     <span class="normat-text">NEXT WEEK'S PRODUCT</span>
                                     <MyCountdown />
