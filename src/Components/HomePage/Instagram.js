@@ -99,7 +99,7 @@ export default class Instagram extends Component {
                         <div class="container">
                             <div class="row">
                                 <div class="col-12">
-                                    <div class="testimonial-wrap  pt-45 pb-30" style={{ backgroundColor: 'rgba(255,255,255,1)' }} >
+                                    <div class="testimonial-wrap  pt-45 pb-30" style={{backgroundImage: "radial-gradient(circle, #fcd70b, white, white)"}} >
                                         <div class="row justify-content-center">
                                             <div class="col-lg-12">
                                                 <div class="testimonial-wrapper section-space--inner" >

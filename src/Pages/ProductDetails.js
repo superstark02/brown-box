@@ -6,6 +6,7 @@ import Slider from '../Components/Products/Slider'
 import Loading from '../Components/Loading'
 import axios from 'axios'
 import firebase from 'firebase'
+import Avatars from '../Components/Avatars'
 
 const shipping = 45;
 
@@ -120,6 +121,15 @@ export class ProductDetails extends Component {
                                                     </p>
                                                 </div>
                                                 <div>
+                                                    {
+                                                        this.state.data.id === "1pow" || this.state.data.id === "1gow" ? (
+                                                            <Avatars/>
+                                                        ) : (
+                                                            <div></div>
+                                                        )
+                                                    }
+                                                </div>
+                                                <div style={{ marginTop: "30px" }} >
                                                     <form onSubmit={this.checkService} >
                                                         <label style={{ color: "grey", fontSize: "10px" }} >Check Delivery Service Avaialbility</label>
                                                         <div>
