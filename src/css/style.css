@@ -164,7 +164,7 @@ a:focus {
 
 a:hover {
   text-decoration: none;
-  color: #151515;
+  color: inherit;
 }
 
 button, input[type="submit"] {

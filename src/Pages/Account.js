@@ -42,7 +42,7 @@ export class Account extends Component {
                     this.setState({ orders: item })
                 })
             } else {
-                this.setState({login:true})
+                this.setState({ login: true })
             }
         });
     }
@@ -87,12 +87,25 @@ export class Account extends Component {
                                         {/* My Account Tab Menu Start */}
                                         <div class="col-lg-3 col-12">
                                             <div class="myaccount-tab-menu nav" role="tablist">
-                                                <a href="#dashboad" class="active" data-toggle="tab"><i class="fa fa-dashboard"></i>
-                                                    Dashboard</a>
+                                                <a href="#dashboad" class="active" data-toggle="tab">
+                                                    <div>
+                                                        <i class="fa fa-dashboard"></i>
+                                                        Dashboard
+                                                    </div>
+                                                </a>
 
-                                                <a href="#orders" data-toggle="tab"><i class="fa fa-cart-arrow-down"></i> Orders</a>
+                                                <a href="#orders" data-toggle="tab">
+                                                    <div>
+                                                        <i class="fa fa-cart-arrow-down"></i> Orders
+                                                    </div>
+                                                </a>
 
-                                                <a href="#address-edit" data-toggle="tab"><i class="fa fa-map-marker"></i> address</a>
+                                                <a href="#address-edit" data-toggle="tab">
+                                                    <div>
+                                                        <i class="fa fa-map-marker"></i>
+                                                        Address
+                                                    </div>
+                                                </a>
 
                                                 <Redirect />
                                             </div>
@@ -205,9 +218,9 @@ export class Account extends Component {
                 </div>
             )
         }
-        if(this.state.login){
-            return(
-                <LoginPage/>
+        if (this.state.login) {
+            return (
+                <LoginPage />
             )
         }
         else {
