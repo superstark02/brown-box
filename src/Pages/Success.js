@@ -13,7 +13,8 @@ class Success extends Component {
         product_name: null,
         date: null,
         amount: null,
-        to: null
+        to: null,
+        updated: false
     }
 
     sendMail = (e) => {
@@ -34,7 +35,7 @@ class Success extends Component {
     componentDidMount() {
         firebase.auth().onAuthStateChanged(user => {
             if (user) {
-
+                this.setState({ name: user.email })
                 getDoc("Products", "1pow").then(snap => {
                     updatePayment({
                         user_id: user.uid,
@@ -59,17 +60,14 @@ class Success extends Component {
         });
     }
 
+    componentDidUpdate() {
+
+    }
+
     render() {
         if (this.state.status) {
             return (
                 <div id="element" >
-                    <form id="mail" onSubmit={this.sendMail} >
-                        <input type="hidden" name="name" value={this.state.name} />
-                        <input type="hidden" name="name" value={this.state.product_name} />
-                        <input type="hidden" name="name" value={this.state.date} />
-                        <input type="hidden" name="name" value={this.state.amount} />
-                        <input type="hidden" name="name" value={this.state.to} />
-                    </form>
                     <div style={{ background: "transparent" }} >
                         <div class="modal-dialog modal-confirm">
                             <div class="modal-content">
@@ -83,7 +81,10 @@ class Success extends Component {
                                 </div>
                                 <h4 style={{ textAlign: "center" }} class="modal-title">Awesome!</h4>
                                 <div class="modal-body">
-                                    <p class="text-center">Your order is placed!! Click <a href="/account" >here</a> for details.</p>
+                                    <p class="text-center">
+                                        Your order is placed!! You will soon receive a <br /> confirmation mail on <b>{this.state.name}</b><br />
+                                        Click <a href="/account" ><b>here</b></a> for details.
+                                    </p>
                                 </div>
                                 <h3 style={{ textAlign: "center" }} >
                                     Thank You <br /> For Shopping With Us<br />🙏
@@ -103,7 +104,12 @@ class Success extends Component {
             );
         }
         else {
-            return <div  id="element"  className="wrap" ><div>Please wait. Do not refresh or reload the page</div></div>
+            return <div id="element" className="wrap" >
+                <div>
+                    Please wait. Do not refresh or reload the page
+                </div>
+
+            </div>
         }
     }
 }
