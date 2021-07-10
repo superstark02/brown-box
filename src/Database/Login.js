@@ -7,7 +7,7 @@ export default async function login() {
 
     try {
         const result = await firebase.auth()
-            .signInWithPopup(provider);
+            .signInWithRedirect(provider);
 
             var temp = null
 

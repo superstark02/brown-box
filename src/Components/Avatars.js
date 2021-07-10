@@ -12,7 +12,6 @@ export class Avatars extends Component {
     componentDidMount() {
         axios.get("https://sheet.best/api/sheets/8469573a-bf05-40b5-9d7f-4c1dcbdad8b1")
             .then(res => {
-                console.log(res.data)
                 this.setState({ data: res.data })
             })
     }

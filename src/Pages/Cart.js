@@ -16,9 +16,9 @@ function GoToUpay() {
 
     return <div>
         <a href='https://pmny.in/Qrh0EfW5DlcG' >
-            <button style={{ width: "135px", backgroundColor: "#0D1E29", textAlign: "center", fontWeight: "800", padding: "11px 0px", color: "white", fontSize: "12px", display: "inline-block", textDecoration: "none" }} >
+            <div style={{ width: "135px", backgroundColor: "#0D1E29", textAlign: "center", fontWeight: "800", padding: "11px 0px", color: "white", fontSize: "12px", display: "inline-block", textDecoration: "none" }} >
                 Buy Now
-            </button>
+            </div>
         </a>
     </div>
 }

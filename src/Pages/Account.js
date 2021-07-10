@@ -161,7 +161,7 @@ export class Account extends Component {
                                                                                             <td>{item.date}</td>
                                                                                             <td>Pending</td>
                                                                                             <td>Success</td>
-                                                                                            <td>{item.amount / 100}</td>
+                                                                                            <td>&#8377;{item.amount}</td>
                                                                                         </tr>
                                                                                     </tbody>
                                                                                 )
