@@ -9,6 +9,7 @@ import Features from "../Components/HomePage/Features"
 import HowLowRates from '../Components/HomePage/HowLowRates'
 import Instagram from '../Components/HomePage/Instagram'
 import Brands from '../Components/HomePage/Brands'
+import Youtubers from '../Components/HomePage/Youtubers'
 
 export class Home extends Component {
     render() {
@@ -58,6 +59,8 @@ export class Home extends Component {
                 <NextProduct />
 
                 {/*<Features />*/}
+
+                <Youtubers/>
 
                 <Instagram />
 

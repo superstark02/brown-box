@@ -49,6 +49,7 @@ export class Cart extends Component {
 
         firebase.auth().onAuthStateChanged(user => {
             if (user) {
+                this.setState({email:user.email})
                 getDoc(this.props.match.params.doc, this.props.match.params.id).then(snap => {
                     this.setState({ data: snap })
                     this.setState({ user_data: user })

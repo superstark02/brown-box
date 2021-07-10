@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import firebase from 'firebase'
 import { updatePayment } from '../Database/uploadData'
-import getDoc from '../Database/getDoc';
+import getDoc, { getSubDoc } from '../Database/getDoc';
 import emailjs from 'emailjs-com';
-
+import axios from 'axios'
 
 class Success extends Component {
     state = {
@@ -42,7 +42,23 @@ class Success extends Component {
                         pow: snap.name
                     }).then(res => {
                         if (res) {
-                            this.setState({ status: true })
+                            getSubDoc("Users", user.uid, "Orders", snap.name).then(data => {
+                                axios.post('https://sheet.best/api/sheets/8469573a-bf05-40b5-9d7f-4c1dcbdad8b1', {
+                                    name: data.name,
+                                    phone: data.phone,
+                                    email: data.email,
+                                    address: data.address,
+                                    city: data.city,
+                                    state: data.state,
+                                    pincode: data.pincode,
+                                    product: data.product,
+                                    photo: user.photoURL
+                                }).then(response => {
+                                    this.setState({ status: true })
+                                }).catch(error => {
+                                    alert(error)
+                                })
+                            })
                         }
                         else {
                             this.setState({

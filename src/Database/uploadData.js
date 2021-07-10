@@ -1,5 +1,4 @@
 import { db } from "../firebase";
-import axios from 'axios'
 
 export function uploadData(data, photo) {
 
@@ -21,23 +20,7 @@ export function uploadData(data, photo) {
                 product: data.product,
                 date: today.getDate().toString().padStart(2, '0') + "/" + today.getMonth().toString().padStart(2, '0') + "/" + today.getFullYear()
             }).then(result => {
-                axios.post('https://sheet.best/api/sheets/8469573a-bf05-40b5-9d7f-4c1dcbdad8b1', {
-                    name: data.name,
-                    phone: data.phone,
-                    email: data.email,
-                    address: data.address,
-                    city: data.city,
-                    state: data.state,
-                    pincode: data.pincode,
-                    product: data.product,
-                    photo: photo
-                }).then(response => {
-                    resolve(true);
-                }).catch(error => {
-                    alert(error)
-                    reject(false);
-                })
-
+                resolve(true)
             }).catch(error => {
                 alert(error)
                 reject(false)
@@ -50,7 +33,7 @@ export function uploadData(data, photo) {
 export function updatePayment(data) {
     return new Promise((resolve, reject) => {
         db.collection("Users").doc(data.user_id).collection("Orders").doc(data.pow)
-            .set({
+            .update({
                 payment: true
             }).then(res=>{
                 resolve(true)
