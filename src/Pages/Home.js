@@ -10,6 +10,7 @@ import HowLowRates from '../Components/HomePage/HowLowRates'
 import Instagram from '../Components/HomePage/Instagram'
 import Brands from '../Components/HomePage/Brands'
 import Youtubers from '../Components/HomePage/Youtubers'
+import Pow from '../Components/HomePage/Pow'
 
 export class Home extends Component {
     render() {
@@ -22,7 +23,7 @@ export class Home extends Component {
                     <div class="hero-slider section">
 
                         {/*Hero Item start*/}
-                        <div class="hero-item  bg-image" style={{ height:"70vh",backgroundImage: "url(https://g.foolcdn.com/image/?url=https%3A//g.foolcdn.com/editorial/images/593627/gettyimages-1185938530.jpg&w=2000&op=resize)" }}>
+                        <div class="hero-item  bg-image" style={{ height: "70vh", backgroundImage: "url(https://g.foolcdn.com/image/?url=https%3A//g.foolcdn.com/editorial/images/593627/gettyimages-1185938530.jpg&w=2000&op=resize)" }}>
                             <div class="container">
                                 <div class="row">
                                     <div class="col-12">
@@ -31,11 +32,11 @@ export class Home extends Component {
                                         <div class="hero-content-2 ">
 
                                             <h2>Buy Products<br /> at Wholesale Rates</h2>
-                                            <p style={{color:"black"}} >
+                                            <p style={{ color: "black" }} >
                                                 Buy together. Save together.
                                             </p>
-                                            <a  href="/how-we-work" >
-                                                <button class="btn" style={{color:"white"}} >KNOW MORE</button>
+                                            <a href="/how-we-work" >
+                                                <button class="btn" style={{ color: "white" }} >KNOW MORE</button>
                                             </a>
                                         </div>
                                         {/*Hero Content end*/}
@@ -52,7 +53,9 @@ export class Home extends Component {
 
                 <Banner />
 
-                <Procedure />
+                <div style={{marginTop:"100px"}} >
+                    <Procedure />
+                </div>
 
                 <Products doc="Products" title="Upcoming Products" />
 
@@ -60,7 +63,7 @@ export class Home extends Component {
 
                 {/*<Features />*/}
 
-                <Youtubers/>
+                <Youtubers />
 
                 <Instagram />
 
