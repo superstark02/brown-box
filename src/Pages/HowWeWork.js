@@ -116,7 +116,7 @@ export class HowWeWork extends Component {
                                     </div>
                                     <div class="feature-content">
                                         <h4 class="title">Easy cancellations</h4>
-                                        <p class="short-desc">You can cancel your order anytime, before shpping.</p>
+                                        <p class="short-desc">You can cancel your order anytime, before shipping.</p>
                                     </div>
                                 </div>
                             </div>

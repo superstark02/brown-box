@@ -80,8 +80,8 @@ export class BuyingSystem extends Component {
                                     <div class="content">
                                         <h3 class="title">
                                             <strong>
-                                                #2. The product is on website for the whole week (Mon-Sun). At the last day(Sun)
-                                                the product is ready to ship.
+                                                #2. The product is on website for the whole week (Mon-Sun). If we receive more than 30 orders by Sunday, 
+                                                we deliver the product to all buyers.
                                             </strong>
                                         </h3>
                                     </div>
@@ -95,7 +95,7 @@ export class BuyingSystem extends Component {
                                         <h3 class="title">
                                             <strong>
                                                 #3. If the number of buyers are less than 30 till the last day (Sun).
-                                                The product is not shipped and buyer's money is refunded on the same day.
+                                                The product is not shipped and all buyer's money is refunded instantly.
                                             </strong>
                                         </h3>
                                     </div>
