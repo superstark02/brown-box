@@ -7,6 +7,7 @@ import Loading from '../Components/Loading'
 import axios from 'axios'
 import firebase from 'firebase'
 import Avatars from '../Components/Avatars'
+import xplain from "../Videos/Xplain2.mp4"
 
 const shipping = 45;
 
@@ -123,7 +124,7 @@ export class ProductDetails extends Component {
                                                 <div>
                                                     {
                                                         this.state.data.id === "1pow" || this.state.data.id === "1gow" ? (
-                                                            <Avatars/>
+                                                            <Avatars />
                                                         ) : (
                                                             <div></div>
                                                         )
@@ -222,6 +223,85 @@ export class ProductDetails extends Component {
                                                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                                                             allowfullscreen>
                                                                         </iframe>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            {/*Review And Description Tab Content End*/}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {/*Product Description Review Section Start*/}
+
+                                        <div class="product-description-review-section section">
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div class="product-review-tab section">
+                                                            {/*Review And Description Tab Menu Start*/}
+                                                            <ul class="nav dec-and-review-menu">
+                                                                <li>
+                                                                    <a class="active" data-toggle="tab" href="#reviews">How It Works</a>
+                                                                </li>
+                                                            </ul>
+                                                            {/*Review And Description Tab Menu End*/}
+                                                            {/*Review And Description Tab Content Start*/}
+                                                            <div class="tab-content product-review-content-tab" id="myTabContent-4">
+
+                                                                <div class="tab-pane fade active show" id="description">
+                                                                    <div class="single-product-description">
+                                                                        {/*<video width="100%" controls  >
+                                                                            <source src={xplain} />
+                                                                        </video>*/}
+                                                                        <div>
+                                                                            <div class="features-section section pt-30 pt-lg-15 pt-md-0 pt-sm-0 pt-xs-15">
+                                                                                <div class="container">
+                                                                                    <div class="row">
+
+                                                                                        <div class="col-lg-4 col-md-6">
+                                                                                            <div class="single-feature mb-30">
+                                                                                                <div class="feature-image">
+                                                                                                    <img src="https://img.icons8.com/ios/50/000000/controller.png" class="img-fluid" alt="" />
+                                                                                                </div>
+                                                                                                <div class="feature-content">
+                                                                                                    <h4 class="title">One Product Per Week</h4>
+                                                                                                    <p class="short-desc">We post one <b>product</b> per week. Interested users buy that product.</p>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="col-lg-4 col-md-6">
+                                                                                            <div class="single-feature mb-30">
+                                                                                                <div class="feature-image">
+                                                                                                    <img src="https://img.icons8.com/ios/50/000000/discount--v1.png" class="img-fluid" alt="" />
+                                                                                                </div>
+                                                                                                <div class="feature-content">
+                                                                                                    <h4 class="title">Buyers</h4>
+                                                                                                    <p class="short-desc">When we receive atleast 30 orders by the end of the week (Sunday). Our partnered companies deliver the product to you.</p>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="col-lg-4 col-md-6">
+                                                                                            <div class="single-feature mb-30">
+                                                                                                <div class="feature-image">
+                                                                                                    <img src="https://demo.hasthemes.com/nelson-preview/nelson/assets/images/icons/feature-3.png" class="img-fluid" alt="" />
+                                                                                                </div>
+                                                                                                <div class="feature-content">
+                                                                                                    <h4 class="title">No Worries</h4>
+                                                                                                    <p class="short-desc">
+                                                                                                        If orders are less than 30, we do not deliver the product and refund your money instantly.
+                                                                                                    </p>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div>
+                                                                            In case of any confusion, feel free to contact through <a href="https://wa.me/919319977851?text=Hi" ><b>WhatsApp</b></a>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                             </div>

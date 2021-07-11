@@ -34,7 +34,7 @@ export class Avatars extends Component {
                     </div>
 
                     <div>
-                        {this.state.data.length}+ users are buying this product together
+                        {this.state.data.length}+ orders received. 
                     </div>
                 </div>
             )
