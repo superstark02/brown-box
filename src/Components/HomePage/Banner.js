@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import  bg from "../../Images/pubgbg.png"
+import  bg from "../../Images/pubgbg1.jpg"
 
 export class Banner extends Component {
     render() {
@@ -11,7 +11,6 @@ export class Banner extends Component {
                             <div class="single-banner-item pt-100 pt-md-80 pt-sm-70 pt-xs-50 pb-120 pb-md-100 pb-sm-90 pb-xs-50 mb-30 bg-image"
                                 style={{
                                     backgroundImage: "url("+bg+")",
-
                                 }}>
                                 <div class="sp-banner-content" style={{ background: "transparent" }} >
                                     <span class="normat-text" style={{ color: "white" }} >IMPROVE YOUR GAME</span>
