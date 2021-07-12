@@ -34,7 +34,7 @@ export function updatePayment(data) {
     return new Promise((resolve, reject) => {
         db.collection("Users").doc(data.user_id).collection("Orders").doc(data.pow)
             .update({
-                payment: true
+                payment: data.payment_mode
             }).then(res=>{
                 resolve(true)
             }).catch(e=>{

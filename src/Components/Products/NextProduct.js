@@ -14,7 +14,7 @@ export class NextProduct extends Component {
                                 style={{ backgroundImage: "url(" + product + ")" }}>
                                 <div class="sp-banner-content" style={{ textAlign: "center" }} >
                                     <span class="normat-text">62% DISCOUNT</span>
-                                    <h2 class="title">UBON WU660 6 IN 1 CABLE</h2>
+                                    <h2 class="title">UBON WR660 6 IN 1 CABLE</h2>
                                     <span class="normat-text">NEXT WEEK'S PRODUCT - Avaialble In</span>
                                     <MyCountdown />
                                     <a href="/display/Products/2">

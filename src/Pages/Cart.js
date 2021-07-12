@@ -10,17 +10,29 @@ import login from '../Database/Login'
 import { useHistory } from "react-router-dom";
 
 const shipping = 45.00;
+const cod_shipping = 89.00
 
-function GoToUpay() {
+function GoToUpay(props) {
     const history = useHistory();
 
-    return <div>
-        <a href='https://pmny.in/Qrh0EfW5DlcG' >
-            <div style={{ width: "135px", backgroundColor: "#0D1E29", textAlign: "center", fontWeight: "800", padding: "11px 0px", color: "white", fontSize: "12px", display: "inline-block", textDecoration: "none" }} >
-                Buy Now
-            </div>
-        </a>
-    </div>
+    if (props.payment_mode === "prepaid") {
+        return <div>
+            <a href='https://pmny.in/Qrh0EfW5DlcG' >
+                <div style={{ width: "135px", backgroundColor: "#0D1E29", textAlign: "center", fontWeight: "800", padding: "11px 0px", color: "white", fontSize: "12px", display: "inline-block", textDecoration: "none" }} >
+                    Buy Now
+                </div>
+            </a>
+        </div>
+    }
+    else if (props.payment_mode === "cod") {
+        return <div>
+            <a href="/payment-success/cod" >
+                <div style={{ width: "135px", backgroundColor: "#0D1E29", textAlign: "center", fontWeight: "800", padding: "11px 0px", color: "white", fontSize: "12px", display: "inline-block", textDecoration: "none" }} >
+                    Confirm Order
+                </div>
+            </a>
+        </div>
+    }
 }
 
 
@@ -42,14 +54,16 @@ export class Cart extends Component {
 
         login_page: false,
         showUpay: false,
-        buttonText: "Place Order"
+        buttonText: "Place Order",
+        payment_mode: "prepaid",
+        shipping: shipping,
     }
 
     componentDidMount() {
 
         firebase.auth().onAuthStateChanged(user => {
             if (user) {
-                this.setState({email:user.email})
+                this.setState({ email: user.email })
                 getDoc(this.props.match.params.doc, this.props.match.params.id).then(snap => {
                     this.setState({ data: snap })
                     this.setState({ user_data: user })
@@ -81,7 +95,7 @@ export class Cart extends Component {
             uid: this.state.user_data.uid,
             product: this.state.data.name,
             e: e,
-            total: parseFloat(this.state.data.sp.replace(/,/g, '')) * this.state.quantity + shipping
+            total: parseFloat(this.state.data.sp.replace(/,/g, '')) * this.state.quantity + this.state.shipping
         }
 
         uploadData(temp, this.state.user_data.photo).then(res => {
@@ -93,6 +107,13 @@ export class Cart extends Component {
     myChangeHandler = (event) => {
         let nam = event.target.name;
         let val = event.target.value;
+
+        if(val === "prepaid"){
+            this.setState({shipping:shipping})
+        }
+        if(val === 'cod'){
+            this.setState({shipping:cod_shipping})
+        }
         this.setState({ [nam]: val });
     }
 
@@ -146,7 +167,7 @@ export class Cart extends Component {
                                                 <td class="pro-price"><span>&#8377;{this.state.data.sp}</span></td>
                                                 <td class="pro-quantity">
                                                     <div class="pro-qty">
-                                                        <input onChange={(e) => { this.setState({ quantity: e.target.value }) }} type="number" defaultValue="1" />
+                                                        1
                                                     </div>
                                                 </td>
                                                 <td class="pro-subtotal"><span>&#8377;{this.state.quantity * parseFloat(this.state.data.sp.replace(/,/g, ''))}</span></td>
@@ -170,7 +191,7 @@ export class Cart extends Component {
 
                                                             <div class="col-md-6 col-12 mb-20">
                                                                 <label>Full Name*</label>
-                                                                <input required name="name" onChange={this.myChangeHandler} type="text" placeholder="First Name" />
+                                                                <input required name="name" onChange={this.myChangeHandler} type="text" placeholder="Full Name" />
                                                             </div>
 
                                                             <div class="col-md-6 col-12 mb-20">
@@ -209,11 +230,19 @@ export class Cart extends Component {
                                                                 <label>Zip Code*</label>
                                                                 <input required name="pincode" onChange={this.myChangeHandler} type="text" placeholder="Zip Code" />
                                                             </div>
+
+                                                            <div class="col-md-6 col-12 mb-20">
+                                                                <label>Payment Mode*</label>
+                                                                <select required name="payment_mode" defaultValue={this.state.payment_mode} onChange={this.myChangeHandler} style={{ padding: "10px" }}>
+                                                                    <option value="cod">Cash On Delivery</option>
+                                                                    <option value="prepaid">Prepaid</option>
+                                                                </select>
+                                                            </div>
                                                         </div>
 
                                                         {
                                                             this.state.showUpay ? (
-                                                                <GoToUpay />
+                                                                <GoToUpay payment_mode={this.state.payment_mode} />
                                                             ) : (
                                                                 <input style={{ backgroundColor: "black", color: "white" }} type="submit" value={this.state.buttonText} class="place-order btn btn-lg " />
                                                             )
@@ -238,12 +267,15 @@ export class Cart extends Component {
                                                                 <li>{this.state.data.name} X {this.state.quantity} <span>&#8377;{parseFloat(this.state.data.sp.replace(/,/g, '')) * this.state.quantity}</span></li>
                                                             </ul>
 
-                                                            <p>Sub Total <span>&#8377;{this.state.data.sp}</span></p>
-                                                            <p>Shipping Fee <span>&#8377;{shipping}</span></p>
+                                                            {
+                                                                this.state.payment_mode === "prepaid" ? (
+                                                                    <p>Shipping Fee (Prepaid) <span>&#8377;{shipping}</span></p>
+                                                                ):(
+                                                                    <p>Shipping Fee (COD) <span>&#8377;{cod_shipping}</span></p>
+                                                                )
+                                                            }                                                            
 
-                                                            <p>Sorry, Cash On Delivery is not available at the moment. We are working on that.</p>
-
-                                                            <h4>Grand Total <span>&#8377;{parseFloat(this.state.data.sp.replace(/,/g, '')) * this.state.quantity + shipping}</span></h4>
+                                                            <h4>Grand Total <span>&#8377;{parseFloat(this.state.data.sp.replace(/,/g, '')) * this.state.quantity + this.state.shipping}</span></h4>
 
                                                         </div>
                                                     </div>

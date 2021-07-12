@@ -36,7 +36,7 @@ function App() {
           <Route exact path='/basically-the-idea' component={HowWeWork} />
           <Route exact path='/how-we-work' component={BuyingSystem} />
           <Route exact path='/contact' component={Contact} />
-          <Route exact path='/payment-success' component={Success} />
+          <Route exact path='/payment-success/:payment_mode' component={Success} />
           <Route exact path='/payment-failed' component={Failed} />
           <Route exact path='/tnc' component={TnC} />
           <Route exact path='/login' component={LoginPage} />

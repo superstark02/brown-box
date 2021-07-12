@@ -103,7 +103,7 @@ export class ProductDetails extends Component {
 
                                                     {
                                                         this.state.data.id === "1pow" || this.state.data.id === "1gow" ? (
-                                                            <span style={{ fontSize: "15px" }} >Shipping (ALL INDIA): &#8377;{shipping}</span>
+                                                            <span style={{ fontSize: "15px" }} >Shipping (ALL INDIA): &#8377;{shipping} <br/> <span style={{fontSize:"10px"}} >Extra charges may apply for cash on delivery</span> </span>
                                                         ) : (
                                                             <span style={{ fontSize: "15px" }} >Shipping (ALL INDIA): Will be revealed after the launch of the product </span>
                                                         )

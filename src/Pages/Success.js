@@ -39,7 +39,8 @@ class Success extends Component {
                 getDoc("Products", "1pow").then(snap => {
                     updatePayment({
                         user_id: user.uid,
-                        pow: snap.name
+                        pow: snap.name,
+                        payment_mode: this.props.match.params.payment_mode
                     }).then(res => {
                         if (res) {
                             getSubDoc("Users", user.uid, "Orders", snap.name).then(data => {
@@ -52,7 +53,8 @@ class Success extends Component {
                                     state: data.state,
                                     pincode: data.pincode,
                                     product: data.product,
-                                    photo: user.photoURL
+                                    photo: user.photoURL,
+                                    payment_mode: this.props.match.params.payment_mode
                                 }).then(response => {
                                     this.setState({ status: true })
                                 }).catch(error => {
@@ -76,9 +78,6 @@ class Success extends Component {
         });
     }
 
-    componentDidUpdate() {
-
-    }
 
     render() {
         if (this.state.status) {
