@@ -59,7 +59,7 @@ export class Home extends Component {
 
                 <Products doc="Products" title="Upcoming Products" />
 
-                <NextProduct />
+                {/*<NextProduct />*/}
 
                 {/*<Features />*/}
 

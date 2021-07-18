@@ -9,7 +9,7 @@ class Pow extends Component {
     }
 
     componentDidMount() {
-        getDoc("Products", "1").then(snap => {
+        getDoc("Products", "2").then(snap => {
             this.setState({ product: snap })
         })
     }
@@ -22,7 +22,7 @@ class Pow extends Component {
                         <div class="my-wrap">
                             <div className="my-wrap">
                                 <div>
-                                    <img className="floating" src={this.state.product.image} alt="" />
+                                    <img className="floating" src={this.state.product.image1} alt="" />
                                 </div>
                             </div>
                             <div  className="my-wrap">
@@ -40,7 +40,7 @@ class Pow extends Component {
                                                 <p>{this.state.product.highlights}</p>
                                             </blockquote>
                                             <div>
-                                                <a href="/display/Products/1" >
+                                                <a href={"/display/Products/"+this.state.product.id} >
                                                     <button className="btn" >
                                                         VIEW
                                                     </button>
