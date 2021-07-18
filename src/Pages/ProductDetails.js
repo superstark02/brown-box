@@ -25,12 +25,14 @@ export class ProductDetails extends Component {
         firebase.auth().onAuthStateChanged(user => {
             getDoc(this.props.match.params.doc, this.props.match.params.id).then(snap => {
                 this.setState({ data: snap })
+            }).then(res=>{
+                if (user) {
+                    this.setState({ href: "/login" })
+                } else {
+                    this.setState({ href: "/cart/" + this.props.match.params.doc + "/" + this.state.data.id })
+                }
             })
-            if (user) {
-                this.setState({ href: "/login" })
-            } else {
-                this.setState({ href: "/cart/" + this.props.match.params.doc + "/1pow" })
-            }
+            
         });
     }
 
@@ -123,7 +125,7 @@ export class ProductDetails extends Component {
                                                 </div>
                                                 <div>
                                                     {
-                                                        this.state.data.id === "1pow" || this.state.data.id === "1gow" ? (
+                                                        this.state.data.selling === "yes" || this.state.data.id === "1gow" ? (
                                                             <Avatars />
                                                         ) : (
                                                             <div></div>
@@ -145,8 +147,8 @@ export class ProductDetails extends Component {
                                                 </div>
                                                 <div className="single-product-quantity">
                                                     {
-                                                        this.state.data.id === "1pow" || this.state.data.id === "1gow" ? (
-                                                            <a href={"/cart/" + this.props.match.params.doc + "/1pow"} className="add-to-link">
+                                                        this.state.data.selling === "yes" || this.state.data.id === "1gow" ? (
+                                                            <a href={"/cart/" + this.props.match.params.doc + "/" + this.state.data.id} className="add-to-link">
                                                                 <button className="btn" style={{ padding: "10px 30px" }} ><i className="fa fa-shopping-bag"></i>buy</button>
                                                             </a>
                                                         ) : (

@@ -8,14 +8,15 @@ import "../css/cart.css"
 import Loading from '../Components/Loading'
 import login from '../Database/Login'
 import { useHistory } from "react-router-dom";
+import bg from "../Images/products.jpg"
 
 const shipping = 45.00;
-const cod_shipping = 89.00
+const cod_shipping = 75.00
 
 function GoToUpay(props) {
     const history = useHistory();
 
-    if (props.payment_mode === "prepaid") {
+    if (props.payment_mode === "prepaid" && props.id==="1" ) {
         return <div>
             <a href='https://pmny.in/Qrh0EfW5DlcG' >
                 <div style={{ width: "135px", backgroundColor: "#0D1E29", textAlign: "center", fontWeight: "800", padding: "11px 0px", color: "white", fontSize: "12px", display: "inline-block", textDecoration: "none" }} >
@@ -24,6 +25,17 @@ function GoToUpay(props) {
             </a>
         </div>
     }
+
+    if (props.payment_mode === "prepaid" && props.id==="2" ) {
+        return <div>
+            <a href='https://pmny.in/WIvJiSJNo6B8' >
+                <div style={{ width: "135px", backgroundColor: "#0D1E29", textAlign: "center", fontWeight: "800", padding: "11px 0px", color: "white", fontSize: "12px", display: "inline-block", textDecoration: "none" }} >
+                    Buy Now
+                </div>
+            </a>
+        </div>
+    }
+
     else if (props.payment_mode === "cod") {
         return <div>
             <a href="/payment-success/cod" >
@@ -125,16 +137,16 @@ export class Cart extends Component {
         return (
             <div>
                 <MyAppBar />
-                <div class="page-banner-section section bg-image" style={{ backgroundImage: "url(https://image.freepik.com/free-photo/up-date-technology-top-view-diverse-personal-accessory_194236-8.jpg)" }}>
+                <div class="page-banner-section section bg-image" style={{ backgroundImage: "url("+ bg +")" }}>
                     <div class="container">
                         <div class="row">
                             <div class="col">
 
                                 <div class="page-banner text-left">
-                                    <h2>Shopping Cart</h2>
+                                    <h2 style={{color:"white"}}  >Shopping Cart</h2>
                                     <ul class="page-breadcrumb">
-                                        <li><a href="index.html">Home</a></li>
-                                        <li>Shopping Cart</li>
+                                        <li><a href="index.html" style={{color:"white"}}  >Home</a></li>
+                                        <li style={{color:"white"}}  >Shopping Cart</li>
                                     </ul>
                                 </div>
 
@@ -166,9 +178,7 @@ export class Cart extends Component {
                                                 <td class="pro-title"><a href="#">{this.state.data.name}</a></td>
                                                 <td class="pro-price"><span>&#8377;{this.state.data.sp}</span></td>
                                                 <td class="pro-quantity">
-                                                    <div class="pro-qty">
-                                                        1
-                                                    </div>
+                                                    <div class="pro-qty"><input type="number" name="quantity" value={1} /></div>
                                                 </td>
                                                 <td class="pro-subtotal"><span>&#8377;{this.state.quantity * parseFloat(this.state.data.sp.replace(/,/g, ''))}</span></td>
 
@@ -242,7 +252,7 @@ export class Cart extends Component {
 
                                                         {
                                                             this.state.showUpay ? (
-                                                                <GoToUpay payment_mode={this.state.payment_mode} />
+                                                                <GoToUpay payment_mode={this.state.payment_mode} id={this.state.data.id} />
                                                             ) : (
                                                                 <input style={{ backgroundColor: "black", color: "white" }} type="submit" value={this.state.buttonText} class="place-order btn btn-lg " />
                                                             )

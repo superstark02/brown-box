@@ -54,7 +54,7 @@ class Success extends Component {
                                     pincode: data.pincode,
                                     product: data.product,
                                     photo: user.photoURL,
-                                    payment_mode: this.props.match.params.payment_mode
+                                    payment_mode: this.props.match.params.payment_mode,
                                 }).then(response => {
                                     this.setState({ status: true })
                                 }).catch(error => {

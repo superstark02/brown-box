@@ -65,7 +65,8 @@ export function uploadProducts(data) {
                 to: data[i].to,
                 amazon: data[i].amazon,
                 flipkart: data[i].flipkart,
-                video: data[i].video
+                video: data[i].video,
+                selling: data[i].selling
             }).then(result => {
                 console.log("Done")
             }).catch(error => {
