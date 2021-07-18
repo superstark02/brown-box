@@ -9,6 +9,7 @@ import Loading from '../Components/Loading'
 import login from '../Database/Login'
 import { useHistory } from "react-router-dom";
 import bg from "../Images/products.jpg"
+import axios from 'axios'
 
 const shipping = 45.00;
 const cod_shipping = 75.00
@@ -127,6 +128,24 @@ export class Cart extends Component {
             this.setState({shipping:cod_shipping})
         }
         this.setState({ [nam]: val });
+    }
+
+    payu = () => {
+        axios.post("https://test.payu.in/_payment", {
+            key: "5rPm6M",
+            txnid: "123",
+            amount: 100.00,
+            productinfo: "Product Name",
+            firstname: "Username",
+            email: "test@gmail.com",
+            phone: "9876543210",
+            surl: "http://localhost:3000/payment-success/prepaid",
+            furl: "http://localhost:3000/payment-failed",
+            hash: "ccc029894dcc03a164f281b7a64596a19785e8a61ae81d008ef482e1534a99a67eee346d3cbf9ffcf1ce63b0e2faee26f2e4a20e6aef471c25b424c33971bb41"
+        }, {headers:{
+            'accept': "application/json",
+            'Content-Type': 'application/x-www-form-urlencoded'
+        }})
     }
 
     render() {

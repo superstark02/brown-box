@@ -9,7 +9,7 @@ class Pow extends Component {
     }
 
     componentDidMount() {
-        getDoc("Products", "1pow").then(snap => {
+        getDoc("Products", "1").then(snap => {
             this.setState({ product: snap })
         })
     }
@@ -40,7 +40,7 @@ class Pow extends Component {
                                                 <p>{this.state.product.highlights}</p>
                                             </blockquote>
                                             <div>
-                                                <a href="/display/Products/1pow" >
+                                                <a href="/display/Products/1" >
                                                     <button className="btn" >
                                                         VIEW
                                                     </button>
