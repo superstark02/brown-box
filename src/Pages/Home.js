@@ -51,8 +51,6 @@ export class Home extends Component {
                 </div>
                 {/*slider section end*/}
 
-                <Banner />
-
                 <div style={{marginTop:"100px"}} >
                     <Procedure />
                 </div>
