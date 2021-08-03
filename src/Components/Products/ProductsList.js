@@ -60,8 +60,8 @@ export class ProductsList extends Component {
                                                         <div class="product-content">
                                                             <p class="product-price">
                                                                 {
-                                                                    item.id === "2" || item.id === "1" ? (
-                                                                        <span class="discounted-price">Product For This Week</span>
+                                                                    item.selling == "yes" ? (
+                                                                        <span class="discounted-price">Avaialble</span>
                                                                     ):(
                                                                         <span class="main-price">Avaialble From {item.from}</span>
                                                                     )

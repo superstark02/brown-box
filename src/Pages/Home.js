@@ -1,16 +1,10 @@
 import React, { Component } from 'react'
 import AppBar from '../Components/AppBar'
-import Banner from '../Components/HomePage/Banner'
 import Products from "../Components/Products/ProductsList"
-import NextProduct from "../Components/Products/NextProduct"
 import { MyFooter } from '../Components/Footer'
 import Procedure from '../Components/HomePage/Procedure'
-import Features from "../Components/HomePage/Features"
 import HowLowRates from '../Components/HomePage/HowLowRates'
 import Instagram from '../Components/HomePage/Instagram'
-import Brands from '../Components/HomePage/Brands'
-import Youtubers from '../Components/HomePage/Youtubers'
-import Pow from '../Components/HomePage/Pow'
 
 export class Home extends Component {
     render() {
@@ -55,13 +49,13 @@ export class Home extends Component {
                     <Procedure />
                 </div>
 
-                <Products doc="Products" title="Upcoming Products" />
+                <Products doc="Products" title="Products" />
 
                 {/*<NextProduct />*/}
 
                 {/*<Features />*/}
 
-                <Youtubers />
+                {/*<Youtubers />*/}
 
                 <Instagram />
 
