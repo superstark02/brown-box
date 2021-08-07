@@ -43,7 +43,6 @@ export class Procedure extends Component {
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>

@@ -64,7 +64,7 @@ export class AppBar extends Component {
                                                             <ul>
                                                                 <li><a href="/how-we-work">How We Work</a></li>
                                                                 <li><a href="/how-we-work/#warranty">Warranty/Garauntee</a></li>
-                                                                <li><a href="/how-we-work/#cancellation">cancellation</a></li>
+                                                                <li><a href="/how-we-work/#cancellation">Cancellation</a></li>
                                                                 <li><a href="/how-we-work/#shipping">Shipping</a></li>
                                                                 <li><a href="/how-we-work/#refunds">Refunds</a></li>
                                                                 <li><a href="/how-we-work/#retun">Returns</a></li>
