@@ -46,11 +46,11 @@ export class AppBar extends Component {
                                         <nav class="main-menu">
                                             <ul>
                                                 <li><a href="/">Home</a>
-                                                    <ul class="sub-menu">
+                                                    {/*<ul class="sub-menu">
                                                         <li><a href="/display/Products/1pow">Product Of The Week</a></li>
                                                         <li><a href="#upcoming-products">Upcoming Products</a></li>
                                                         <li><a href="#next-product">Next Week's Product</a></li>
-                                                    </ul>
+        </ul>*/}
                                                 </li>
                                                 <li><a >About Us</a>
                                                     <ul class="mega-menu four-column left-0">
@@ -167,11 +167,11 @@ export class AppBar extends Component {
                             <nav class="offcanvas-navigation">
                                 <ul>
                                     <li class="menu-item-has-children"><a href="#">Home</a>
-                                        <ul class="submenu2">
+                                        {/*<ul class="submenu2">
                                             <li><a href="/display/Products/1pow">Product Of The Week</a></li>
                                             <li><a href="#upcoming-products">Upcoming Products</a></li>
                                             <li><a href="#next-product">Next Week's Product</a></li>
-                                        </ul>
+                                                    </ul>*/}
                                     </li>
                                     <li class="menu-item-has-children"><a href="#">Brown Box</a>
                                         <ul class="submenu2">

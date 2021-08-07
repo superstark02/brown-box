@@ -104,7 +104,7 @@ export class ProductDetails extends Component {
                                                     <span className="regular-price" style={{ fontSize: "15px" }} >&#8377;{this.state.data.mrp}</span> <br></br>
 
                                                     {
-                                                        this.state.data.id === "1pow" || this.state.data.id === "1gow" ? (
+                                                        this.state.data.selling === "yes" ? (
                                                             <span style={{ fontSize: "15px" }} >Shipping (ALL INDIA): &#8377;{shipping} <br/> <span style={{fontSize:"10px"}} >Extra charges may apply for cash on delivery</span> </span>
                                                         ) : (
                                                             <span style={{ fontSize: "15px" }} >Shipping (ALL INDIA): Will be revealed after the launch of the product </span>

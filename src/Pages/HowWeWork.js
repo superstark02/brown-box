@@ -9,6 +9,7 @@ import retailer from '../Images/HowWeWork/wholeseller.png'
 import shop from '../Images/HowWeWork/shop.png'
 import customer from '../Images/HowWeWork/customer.png'
 import "../css/howwework.css"
+import hotel from '../Images/HowWeWork/hotel.jpg'
 
 export class HowWeWork extends Component {
     render() {
@@ -16,7 +17,7 @@ export class HowWeWork extends Component {
             <div>
                 <AppBar />
 
-                <div class="page-banner-section section bg-image" style={{ backgroundImage: "url(https://image.freepik.com/free-photo/blurred-view-corridor-with-plants_1203-1080.jpg)" }} >
+                <div class="page-banner-section section bg-image" style={{ backgroundImage: "url("+hotel+")" }} >
                     <div class="container">
                         <div class="row">
                             <div class="col">

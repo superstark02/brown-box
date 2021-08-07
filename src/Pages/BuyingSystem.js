@@ -2,13 +2,14 @@ import React, { Component } from 'react'
 import { MyFooter } from '../Components/Footer'
 import MyAppBar from "../Components/AppBar"
 import xplain from "../Videos/Xplain.mp4"
+import pink_headphones from "../Images/HowWeWork/pink-headphones.jpg"
 
 export class BuyingSystem extends Component {
     render() {
         return (
             <div>
                 <MyAppBar />
-                <div class="page-banner-section section bg-image" style={{ backgroundImage: "url(https://image.freepik.com/free-photo/aerial-view-container-cargo-ship-sea_335224-719.jpg)" }} >
+                <div class="page-banner-section section bg-image" style={{ backgroundImage: "url(https://image.freepik.com/free-photo/robots-efficiently-sorting-hundreds-parcels-per-hour-3d-rendering_41470-3492.jpg)" }} >
                     <div class="container">
                         <div class="row">
                             <div class="col">
@@ -61,7 +62,7 @@ export class BuyingSystem extends Component {
 
                             <div class="blog col-lg-4 col-md-6">
                                 <div class="blog-inner mb-30">
-                                    <div class="blog-media"><div class="image"><img src="https://image.freepik.com/free-photo/pink-headphones-wireless-digital-device_53876-96804.jpg" alt="" /></div></div>
+                                    <div class="blog-media"><div class="image"><img src={pink_headphones} alt="" /></div></div>
                                     <div class="content">
                                         <h3 class="title">
                                             <strong>
@@ -135,7 +136,7 @@ export class BuyingSystem extends Component {
                                                     </td>
                                                 </tr>
                                                 <tr id="cancellation" >
-                                                    <td class="first-column">cancellation</td>
+                                                    <td class="first-column">Cancellation</td>
                                                     <td class="pro-desc">
                                                         <p>
                                                             You can cancel your order before last day (Sun) of the week. You cancel by contacting <a href="/contact" > here</a>
