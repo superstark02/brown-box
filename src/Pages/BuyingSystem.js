@@ -3,13 +3,14 @@ import { MyFooter } from '../Components/Footer'
 import MyAppBar from "../Components/AppBar"
 import xplain from "../Videos/Xplain.mp4"
 import pink_headphones from "../Images/HowWeWork/pink-headphones.jpg"
+import ship from "../Images/HowWeWork/ship.png"
 
 export class BuyingSystem extends Component {
     render() {
         return (
             <div>
                 <MyAppBar />
-                <div class="page-banner-section section bg-image" style={{ backgroundImage: "url(https://image.freepik.com/free-photo/robots-efficiently-sorting-hundreds-parcels-per-hour-3d-rendering_41470-3492.jpg)" }} >
+                <div class="page-banner-section section bg-image" style={{ backgroundImage: "url("+ship+")" }} >
                     <div class="container">
                         <div class="row">
                             <div class="col">
@@ -66,8 +67,7 @@ export class BuyingSystem extends Component {
                                     <div class="content">
                                         <h3 class="title">
                                             <strong>
-                                                #1. We post a product every week. We are focusing on gaming community right now. So,
-                                                most of the products are gaming accessories
+                                                #1. Branded and good quality products.
                                             </strong>
                                         </h3>
                                         {/*<a class="read-more" href="blog-details.html">Read more</a>*/}
@@ -81,8 +81,7 @@ export class BuyingSystem extends Component {
                                     <div class="content">
                                         <h3 class="title">
                                             <strong>
-                                                #2. The product is on website for the whole week (Mon-Sun). If we receive more than 30 orders by Sunday, 
-                                                we deliver the product to all buyers.
+                                                #2. The product is shipped as soon as 30 orders are received.
                                             </strong>
                                         </h3>
                                     </div>
@@ -95,7 +94,7 @@ export class BuyingSystem extends Component {
                                     <div class="content">
                                         <h3 class="title">
                                             <strong>
-                                                #3. If the number of buyers are less than 30 till the last day (Sun).
+                                                #3. If the number of buyers are less than 30.
                                                 The product is not shipped and all buyer's money is refunded instantly.
                                             </strong>
                                         </h3>
@@ -131,7 +130,7 @@ export class BuyingSystem extends Component {
                                                     <td class="first-column">Warranty/Garauntee</td>
                                                     <td class="pro-desc">
                                                         <p>
-                                                            No warrany/garauntee is compromised. You get full warranty/garauntee on branded products.
+                                                            No warrany/garauntee is compromised. Get full warranty/garauntee on branded products.
                                                         </p>
                                                     </td>
                                                 </tr>
@@ -139,7 +138,7 @@ export class BuyingSystem extends Component {
                                                     <td class="first-column">Cancellation</td>
                                                     <td class="pro-desc">
                                                         <p>
-                                                            You can cancel your order before last day (Sun) of the week. You cancel by contacting <a href="/contact" > here</a>
+                                                            Cancel your order before shiping. You cancel your order by contacting <a href="/contact" > here</a>
                                                         </p>
                                                     </td>
                                                 </tr>
@@ -147,7 +146,7 @@ export class BuyingSystem extends Component {
                                                     <td class="first-column">Shipping</td>
                                                     <td class="pro-desc">
                                                         <p>
-                                                            The product is shipped on the last day of the week (Sun). The product is delivered to you within 3-4 days.
+                                                            The product is delivered to you within 3-4 days.
                                                         </p>
                                                     </td>
                                                 </tr>
@@ -172,8 +171,9 @@ export class BuyingSystem extends Component {
                                                     <td class="first-column">Returns</td>
                                                     <td class="pro-desc">
                                                         <p>
-                                                            The returns are only initited for branded products. For returning a product extra charges are applied. Unbranded products
-                                                            are not returned. This month we will be focusing on non-branded products.
+                                                            The returns are only initiated for branded products. For returning a 
+                                                            product extra charges are applied. Unbranded products are not returned. 
+                                                            This month we will be focusing on non-branded products.
                                                         </p>
                                                     </td>
                                                 </tr>

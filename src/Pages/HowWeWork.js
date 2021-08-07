@@ -52,8 +52,8 @@ export class HowWeWork extends Component {
                                 <div class="about-us-content pl-30 pl-md-0 pl-sm-0 pl-xs-0">
                                     <span>Concept</span>
                                     <h2>Team Buying</h2>
-                                    <p>When multiple user come together and but a product, it's called <b>team buying</b></p>
-                                    <p>We post a product everyweek. Interested buyers can buy together and save upto 90% </p>
+                                    <p>When multiple users come together and buy a product, it's called <b>team buying</b></p>
+                                    <p>Team buying can save up to 90% </p>
                                 </div>
                                 {/*About Us Content End*/}
                             </div>
@@ -94,7 +94,7 @@ export class HowWeWork extends Component {
                                     <div class="feature-content">
                                         <h4 class="title">Warranty And Service</h4>
                                         <p class="short-desc">
-                                            No compromises on warranty. Get full warranty/garauntee with bill.
+                                            No compromise on warranty. Get full warranty/guarantee with the bill.
                                         </p>
                                     </div>
                                 </div>
@@ -106,7 +106,7 @@ export class HowWeWork extends Component {
                                     </div>
                                     <div class="feature-content">
                                         <h4 class="title">Quality Products</h4>
-                                        <p class="short-desc">We ensure the product quality that is our main goal </p>
+                                        <p class="short-desc">We ensure the product quality, that's our priority</p>
                                     </div>
                                 </div>
                             </div>
@@ -117,7 +117,7 @@ export class HowWeWork extends Component {
                                     </div>
                                     <div class="feature-content">
                                         <h4 class="title">Easy cancellations</h4>
-                                        <p class="short-desc">You can cancel your order anytime, before shipping.</p>
+                                        <p class="short-desc">Cancel your order anytime before shipping.</p>
                                     </div>
                                 </div>
                             </div>

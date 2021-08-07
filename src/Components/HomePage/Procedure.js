@@ -14,8 +14,8 @@ export class Procedure extends Component {
                                         <img src="https://img.icons8.com/ios/50/000000/controller.png" class="img-fluid" alt="" />
                                     </div>
                                     <div class="feature-content">
-                                        <h4 class="title">New Product Every Week</h4>
-                                        <p class="short-desc">We post one <b>product</b> every week. Products are cool gaming or mobile accessories.</p>
+                                        <h4 class="title">Genuine Products</h4>
+                                        <p class="short-desc">Get genuine products, with the on-time shipment.</p>
                                     </div>
                                 </div>
                             </div>
@@ -26,7 +26,7 @@ export class Procedure extends Component {
                                     </div>
                                     <div class="feature-content">
                                         <h4 class="title">Heavy Discounts</h4>
-                                        <p class="short-desc">Since 100+ users buy a product together. You get the product in wholesale rates</p>
+                                        <p class="short-desc">Buy together with 100+ users. Get the products in wholesale rates</p>
                                     </div>
                                 </div>
                             </div>
@@ -38,7 +38,7 @@ export class Procedure extends Component {
                                     <div class="feature-content">
                                         <h4 class="title">Instant Refunds</h4>
                                         <p class="short-desc">
-                                            If buyers are less than 30, we do not ship the product and refund your money instantly.
+                                            When buyers are less than 30 even after a week, the product is not shipped and your money is refunded instantly.
                                         </p>
                                     </div>
                                 </div>
