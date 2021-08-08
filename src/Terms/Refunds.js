@@ -8,7 +8,7 @@ export const refunds = <div>
                 When there are less than 30 buyers for a product in a particular week: refund will be intiated on the first day of the next week
             </li>
             <li>
-                When the product is defective/different than described and shown on the website: refund will be initiated as soon as the problem about the product is verified and the product is received by the company.
+                When the product is defective/different than described and shown on the website: refund is initiated as soon as the problem about the product is verified and the product is received by the company.
             </li>
             <li>
                 For any other situation, Brown Box will decide when and how to refund the amount if applicable.

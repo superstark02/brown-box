@@ -46,7 +46,7 @@ export class About extends Component {
                                     <h2>Provide Best Quality Products In Lowest Rates Possible</h2>
                                     <p>What's our idea? Know it <a href="/basically-the-idea" >here</a></p>
                                     <p>
-                                        We enable <a href="/basically-the-idea" >team buying</a>, which eanables heavy discounts for you.
+                                        We provide <a href="/basically-the-idea" >team buying</a>, which enables heavy discounts for you.
                                     </p>
                                 </div>
                                 {/*About Us Content End*/}
@@ -69,7 +69,7 @@ export class About extends Component {
                                         <h2 class="title">Brown Box</h2>
                                         <span class="">
                                             To make Brown Box an e-commerce platform, where <br/> our users can buy products at wholesale rates. <br/>
-                                            Weather it is gaming accessories or groceries,<br/> everthing at lowest rates possible
+                                            Wether it is gaming accessories or groceries,<br/> at lowest rates possible
                                         </span>
                                         <div class="countdown-area">
                                             <div class="product-countdown" data-countdown="2019/06/01"></div>
