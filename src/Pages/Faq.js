@@ -25,14 +25,14 @@ const faqs = [
     },
     {
         q: "How to cancel an order?",
-        a: "Once shipping is started, it cannot be cancelled. Before shipping you can cancel your orderby messaging ",
+        a: "Once shipping is started, it cannot be cancelled. Before shipping you can cancel your order by messaging to us on our Whatsapp No. ",
         heading: "headingFour",
         collapse: "collapseFour",
         tag: tag
     },
     {
         q: "How to return an order?",
-        a: "You can return order only in cases of defect or wrong product. You can return order by messaging ",
+        a: "You can return order only in cases of defect or wrong product. You can return your order by messaging to us on our Whatsapp No. ",
         tag: tag,
         heading: "headingFive",
         collapse: "collapseFive"
