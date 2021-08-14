@@ -65,7 +65,7 @@ export class HowWeWork extends Component {
                 <div class="row mb-50 mb-xs-20" style={{maxWidth:"100%"}}  >
                     <div class="col">
                         <div class="section-title text-center">
-                            <h2>Explaination Video</h2>
+                            <h2>Explanation Video</h2>
                             <span>WHAT IS BROWN BOX</span>
                         </div>
                     </div>
