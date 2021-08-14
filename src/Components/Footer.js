@@ -13,9 +13,9 @@ export class MyFooter extends Component {
 
                                 {/*Footer Widget start*/}
                                 <div class="footer-widget col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12 mb-40 mb-xs-35">
-                                    <h4 class="title"><span class="text">Timmings</span></h4>
+                                    <h4 class="title"><span class="text">Timings</span></h4>
                                     <p class="mb-15">New Product: Every Monday</p>
-                                    <p class="mb-15">Support: Sun - Mon, 8am - 6pm</p>
+                                    <p class="mb-15">Support:8am - 6pm/ 7 </p>
                                     <h4 class="opeaning-title">We Work On All The Holidays</h4>
                                 </div>
                                 {/*Footer Widget end*/}
